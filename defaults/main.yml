@@ -1,0 +1,9 @@
+# enable sound applets, applications, and Control Center integration
+enable_sound_support: true
+
+# enable printing applications and Control Center integration
+enable_printing_support: true
+
+# enable power-management applets, applications, and Control Center integration
+enable_power_support: false
+
