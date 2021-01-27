@@ -1,0 +1,8 @@
+- name: "Install base MATE package group"
+  community.general.pacman:
+    name: mate
+    state: present
+    extra_args: --needed
+  become: true
+  become_user: root
+
