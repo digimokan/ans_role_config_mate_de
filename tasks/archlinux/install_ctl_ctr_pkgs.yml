@@ -1,10 +1,3 @@
-- name: "MATE: install main Control Center 'mate-control-center' package"
-  community.general.pacman:
-    name: mate-control-center
-    state: present
-  become: true
-  become_user: root
-
 - name: "MATE: install Control Center 'network-manager-applet' package"
   community.general.pacman:
     name: network-manager-applet
