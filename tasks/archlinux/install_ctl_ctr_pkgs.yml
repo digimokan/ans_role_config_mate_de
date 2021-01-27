@@ -1,11 +1,11 @@
-- name: "MATE: install Control Center 'network-manager-applet' package"
+- name: "Install Control Center 'network-manager-applet' package"
   community.general.pacman:
     name: network-manager-applet
     state: present
   become: true
   become_user: root
 
-- name: "MATE: install Control Center 'mate-media' package, for sound support"
+- name: "Install Control Center 'mate-media' package, for sound support"
   community.general.pacman:
     name: mate-media
     state: present
@@ -13,7 +13,7 @@
   become_user: root
   when: enable_sound_support
 
-- name: "MATE: install Control Center 'system-config-printer' package"
+- name: "Install Control Center 'system-config-printer' package"
   community.general.pacman:
     name: system-config-printer
     state: present
@@ -21,7 +21,7 @@
   become_user: root
   when: enable_printing_support
 
-- name: "MATE: install Control Center 'mate-power-manager' package"
+- name: "Install Control Center 'mate-power-manager' package"
   community.general.pacman:
     name: mate-power-manager
     state: present

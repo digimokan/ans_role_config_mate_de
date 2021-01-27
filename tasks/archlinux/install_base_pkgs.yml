@@ -1,11 +1,11 @@
-- name: "MATE: install 'xorg-server' display server package"
+- name: "Install 'xorg-server' display server package"
   community.general.pacman:
     name: xorg-server
     state: present
   become: true
   become_user: root
 
-- name: "MATE: install base 'mate' package-group"
+- name: "Install base 'mate' package-group"
   community.general.pacman:
     name: mate
     state: present
@@ -13,7 +13,7 @@
   become: true
   become_user: root
 
-- name: "MATE: install pkgs from 'mate-extra' group commonly used by all machines"
+- name: "Install pkgs from 'mate-extra' group commonly used by all machines"
   community.general.pacman:
     name:
       - atril

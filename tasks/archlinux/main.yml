@@ -1,6 +1,6 @@
-- name: "MATE: install base 'mate' and 'mate-extra' packages"
+- name: "Install base 'mate' and 'mate-extra' packages"
   ansible.builtin.include_tasks: install_base_pkgs.yml
 
-- name: "MATE: install Control Center packages"
+- name: "Install Control Center packages"
   ansible.builtin.include_tasks: install_ctl_ctr_pkgs.yml
 
