@@ -1,3 +1,10 @@
+- name: "MATE: install 'xorg-server' display server package"
+  community.general.pacman:
+    name: xorg-server
+    state: present
+  become: true
+  become_user: root
+
 - name: "MATE: install base 'mate' package-group"
   community.general.pacman:
     name: mate
