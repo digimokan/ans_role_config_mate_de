@@ -1,8 +1,25 @@
-- name: "Install base MATE package group"
+- name: "Install base package-group 'mate'"
   community.general.pacman:
     name: mate
     state: present
     extra_args: --needed
+  become: true
+  become_user: root
+
+- name: "Install package-group 'mate-extra' packages commonly used by all machines"
+  community.general.pacman:
+    name:
+      - atril
+      - caja-wallpaper
+      - engrampa
+      - eom
+      - mate-calc
+      - mate-screensaver
+      - mate-system-monitor
+      - mate-terminal
+      - mate-utils
+      - pluma
+    state: present
   become: true
   become_user: root
 
