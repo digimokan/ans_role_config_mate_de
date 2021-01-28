@@ -1,6 +1,6 @@
-- name: "In WM, hide all desktop icons"
+- name: "In WM, hide 'computer' desktop icons"
   community.general.dconf:
-    key: "/org/mate/background/show-desktop-icons"
+    key: "/org/mate/caja/desktop/computer-icon-visible"
     value: "false"
     state: present
   become: true
