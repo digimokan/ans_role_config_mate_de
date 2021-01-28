@@ -1,4 +1,7 @@
-- name: "Configure MATE DE for Arch Linux"
+- name: "Install MATE DE packages for Arch Linux"
   ansible.builtin.include_tasks: archlinux/main.yml
   when: ansible_os_family == "Archlinux"
+
+- name: "Configure MATE window manager settings"
+  ansible.builtin.include_tasks: config_wm.yml
 

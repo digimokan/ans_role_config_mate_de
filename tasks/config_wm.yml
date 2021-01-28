@@ -1,0 +1,6 @@
+- name: "Hide all desktop icons"
+  community.general.dconf:
+    key: "org/mate/background/show-desktop-icons"
+    value: "false"
+    state: present
+
