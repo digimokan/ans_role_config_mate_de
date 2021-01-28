@@ -1,0 +1,7 @@
+- name: "Install python-psutil package, for dconf support"
+  community.general.pacman:
+    name: python-psutil
+    state: present
+  become: true
+  become_user: root
+

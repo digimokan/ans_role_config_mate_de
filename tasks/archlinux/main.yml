@@ -4,3 +4,6 @@
 - name: "Install Control Center packages"
   ansible.builtin.include_tasks: install_ctl_ctr_pkgs.yml
 
+- name: "Install window manager packages"
+  ansible.builtin.include_tasks: install_wm_pkgs.yml
+
