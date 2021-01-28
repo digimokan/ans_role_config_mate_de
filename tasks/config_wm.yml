@@ -3,6 +3,6 @@
     key: "/org/mate/background/show-desktop-icons"
     value: "false"
     state: present
-  become: "{{ user_name }}"
-  become_user: root
+  become: true
+  become_user: "{{ user_name }}"
 
