@@ -1,6 +1,22 @@
-- name: "Hide all desktop icons"
+- name: "Hide computer desktop icon"
   community.general.dconf:
-    key: "/org/mate/background/show-desktop-icons"
+    key: "/org/mate/caja/desktop/computer-icon-visible"
+    value: "false"
+    state: present
+  become: true
+  become_user: root
+
+- name: "Hide home desktop icon"
+  community.general.dconf:
+    key: "/org/mate/caja/desktop/home-icon-visible"
+    value: "false"
+    state: present
+  become: true
+  become_user: root
+
+- name: "Hide home desktop icon"
+  community.general.dconf:
+    key: "/org/mate/caja/desktop/trash-icon-visible"
     value: "false"
     state: present
   become: true
