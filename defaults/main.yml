@@ -1,6 +1,3 @@
-# primary MATE user name
-user_name
-
 # enable sound applets, applications, and Control Center integration
 enable_sound_support: true
 
