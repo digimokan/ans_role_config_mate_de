@@ -53,7 +53,7 @@ Configure the MATE desktop environment.
          ansible.builtin.include_role:
            name: ans_role_config_mate_de
          vars:
-           mate_user: "user2"
+           user_name: "user2"
    ```
 
 ## Role Options
@@ -64,7 +64,7 @@ See the role `defaults` file, for overridable vars:
 
 Define these _required_ vars for the role:
 
-  * `mate_user`: name of user to configure desktop for
+  * `user_name`: name of primary MATE user to configure the desktop for
 
 ## Role Dependencies
 
