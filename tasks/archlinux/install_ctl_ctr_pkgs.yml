@@ -1,3 +1,10 @@
+- name: "Install Control Center 'mate-power-manager' package"
+  community.general.pacman:
+    name: mate-power-manager
+    state: present
+  become: true
+  become_user: root
+
 - name: "Install Control Center 'network-manager-applet' package"
   community.general.pacman:
     name: network-manager-applet
@@ -20,11 +27,4 @@
   become: true
   become_user: root
   when: enable_printing_support
-
-- name: "Install Control Center 'mate-power-manager' package"
-  community.general.pacman:
-    name: mate-power-manager
-    state: present
-  become: true
-  become_user: root
 
