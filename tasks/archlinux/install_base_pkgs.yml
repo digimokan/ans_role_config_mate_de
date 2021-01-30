@@ -13,20 +13,3 @@
   become: true
   become_user: root
 
-- name: "Install pkgs from 'mate-extra' group commonly used by all machines"
-  community.general.pacman:
-    name:
-      - atril
-      - caja-wallpaper
-      - engrampa
-      - eom
-      - mate-calc
-      - mate-screensaver
-      - mate-system-monitor
-      - mate-terminal
-      - mate-utils
-      - pluma
-    state: present
-  become: true
-  become_user: root
-
