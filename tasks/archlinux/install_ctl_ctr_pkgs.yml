@@ -1,30 +1,22 @@
-- name: "Install Control Center 'mate-power-manager' package"
-  community.general.pacman:
-    name: mate-power-manager
-    state: present
+- name: "Install MATE Control Center packages"
+  block:
+    - name: "Install 'mate-power-manager' package"
+      community.general.pacman:
+        name: mate-power-manager
+        state: present
+    - name: "Install 'network-manager-applet' package"
+      community.general.pacman:
+        name: network-manager-applet
+        state: present
+    - name: "Install 'mate-media' package, for sound support"
+      community.general.pacman:
+        name: mate-media
+        state: present
+        when: enable_sound_support
+    - name: "Install 'system-config-printer' package, for printing support"
+      community.general.pacman:
+        name: system-config-printer
+        state: present
   become: true
   become_user: root
-
-- name: "Install Control Center 'network-manager-applet' package"
-  community.general.pacman:
-    name: network-manager-applet
-    state: present
-  become: true
-  become_user: root
-
-- name: "Install Control Center 'mate-media' package, for sound support"
-  community.general.pacman:
-    name: mate-media
-    state: present
-  become: true
-  become_user: root
-  when: enable_sound_support
-
-- name: "Install Control Center 'system-config-printer' package"
-  community.general.pacman:
-    name: system-config-printer
-    state: present
-  become: true
-  become_user: root
-  when: enable_printing_support
 
