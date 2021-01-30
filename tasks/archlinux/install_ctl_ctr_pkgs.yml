@@ -12,11 +12,12 @@
       community.general.pacman:
         name: mate-media
         state: present
-        when: enable_sound_support
+      when: enable_sound_support
     - name: "Install 'system-config-printer' package, for printing support"
       community.general.pacman:
         name: system-config-printer
         state: present
+      when: enable_printing_support
   become: true
   become_user: root
 
