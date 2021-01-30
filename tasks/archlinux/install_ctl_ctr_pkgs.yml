@@ -27,5 +27,4 @@
     state: present
   become: true
   become_user: root
-  when: enable_power_support
 
