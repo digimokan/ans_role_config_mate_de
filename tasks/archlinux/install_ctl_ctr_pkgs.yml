@@ -12,7 +12,7 @@
       community.general.pacman:
         name: mozo
         state: present
-    - name: "Install 'mate-media' package, for sound support"
+    - name: "Install sound-support packages"
       community.general.pacman:
         name:
           - mate-media
