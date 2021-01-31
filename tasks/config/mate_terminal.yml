@@ -1,16 +1,23 @@
 - name: "Configure MATE Terminal app settings"
   block:
-    - name: "In MATE Terminal app, set background to '{{ terminal_bg_type }}'"
+    - name: "In MATE Terminal app, set background to '{{ bg_type }}'"
       community.general.dconf:
         key: "/org/mate/terminal/profiles/default/background-type"
-        value: "'{{ terminal_bg_type }}'"
+        value: "{{ bg_type }}"
         state: present
+      vars:
+        bg_type: "{{ 'solid' if (terminal_bg_transparency == '1.00') else 'transparent' }}"
     - name: "In MATE Terminal app, set background transparency to {{ terminal_bg_transparency }}"
       community.general.dconf:
         key: "/org/mate/terminal/profiles/default/background-darkness"
         value: "{{ terminal_bg_transparency }}"
         state: present
-      when: terminal_bg_type == 'transparent'
+      when: terminal_bg_transparency != '1.00'
+    - name: "In MATE Terminal app, set background color to '{{ terminal_bg_color }}'"
+      community.general.dconf:
+        key: "/org/mate/terminal/profiles/default/background-color"
+        value: "'{{ terminal_bg_color }}'"
+        state: present
   become: true
   become_user: "{{ user_name }}"
 
