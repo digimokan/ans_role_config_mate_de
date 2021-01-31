@@ -8,6 +8,10 @@
       community.general.pacman:
         name: network-manager-applet
         state: present
+    - name: "Install 'mozo' package, for main-menu item editing"
+      community.general.pacman:
+        name: mozo
+        state: present
     - name: "Install 'mate-media' package, for sound support"
       community.general.pacman:
         name: mate-media
