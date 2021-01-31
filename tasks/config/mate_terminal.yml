@@ -1,7 +1,7 @@
 - name: "In MATE Terminal app, set background to '{{ terminal_bg_type }}'"
   community.general.dconf:
     key: "/org/mate/terminal/profiles/default/background-type"
-    value: "'transparent'"
+    value: "'{{ terminal_bg_type }}'"
     state: present
   become: true
   become_user: "{{ user_name }}"
