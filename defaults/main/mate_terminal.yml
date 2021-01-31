@@ -4,3 +4,6 @@ terminal_bg_color: "#000000000000"
 # value from "0.01" (fully-transparent) to "1.00" (solid background color)
 terminal_bg_transparency: "0.85"
 
+# foreground color (i.e. text color) hex code
+terminal_fg_color: "#F6F6F5F5F4F4"
+

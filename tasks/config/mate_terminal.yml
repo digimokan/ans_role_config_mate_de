@@ -18,6 +18,11 @@
         key: "/org/mate/terminal/profiles/default/background-color"
         value: "'{{ terminal_bg_color }}'"
         state: present
+    - name: "In MATE Terminal app, set foreground/text color to '{{ terminal_fg_color }}'"
+      community.general.dconf:
+        key: "/org/mate/terminal/profiles/default/foreground-color"
+        value: "'{{ terminal_fg_color }}'"
+        state: present
   become: true
   become_user: "{{ user_name }}"
 
