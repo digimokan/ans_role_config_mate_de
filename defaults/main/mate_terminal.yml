@@ -13,3 +13,6 @@ terminal_fg_bold_color: "#FFFFFFFFFFFF"
 # cursor-blink "on" or "off"
 terminal_cursor_blink: "off"
 
+# a font family and size (e.g. "Monospace 10"), or "system" to use system font
+terminal_font: "system"
+
