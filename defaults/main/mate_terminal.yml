@@ -10,3 +10,6 @@ terminal_fg_color: "#F6F6F5F5F4F4"
 # foreground bold color (i.e. bold text color) hex code
 terminal_fg_bold_color: "#FFFFFFFFFFFF"
 
+# cursor-blink "on" or "off"
+terminal_cursor_blink: "off"
+
