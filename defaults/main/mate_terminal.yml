@@ -2,5 +2,5 @@
 terminal_bg_color: "#000000000000"
 
 # value from "0.01" (fully-transparent) to "1.00" (solid background color)
-terminal_bg_transparency: "1.00"
+terminal_bg_transparency: "0.85"
 
