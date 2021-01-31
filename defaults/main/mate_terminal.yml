@@ -14,5 +14,5 @@ terminal_fg_bold_color: "#FFFFFFFFFFFF"
 terminal_cursor_blink: "off"
 
 # a font family and size (e.g. "Monospace 10"), or "system" to use system font
-terminal_font: "system"
+terminal_font: "Monospace 14"
 
