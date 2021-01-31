@@ -44,6 +44,11 @@
         key: "/org/mate/terminal/profiles/default/cursor-blink-mode"
         value: "'{{ terminal_cursor_blink }}'"
         state: present
+    - name: "In MATE Terminal app, set num scrollback lines to {{ terminal_num_scrollback_lines }}"
+      community.general.dconf:
+        key: "/org/mate/terminal/profiles/default/scrollback-lines"
+        value: "{{ terminal_num_scrollback_lines }}"
+        state: present
   become: true
   become_user: "{{ user_name }}"
 

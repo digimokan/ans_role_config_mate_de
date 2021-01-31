@@ -13,3 +13,6 @@ terminal_fg_bold_color: "#FFFFFFFFFFFF"
 # cursor-blink "on" or "off"
 terminal_cursor_blink: "off"
 
+# number of lines to retain in terminal scroll-history
+terminal_num_scrollback_lines: "20000"
+
