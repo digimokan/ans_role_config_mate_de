@@ -1,3 +1,6 @@
+- name: "Configure MATE Terminal settings"
+  ansible.builtin.include_tasks: mate_terminal.yml
+
 - name: "In WM, hide 'computer' desktop icons"
   community.general.dconf:
     key: "/org/mate/caja/desktop/computer-icon-visible"

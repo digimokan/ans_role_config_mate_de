@@ -1,0 +1,6 @@
+# background either "solid" or "transparent"
+terminal_bg_type: "transparent"
+
+# if transparent background, from 0.00 (fully-transparent) to 1.00 (opaque)
+terminal_bg_transparency: 0.86
+
