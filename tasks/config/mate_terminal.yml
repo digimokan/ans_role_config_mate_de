@@ -50,7 +50,7 @@
         value: "{{ use_sys_font }}"
         state: present
       vars:
-        use_sys_font: (terminal_font == 'system')
+        use_sys_font: "{{ terminal_font == 'system' }}"
     - name: "In MATE Terminal app, set font to '{{ terminal_font }}'"
       community.general.dconf:
         key: "/org/mate/terminal/profiles/default/font"
