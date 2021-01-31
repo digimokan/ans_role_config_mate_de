@@ -1,5 +1,10 @@
 - name: "Configure MATE Terminal app settings"
   block:
+    - name: "In MATE Terminal app, set use-system-theme-colors 'false'"
+      community.general.dconf:
+        key: "/org/mate/terminal/profiles/default/use-theme-colors"
+        value: "false"
+        state: present
     - name: "In MATE Terminal app, set background to '{{ bg_type }}'"
       community.general.dconf:
         key: "/org/mate/terminal/profiles/default/background-type"
