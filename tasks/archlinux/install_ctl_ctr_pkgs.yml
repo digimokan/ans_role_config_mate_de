@@ -14,7 +14,9 @@
         state: present
     - name: "Install 'mate-media' package, for sound support"
       community.general.pacman:
-        name: mate-media
+        name:
+          - mate-media
+          - libcanberra-pulse
         state: present
       when: enable_sound_support
     - name: "Install 'system-config-printer' package, for printing support"
