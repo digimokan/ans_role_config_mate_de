@@ -49,6 +49,21 @@
         key: "/org/mate/terminal/profiles/default/scrollback-lines"
         value: "{{ terminal_num_scrollback_lines }}"
         state: present
+    - name: "In MATE Terminal app, set use-custom-window-dimensions to 'true'"
+      community.general.dconf:
+        key: "/org/mate/terminal/profiles/default/use-custom-default-size"
+        value: "true"
+        state: present
+    - name: "In MATE Terminal app, set default-window-height to {{ terminal_window_height }}"
+      community.general.dconf:
+        key: "/org/mate/terminal/profiles/default/default-size-rows"
+        value: "{{ terminal_window_height }}"
+        state: present
+    - name: "In MATE Terminal app, set default-window-width to {{ terminal_window_width }}"
+      community.general.dconf:
+        key: "/org/mate/terminal/profiles/default/default-size-columns"
+        value: "{{ terminal_window_width }}"
+        state: present
   become: true
   become_user: "{{ user_name }}"
 

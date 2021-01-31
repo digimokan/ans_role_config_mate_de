@@ -16,3 +16,9 @@ terminal_cursor_blink: "off"
 # number of lines to retain in terminal scroll-history
 terminal_num_scrollback_lines: "20000"
 
+# default height (in number of rows) of the terminal app window
+terminal_window_height: "32"
+
+# default width (in number of chars) of the terminal app window
+terminal_window_width: "120"
+
