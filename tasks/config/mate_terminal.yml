@@ -44,19 +44,6 @@
         key: "/org/mate/terminal/profiles/default/cursor-blink-mode"
         value: "'{{ terminal_cursor_blink }}'"
         state: present
-    - name: "In MATE Terminal app, set use-system-font to '{{ use_sys_font }}'"
-      community.general.dconf:
-        key: "/org/mate/terminal/profiles/default/use-system-font"
-        value: "{{ use_sys_font }}"
-        state: present
-      vars:
-        use_sys_font: "{{ 'true' if (terminal_font == 'system') else 'false' }}"
-    - name: "In MATE Terminal app, set font to '{{ terminal_font }}'"
-      community.general.dconf:
-        key: "/org/mate/terminal/profiles/default/font"
-        value: "{{ terminal_font }}"
-        state: present
-      when: terminal_font != 'system'
   become: true
   become_user: "{{ user_name }}"
 
