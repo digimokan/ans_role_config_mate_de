@@ -1,0 +1,15 @@
+# font used for window titles
+font_for_window_titles: "Sans 12"
+
+# font used for desktop background items
+font_for_desktop_background: "Sans 10"
+
+# main font used in all applications, including MATE apps
+font_for_apps: "Sans 10"
+
+# document font, used in apps for user-input
+font_for_docs: "Sans 10"
+
+# font used in apps when monospace-font is specified
+font_for_monospace: "Monospace 10"
+
