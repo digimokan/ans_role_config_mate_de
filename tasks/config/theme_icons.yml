@@ -1,0 +1,10 @@
+- name: "Configure theme icons settings"
+  block:
+    - name: "For theme icons, set file-view to '{{ icons_file_view }}'"
+      community.general.dconf:
+        key: "/org/mate/desktop/file-views/icon-theme"
+        value: "'{{ icons_file_view }}'"
+        state: present
+  become: true
+  become_user: "{{ user_name }}"
+
