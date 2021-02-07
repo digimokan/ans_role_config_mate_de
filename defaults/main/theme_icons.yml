@@ -5,5 +5,5 @@ icons_for_file_view: "crux_teal"
 icons_on_buttons: true
 
 # if true, put icons in user menus
-icons_in_menus: false
+icons_in_menus: true
 
