@@ -2,7 +2,7 @@ galaxy_info:
   author: digimokan
   description: "Configure the MATE desktop environment"
   license: "MIT"
-  min_ansible_version: 2.3
+  min_ansible_version: 2.7
   platforms:
     - name: Archlinux
       versions:
