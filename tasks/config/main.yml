@@ -1,7 +1,7 @@
 - name: "In WM, hide 'computer' desktop icons"
   community.general.dconf:
     key: "/org/mate/caja/desktop/computer-icon-visible"
-    value: "false"
+    value: "true"
     state: present
   become: true
   become_user: "{{ user_name }}"
