@@ -4,6 +4,9 @@
 - name: "Configure theme icons settings"
   ansible.builtin.include_tasks: theme_icons.yml
 
+- name: "Configure interface behavior settings"
+  ansible.builtin.include_tasks: interface_behavior.yml
+
 - name: "Configure MATE Terminal settings"
   ansible.builtin.include_tasks: mate_terminal.yml
 
