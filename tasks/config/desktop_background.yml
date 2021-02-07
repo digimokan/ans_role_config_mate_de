@@ -1,0 +1,10 @@
+- name: "Configure desktop background settings"
+  block:
+    - name: "For desktop background, set bg image to '{{ background_image_path }}'"
+      community.general.dconf:
+        key: "/org/mate/desktop/background/picture-filename"
+        value: "'{{ background_image_path }}'"
+        state: present
+  become: true
+  become_user: "{{ user_name }}"
+
