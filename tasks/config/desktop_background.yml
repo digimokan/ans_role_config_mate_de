@@ -5,6 +5,31 @@
         key: "/org/mate/desktop/background/picture-filename"
         value: "'{{ background_image_path }}'"
         state: present
+    - name: "For desktop background, set bg image opacity to {{ background_image_opacity }}"
+      community.general.dconf:
+        key: "/org/mate/desktop/background/picture-opacity"
+        value: "{{ background_image_opacity }}"
+        state: present
+    - name: "For desktop background, set bg image coverage to '{{ background_image_coverage }}'"
+      community.general.dconf:
+        key: "/org/mate/desktop/background/picture-options"
+        value: "'{{ background_image_coverage }}'"
+        state: present
+    - name: "For desktop background, set bg primary color to '{{ background_primary_color }}'"
+      community.general.dconf:
+        key: "/org/mate/desktop/background/primary-color"
+        value: "'{{ background_primary_color }}'"
+        state: present
+    - name: "For desktop background, set bg secondary color to '{{ background_secondary_color }}'"
+      community.general.dconf:
+        key: "/org/mate/desktop/background/secondary-color"
+        value: "'{{ background_secondary_color }}'"
+        state: present
+    - name: "For desktop background, set bg colors transition to '{{ background_colors_transition }}'"
+      community.general.dconf:
+        key: "/org/mate/desktop/background/color-shading-type"
+        value: "'{{ background_colors_transition }}'"
+        state: present
   become: true
   become_user: "{{ user_name }}"
 
