@@ -7,6 +7,9 @@
 - name: "Configure interface behavior settings"
   ansible.builtin.include_tasks: interface_behavior.yml
 
+- name: "Configure windowing settings"
+  ansible.builtin.include_tasks: windowing.yml
+
 - name: "Configure MATE Terminal settings"
   ansible.builtin.include_tasks: mate_terminal.yml
 

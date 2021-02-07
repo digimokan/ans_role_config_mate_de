@@ -1,0 +1,12 @@
+- name: "Configure windowing settings"
+  block:
+    - name: "For windowing actions, set draw-animations to '{{ use_animations }}'"
+      community.general.dconf:
+        key: "/org/mate/desktop/interface/enable-animations"
+        value: "'{{ use_animations }}'"
+        state: present
+      vars:
+        use_animations: "{{ 'true' if windowing_animations else 'false' }}"
+  become: true
+  become_user: "{{ user_name }}"
+
