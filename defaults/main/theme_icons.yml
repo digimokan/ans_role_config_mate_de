@@ -1,3 +1,9 @@
 # theme for file-view icons
-icons_file_view: "crux_teal"
+icons_for_file_view: "crux_teal"
+
+# if true, put icons on WM buttons
+icons_on_buttons: true
+
+# if true, put icons in user menus
+icons_in_menus: false
 
