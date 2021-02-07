@@ -5,16 +5,20 @@
         key: "/org/mate/desktop/file-views/icon-theme"
         value: "'{{ icons_for_file_view }}'"
         state: present
-    - name: "For theme icons, set icons-on-buttons to '{{ icons_on_buttons }}'"
+    - name: "For theme icons, set icons-on-buttons to '{{ have_icons }}'"
       community.general.dconf:
         key: "/org/mate/desktop/interface/buttons-have-icons"
-        value: "{{ 'true' if icons_on_buttons else 'false' }}"
+        value: "'{{ have_icons }}'"
         state: present
-    - name: "For theme icons, set icons-in-menus to '{{ icons_in_menus }}'"
+      vars:
+        have_icons: "{{ 'true' if icons_on_buttons else 'false' }}"
+    - name: "For theme icons, set icons-in-menus to '{{ have_icons }}'"
       community.general.dconf:
         key: "/org/mate/desktop/interface/menus-have-icons"
-        value: "{{ 'true' if icons_in_menus else 'false' }}"
+        value: "'{{ have_icons }}'"
         state: present
+      vars:
+        have_icons: "{{ 'true' if icons_in_menus else 'false' }}"
   become: true
   become_user: "{{ user_name }}"
 
