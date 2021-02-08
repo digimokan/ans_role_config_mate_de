@@ -16,6 +16,9 @@
 - name: "Configure windowing settings"
   ansible.builtin.include_tasks: windowing.yml
 
+- name: "Configure media devices settings"
+  ansible.builtin.include_tasks: media_devices.yml
+
 - name: "Configure MATE Terminal app settings"
   ansible.builtin.include_tasks: mate_terminal.yml
 
