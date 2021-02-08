@@ -1,0 +1,20 @@
+- name: "Configure mouse pointer settings"
+  block:
+    - name: "For mouse, set pointer-theme to '{{ mouse_pointer_theme }}'"
+      community.general.dconf:
+        key: "/org/mate/desktop/peripherals/mouse/cursor-theme"
+        value: "'{{ mouse_pointer_theme }}'"
+        state: present
+    - name: "For mouse, set pointer-size to {{ mouse_pointer_size }}"
+      community.general.dconf:
+        key: "/org/mate/desktop/peripherals/mouse/cursor-size"
+        value: "{{ mouse_pointer_size }}"
+        state: present
+    - name: "For mouse, set double-click-threshold-time to {{ mouse_double_click_time }} millisec"
+      community.general.dconf:
+        key: "/org/mate/desktop/peripherals/mouse/double-click"
+        value: "{{ mouse_double_click_time }}"
+        state: present
+  become: true
+  become_user: "{{ user_name }}"
+
