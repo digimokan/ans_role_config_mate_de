@@ -2,7 +2,7 @@
   ansible.builtin.include_tasks: desktop_background.yml
 
 - name: "Configure theme icons settings"
-  ansible.builtin.include_tasks: theme_icons.yml
+  ansible.builtin.include_tasks: icons.yml
 
 - name: "Configure fonts settings"
   ansible.builtin.include_tasks: fonts.yml

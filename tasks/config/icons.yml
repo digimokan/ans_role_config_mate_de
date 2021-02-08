@@ -1,18 +1,23 @@
 - name: "Configure theme icons settings"
   block:
-    - name: "For theme icons, set file-view to '{{ icons_for_file_view }}'"
+    - name: "For icons, set main icone theme to '{{ icons_main_theme }}'"
+      community.general.dconf:
+        key: "/org/mate/desktop/interface/icon-theme"
+        value: "'{{ icons_main_theme }}'"
+        state: present
+    - name: "For icons, set file-view to '{{ icons_for_file_view }}'"
       community.general.dconf:
         key: "/org/mate/desktop/file-views/icon-theme"
         value: "'{{ icons_for_file_view }}'"
         state: present
-    - name: "For theme icons, set icons-on-buttons to '{{ have_icons }}'"
+    - name: "For icons, set icons-on-buttons to '{{ have_icons }}'"
       community.general.dconf:
         key: "/org/mate/desktop/interface/buttons-have-icons"
         value: "'{{ have_icons }}'"
         state: present
       vars:
         have_icons: "{{ 'true' if icons_on_buttons else 'false' }}"
-    - name: "For theme icons, set icons-in-menus to '{{ have_icons }}'"
+    - name: "For icons, set icons-in-menus to '{{ have_icons }}'"
       community.general.dconf:
         key: "/org/mate/desktop/interface/menus-have-icons"
         value: "'{{ have_icons }}'"
