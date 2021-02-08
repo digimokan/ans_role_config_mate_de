@@ -1,7 +1,7 @@
 # theme/appearance of mouse pointer
 mouse_pointer_theme: "mate-black"
 
-# size of mouse pointer
+# size of mouse pointer (depending on theme: "24", "32", "48", or "64")
 mouse_pointer_size: "48"
 
 # mouse double-click threshold time, in millisec
