@@ -1,5 +1,5 @@
 - name: "Configure desktop background settings"
-  ansible.builtin.include_tasks: desktop_background.yml
+  ansible.builtin.include_tasks: background.yml
 
 - name: "Configure theme icons settings"
   ansible.builtin.include_tasks: icons.yml
@@ -13,6 +13,6 @@
 - name: "Configure windowing settings"
   ansible.builtin.include_tasks: windowing.yml
 
-- name: "Configure MATE Terminal settings"
+- name: "Configure MATE Terminal app settings"
   ansible.builtin.include_tasks: mate_terminal.yml
 
