@@ -1,0 +1,30 @@
+- name: "Configure keyboard settings"
+  block:
+    - name: "For keyboard, set enable-keypress-repeat to '{{ repeat_on }}'"
+      community.general.dconf:
+        key: "/org/mate/desktop/peripherals/keyboard/repeat"
+        value: "'{{ repeat_on }}'"
+        state: present
+      vars:
+        repeat_on: "{{ 'false' if (keyboard_repeat_rate == 'none') else 'true' }}"
+    - name: "For keyboard, set keypress-repeat-rate to {{ keyboard_repeat_rate }} millisec"
+      community.general.dconf:
+        key: "/org/mate/desktop/peripherals/keyboard/rate"
+        value: "{{ keyboard_repeat_rate }}"
+        state: present
+      when: keyboard_repeat_delay != 'none'
+    - name: "For keyboard, set keypress-repeat-delay to {{ keyboard_repeat_delay }} millisec"
+      community.general.dconf:
+        key: "/org/mate/desktop/peripherals/keyboard/delay"
+        value: "{{ keyboard_repeat_delay }}"
+        state: present
+    - name: "For keyboard, set enable-audible-bell to '{{ bell_on }}'"
+      community.general.dconf:
+        key: "/org/mate/desktop/peripherals/keyboard/bell-mode"
+        value: "'{{ bell_on }}'"
+        state: present
+      vars:
+        bell_on: "{{ 'on' if keyboard_bell_enable else 'off' }}"
+  become: true
+  become_user: "{{ user_name }}"
+

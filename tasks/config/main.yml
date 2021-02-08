@@ -16,6 +16,9 @@
 - name: "Configure windowing settings"
   ansible.builtin.include_tasks: windowing.yml
 
+- name: "Configure keyboard settings"
+  ansible.builtin.include_tasks: keyboard.yml
+
 - name: "Configure media devices settings"
   ansible.builtin.include_tasks: media_devices.yml
 
