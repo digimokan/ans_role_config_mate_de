@@ -1,0 +1,20 @@
+- name: "Configure theme, style, and colors settings"
+  block:
+    - name: "For theme, set main WM theme to '{{ theme_for_windows }}'"
+      community.general.dconf:
+        key: "/org/mate/desktop/interface/gtk-theme"
+        value: "'{{ theme_for_windows }}'"
+        state: present
+    - name: "For theme, set WM border/title-bar theme to '{{ theme_for_borders }}'"
+      community.general.dconf:
+        key: "/org/mate/marco/general/theme"
+        value: "'{{ theme_for_borders }}'"
+        state: present
+    - name: "For theme, set pop-up notification theme to '{{ theme_for_notifications }}'"
+      community.general.dconf:
+        key: "/org/mate/notification-daemon/theme"
+        value: "'{{ theme_for_notifications }}'"
+        state: present
+  become: true
+  become_user: "{{ user_name }}"
+

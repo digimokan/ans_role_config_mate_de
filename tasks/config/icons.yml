@@ -1,6 +1,6 @@
-- name: "Configure theme icons settings"
+- name: "Configure icons settings"
   block:
-    - name: "For icons, set main icone theme to '{{ icons_main_theme }}'"
+    - name: "For icons, set main icon theme to '{{ icons_main_theme }}'"
       community.general.dconf:
         key: "/org/mate/desktop/interface/icon-theme"
         value: "'{{ icons_main_theme }}'"
