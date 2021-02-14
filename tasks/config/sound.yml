@@ -13,7 +13,7 @@
         value: "'{{ theme_name }}'"
         state: present
       vars:
-        theme_name: "{{ '__no_sounds' if (sound_theme == 'none') else 'sound_theme' }}"
+        theme_name: "{{ '__no_sounds' if (sound_theme == 'none') else sound_theme }}"
     - name: "For sound, set input-feedback-sounds to '{{ use_input }}'"
       community.general.dconf:
         key: "/org/mate/desktop/sound/input-feedback-sounds"
