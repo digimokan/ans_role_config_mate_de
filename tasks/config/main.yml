@@ -22,6 +22,9 @@
 - name: "Configure mouse pointer settings"
   ansible.builtin.include_tasks: mouse.yml
 
+- name: "Configure sound settings"
+  ansible.builtin.include_tasks: sound.yml
+
 - name: "Configure media devices settings"
   ansible.builtin.include_tasks: media_devices.yml
 

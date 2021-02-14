@@ -1,0 +1,26 @@
+- name: "Configure sound settings"
+  block:
+    - name: "For sound, set event-sounds to '{{ use_sounds }}'"
+      community.general.dconf:
+        key: "/org/mate/desktop/sound/event-sounds"
+        value: "'{{ use_sounds }}'"
+        state: present
+      vars:
+        use_sounds: "{{ 'false' if (sound_theme == 'none') else 'true' }}"
+    - name: "For sound, set theme-name to '{{ theme_name }}'"
+      community.general.dconf:
+        key: "/org/mate/desktop/sound/theme-name"
+        value: "'{{ theme_name }}'"
+        state: present
+      vars:
+        theme_name: "{{ '__no_sounds' if (sound_theme == 'none') else 'sound_theme' }}"
+    - name: "For sound, set input-feedback-sounds to '{{ use_input }}'"
+      community.general.dconf:
+        key: "/org/mate/desktop/sound/input-feedback-sounds"
+        value: "'{{ use_input }}'"
+        state: present
+      vars:
+        use_input: "{{ 'true' if enable_input_sounds else 'false' }}"
+  become: true
+  become_user: "{{ user_name }}"
+
