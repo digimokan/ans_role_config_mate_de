@@ -3,7 +3,7 @@
     - name: "For keyboard, set enable-keypress-repeat to '{{ repeat_on }}'"
       community.general.dconf:
         key: "/org/mate/desktop/peripherals/keyboard/repeat"
-        value: "'{{ repeat_on }}'"
+        value: "{{ repeat_on }}"
         state: present
       vars:
         repeat_on: "{{ 'false' if (keyboard_repeat_rate == 'none') else 'true' }}"

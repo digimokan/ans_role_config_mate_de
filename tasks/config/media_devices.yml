@@ -3,21 +3,21 @@
     - name: "For media devices, set auto-mount-devices to '{{ do_auto }}'"
       community.general.dconf:
         key: "/org/mate/desktop/media-handling/automount"
-        value: "'{{ do_auto }}'"
+        value: "{{ do_auto }}"
         state: present
       vars:
         do_auto: "{{ 'true' if media_auto_mount else 'false' }}"
     - name: "For media devices, set auto-open-after-mount to '{{ do_auto }}'"
       community.general.dconf:
         key: "/org/mate/desktop/media-handling/automount-open"
-        value: "'{{ do_auto }}'"
+        value: "{{ do_auto }}"
         state: present
       vars:
         do_auto: "{{ 'true' if media_auto_open else 'false' }}"
     - name: "For media devices, set prompt-to-run-device-apps to '{{ do_auto }}'"
       community.general.dconf:
         key: "/org/mate/desktop/media-handling/autorun-never"
-        value: "'{{ do_auto }}'"
+        value: "{{ do_auto }}"
         state: present
       vars:
         do_auto: "{{ 'false' if media_prompt_to_run else 'true' }}"

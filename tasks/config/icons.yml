@@ -13,14 +13,14 @@
     - name: "For icons, set icons-on-buttons to '{{ have_icons }}'"
       community.general.dconf:
         key: "/org/mate/desktop/interface/buttons-have-icons"
-        value: "'{{ have_icons }}'"
+        value: "{{ have_icons }}"
         state: present
       vars:
         have_icons: "{{ 'true' if icons_on_buttons else 'false' }}"
     - name: "For icons, set icons-in-menus to '{{ have_icons }}'"
       community.general.dconf:
         key: "/org/mate/desktop/interface/menus-have-icons"
-        value: "'{{ have_icons }}'"
+        value: "{{ have_icons }}"
         state: present
       vars:
         have_icons: "{{ 'true' if icons_in_menus else 'false' }}"

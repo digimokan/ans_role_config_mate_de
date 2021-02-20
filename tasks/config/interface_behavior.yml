@@ -3,7 +3,7 @@
     - name: "For interface behavior, set cursor-blink to '{{ blink_on }}'"
       community.general.dconf:
         key: "/org/mate/desktop/interface/cursor-blink"
-        value: "'{{ blink_on }}'"
+        value: "{{ blink_on }}"
         state: present
       vars:
         blink_on: "{{ 'false' if (interface_cursor_blink_time == '0') else 'true' }}"

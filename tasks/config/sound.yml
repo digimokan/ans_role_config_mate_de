@@ -4,7 +4,6 @@
     community.general.dconf:
       key: "/org/mate/desktop/sound/input-feedback-sounds"
       value: "{{ use_input }}"
-      # value: "'true'"
       state: present
     vars:
       use_input: "{{ 'true' if enable_input_sounds else 'false' }}"
@@ -12,7 +11,6 @@
     community.general.dconf:
       key: "/org/mate/desktop/sound/event-sounds"
       value: "{{ use_sounds }}"
-      # value: "true"
       state: present
     vars:
       use_sounds: "{{ 'false' if (sound_theme == 'none') else 'true' }}"
