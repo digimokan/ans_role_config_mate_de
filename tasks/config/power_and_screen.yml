@@ -18,7 +18,7 @@
   - name: "For screen/power, set screensaver-theme to '{{ theme }}'"
     community.general.dconf:
       key: "/org/mate/screensaver/themes"
-      value: "{{ theme }}"
+      value: "{{ theme | string }}"
       state: present
     vars:
       theme: ['{{ screensaver_theme }}']
