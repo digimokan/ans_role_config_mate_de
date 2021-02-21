@@ -1,6 +1,6 @@
 # show screensaver after this number of minutes (define to 0 for no screensaver)
 # screensaver_delay_time: 15
-screensaver_delay_time: 1
+screensaver_delay_time: 0
 
 # screensaver to show (if screensaver_delay_time is not 0)
 screensaver_theme: "screensavers-cosmos-slideshow"
