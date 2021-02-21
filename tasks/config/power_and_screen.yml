@@ -15,6 +15,12 @@
     vars:
       delay_time: "{{ screensaver_delay_time }}"
     when: screensaver_delay_time != 0
+  - name: "For screen/power, set screensaver-mode to 'single'"
+    community.general.dconf:
+      key: "/org/mate/screensaver/mode"
+      value: "'single'"
+      state: present
+    when: screensaver_delay_time != 0
   - name: "For screen/power, set screensaver-theme to '{{ screensaver_theme }}'"
     community.general.dconf:
       key: "/org/mate/screensaver/themes"
@@ -22,12 +28,6 @@
       state: present
     vars:
       theme: ['{{ screensaver_theme }}']
-    when: screensaver_delay_time != 0
-  - name: "For screen/power, set screensaver-mode to 'single'"
-    community.general.dconf:
-      key: "/org/mate/screensaver/mode"
-      value: "'single'"
-      state: present
     when: screensaver_delay_time != 0
   - name: "For screen/power, set AC-power screen blank delay to {{ blank_setting }}"
     community.general.dconf:
