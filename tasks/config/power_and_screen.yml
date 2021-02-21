@@ -56,7 +56,7 @@
       key: "/org/mate/screensaver/picture-filename"
       value: "'{{ lock_background_picture }}'"
       state: present
-    when: lock_with_screensaver
+    # when: lock_with_screensaver
   - name: "For screen/power, set poweroff/logout dialog-delay to {{ delay_time }} seconds"
     community.general.dconf:
       key: "/org/mate/desktop/session/logout-timeout"
