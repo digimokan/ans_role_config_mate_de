@@ -1,0 +1,10 @@
+- name: "Configure general panel settings"
+  block:
+    - name: "For panels, set available items for all panels to {{ panels_available_items }}"
+      community.general.dconf:
+        key: "/org/mate/panel/general/object-id-list"
+        value: "{{ panels_available_items | string }}"
+        state: present
+  become: true
+  become_user: "{{ user_name }}"
+

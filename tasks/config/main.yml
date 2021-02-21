@@ -31,6 +31,9 @@
 - name: "Configure screensaver and power settings"
   ansible.builtin.include_tasks: power_and_screen.yml
 
+- name: "Configure top and bottom panels (i.e. 'system-tray') settings"
+  ansible.builtin.include_tasks: panels.yml
+
 - name: "Configure MATE Terminal app settings"
   ansible.builtin.include_tasks: mate_terminal.yml
 

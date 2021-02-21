@@ -1,0 +1,3 @@
+# available items for both top and bottom panels
+panels_available_items: ['menu-bar', 'notification area', 'clock', 'show-desktop', 'window-list', 'object-0']
+
