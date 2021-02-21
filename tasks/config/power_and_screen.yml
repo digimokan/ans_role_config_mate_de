@@ -40,6 +40,11 @@
       state: present
     vars:
       set_lock: "{{ 'true' if lock_with_screensaver else 'false' }}"
+  - name: "For screen/power, set poweroff/logout dialog-delay to {{ poweroff_dialog_delay }} seconds"
+    community.general.dconf:
+      key: "/org/mate/desktop/session/logout-timeout"
+      value: "{{ poweroff_dialog_delay }}"
+      state: present
   vars:
     blank_min: "{{ screen_blank_time * 60 }}"
     blank_setting: "{{ 'no-screen-blank' if (blank_min == 0) else screen_blank_time }}{{ '' if (blank_min == 0) else ' minutes' }}"

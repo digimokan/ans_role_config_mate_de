@@ -10,6 +10,6 @@ lock_with_screensaver: false
 # blank the screen after this number of minutes (define to 0 for no blanking)
 screen_blank_time: 30
 
-# on showing logout/poweroff menu, do auto-logout/poweroff after XX seconds
-poweroff_delay: 30
+# on showing logout/poweroff dialog, do auto-logout/poweroff after XX seconds
+poweroff_dialog_delay: 30
 
