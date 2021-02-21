@@ -10,3 +10,15 @@
   become: true
   become_user: "{{ user_name }}"
 
+- name: "Configure bottom panel settings"
+  block:
+    - name: "For bottom panel, set panel-size to {{ size }}"
+      community.general.dconf:
+        key: "/org/mate/panel/toplevels/bottom/size"
+        value: "{{ size }}"
+        state: present
+      vars:
+        size:  "{{ bottom_panel_size }}"
+  become: true
+  become_user: "{{ user_name }}"
+
