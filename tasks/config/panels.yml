@@ -10,11 +10,13 @@
 
 - name: "Configure top panel settings"
   block:
-    - name: "For top panel, set panel-size to {{ top_panel_size }}"
+    - name: "For top panel, set panel-size to {{ size }}"
       community.general.dconf:
         key: "/org/mate/panel/toplevels/top/size"
-        value: "{{ top_panel_size }}"
+        value: "{{ size }}"
         state: present
+      vars:
+        size:  "{{ top_panel_size }}"
   become: true
   become_user: "{{ user_name }}"
 
