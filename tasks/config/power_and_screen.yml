@@ -46,7 +46,7 @@
       value: "{{ delay_time }}"
       state: present
     vars:
-      delay_time: "{{ screensaver_delay_time }}"
+      delay_time: "{{ poweroff_dialog_delay }}"
   vars:
     blank_min: "{{ screen_blank_time * 60 }}"
     blank_setting: "{{ 'no-screen-blank' if (blank_min == 0) else screen_blank_time }}{{ '' if (blank_min == 0) else ' minutes' }}"
