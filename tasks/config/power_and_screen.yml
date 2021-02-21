@@ -15,7 +15,7 @@
     vars:
       delay_time: "{{ screensaver_delay_time }}"
     when: screensaver_delay_time != 0
-  - name: "For screen/power, set screensaver-theme to '{{ theme }}'"
+  - name: "For screen/power, set screensaver-theme to '{{ screensaver_theme }}'"
     community.general.dconf:
       key: "/org/mate/screensaver/themes"
       value: "{{ theme | string }}"
