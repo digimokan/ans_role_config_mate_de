@@ -38,13 +38,19 @@
       key: "/org/mate/power-manager/sleep-display-ups"
       value: "{{ blank_min }}"
       state: present
-  - name: "For screen/power, set screensaver/blanking lock to '{{ set_lock }}'"
+  - name: "For screen/power, set screensaver lock to '{{ set_lock }}'"
     community.general.dconf:
       key: "/org/mate/screensaver/lock-enabled"
       value: "{{ set_lock }}"
       state: present
     vars:
       set_lock: "{{ 'true' if lock_with_screensaver else 'false' }}"
+  - name: "For screen/power, set screensaver lock background to '{{ lock_background_picture }}'"
+    community.general.dconf:
+      key: "/org/mate/screensaver/picture-filename"
+      value: "{{ lock_background_picture }}"
+      state: present
+    when: lock_with_screensaver
   - name: "For screen/power, set poweroff/logout dialog-delay to {{ delay_time }} seconds"
     community.general.dconf:
       key: "/org/mate/desktop/session/logout-timeout"
