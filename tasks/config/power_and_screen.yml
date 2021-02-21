@@ -15,14 +15,14 @@
     vars:
       delay_time: "{{ screensaver_delay_time }}"
     when: screensaver_delay_time != 0
-  - name: "For screen/power, set screensaver-theme to '{{ screensaver_theme }}'"
+  - name: "For screen/power, set screensaver-theme to '{{ theme }}'"
     community.general.dconf:
       key: "/org/mate/screensaver/themes"
-      value: ""{{ theme }}""
+      value: "{{ theme }}"
       state: present
-    when: screensaver_delay_time != 0
     vars:
       theme: "['{{ screensaver_theme }}']"
+    when: screensaver_delay_time != 0
   - name: "For screen/power, set battery-power screen blank delay to {{ blank_setting }}"
     community.general.dconf:
       key: "/org/mate/power-manager/sleep-display-battery"
