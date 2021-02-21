@@ -1,5 +1,5 @@
 # available items for both top and bottom panels
-panels_available_items: ['menu-bar', 'notification area', 'clock', 'show-desktop', 'window-list', 'object-0']
+panels_available_items: ['menu-bar', 'notification area', 'clock', 'show-desktop', 'window-list']
 
 # height of the top panel (note: increases icon sizes as well)
 top_panel_size: 38
