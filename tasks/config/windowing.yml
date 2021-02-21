@@ -7,6 +7,11 @@
         state: present
       vars:
         use_animations: "{{ 'true' if windowing_animations else 'false' }}"
+    - name: "For windowing, set num-workspaces to {{ windowing_num_workspace }}"
+      community.general.dconf:
+        key: "/org/mate/marco/general/num-workspaces"
+        value: "{{ windowing_num_workspace }}"
+        state: present
   become: true
   become_user: "{{ user_name }}"
 
