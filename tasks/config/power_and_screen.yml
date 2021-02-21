@@ -21,9 +21,7 @@
       value: "{{ theme }}"
       state: present
     vars:
-      theme: "['{{ screensaver_theme }}']"
-    args:
-      warn: false
+      theme: ['{{ screensaver_theme }}']
     when: screensaver_delay_time != 0
   - name: "For screen/power, set battery-power screen blank delay to {{ blank_setting }}"
     community.general.dconf:
