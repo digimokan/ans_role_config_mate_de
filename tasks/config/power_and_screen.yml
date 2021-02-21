@@ -7,12 +7,13 @@
       state: present
     vars:
       enable_screensaver: "{{ 'false' if (screensaver_delay_time == 0) else 'true' }}"
-  - name: "For screen/power, set screensaver-delay to {{ screensaver_delay_time }} minutes"
+  - name: "For screen/power, set screensaver-delay to {{ delay_time }} minutes"
     community.general.dconf:
       key: "/org/mate/desktop/session/idle-delay"
-      value: "{{ screensaver_delay_time }}"
+      value: "{{ delay_time }}"
       state: present
-    when: screensaver_delay_time != 0
+    vars:
+      delay_time: "{{ screensaver_delay_time }}"
   - name: "For screen/power, set battery-power screen blank delay to {{ blank_setting }}"
     community.general.dconf:
       key: "/org/mate/power-manager/sleep-display-battery"
