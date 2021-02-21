@@ -1,0 +1,15 @@
+# show screensaver after this number of minutes (define to 0 for no screensaver)
+screensaver_delay_time: 10
+
+# screensaver to show (if screensaver_delay_time is not 0)
+screensaver_theme: "screensavers-cosmos-slideshow"
+
+# lock the screen when screensaver is activated
+lock_with_screensaver: false
+
+# blank the screen after this number of minutes (define to 0 for no blanking)
+screen_blank_time: 30
+
+# on showing logout/poweroff menu, do auto-logout/poweroff after XX seconds
+poweroff_delay: 30
+

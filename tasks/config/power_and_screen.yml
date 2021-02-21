@@ -1,0 +1,12 @@
+- name: "Configure screensaver and power settings"
+  block:
+  - name: "For screen/power, set AC-power screen blank delay to '{{ 'no_screen_blank' if (blank_min == 0) else blank_min }}'"
+    community.general.dconf:
+      key: "/org/mate/power-manager/sleep-display-ac"
+      value: "{{ blank_min }}"
+      state: present
+    vars:
+      blank_min: screen_blank_time * 60
+  become: true
+  become_user: "{{ user_name }}"
+

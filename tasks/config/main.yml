@@ -28,6 +28,9 @@
 - name: "Configure media devices settings"
   ansible.builtin.include_tasks: media_devices.yml
 
+- name: "Configure screensaver and power settings"
+  ansible.builtin.include_tasks: power_and_screen.yml
+
 - name: "Configure MATE Terminal app settings"
   ansible.builtin.include_tasks: mate_terminal.yml
 
