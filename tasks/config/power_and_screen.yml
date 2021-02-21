@@ -33,6 +33,13 @@
       key: "/org/mate/power-manager/sleep-display-ups"
       value: "{{ blank_min }}"
       state: present
+  - name: "For screen/power, set screensaver/blanking lock to '{{ set_lock }}'"
+    community.general.dconf:
+      key: "/org/mate/screensaver/lock-enabled"
+      value: "{{ set_lock }}"
+      state: present
+    vars:
+      set_lock: "{{ 'true' if lock_with_screensaver else 'false' }}"
   vars:
     blank_min: "{{ screen_blank_time * 60 }}"
     blank_setting: "{{ 'no-screen-blank' if (blank_min == 0) else screen_blank_time }}{{ '' if (blank_min == 0) else ' minutes' }}"
