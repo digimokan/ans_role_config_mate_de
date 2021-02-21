@@ -1,10 +1,18 @@
 - name: "Configure screensaver and power settings"
   block:
-  - name: "For screen/power, set AC-power screen blank delay to {{ blank_setting }}"
+  - name: "For screen/power, set enable-screensaver to '{{ enable_screensaver }}'"
     community.general.dconf:
-      key: "/org/mate/power-manager/sleep-display-ac"
-      value: "{{ blank_min }}"
+      key: "/org/mate/screensaver/idle-activation-enabled"
+      value: "{{ enable_screensaver }}"
       state: present
+    vars:
+      enable_screensaver: "{{ 'false' if (screensaver_delay_time == 0) else 'true' }}"
+  - name: "For screen/power, set screensaver-delay to {{ screensaver_delay_time }} minutes"
+    community.general.dconf:
+      key: "/org/mate/desktop/session/idle-delay"
+      value: "{{ screensaver_delay_time }}"
+      state: present
+    when: screensaver_delay_time != 0
   - name: "For screen/power, set battery-power screen blank delay to {{ blank_setting }}"
     community.general.dconf:
       key: "/org/mate/power-manager/sleep-display-battery"
