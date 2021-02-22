@@ -2,5 +2,5 @@
 windowing_animations: true
 
 # total number of workspaces in the window manager
-windowing_num_workspace: 1
+windowing_num_workspaces: 1
 
