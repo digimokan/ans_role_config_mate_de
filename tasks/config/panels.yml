@@ -16,7 +16,19 @@
         value: "{{ size }}"
         state: present
       vars:
-        size:  "{{ top_panel_size }}"
+        size: "{{ top_panel_size }}"
+    - name: "For top panel, set background-type to '{{ bg_type }}'"
+      community.general.dconf:
+        key: "/org/mate/panel/toplevels/top/background/type"
+        value: "'{{ bg_type }}'"
+        state: present
+      vars:
+        bg_type: "color"
+    - name: "For top panel, set background-color to '{{ panels_background_color }}'"
+      community.general.dconf:
+        key: "/org/mate/panel/toplevels/top/background/color"
+        value: "'{{ panels_background_color }}'"
+        state: present
   become: true
   become_user: "{{ user_name }}"
 
@@ -28,7 +40,7 @@
         value: "{{ size }}"
         state: present
       vars:
-        size:  "{{ bottom_panel_size }}"
+        size: "{{ bottom_panel_size }}"
   become: true
   become_user: "{{ user_name }}"
 
