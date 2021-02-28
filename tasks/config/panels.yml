@@ -1,72 +1,72 @@
-- name: "Configure general panel and panel-item settings"
-  block:
-    - name: "For panels, set available items for all panels to {{ avail_items }}"
-      community.general.dconf:
-        key: "/org/mate/panel/general/object-id-list"
-        value: "{{ avail_items | string }}"
-        state: present
-    - name: "For panels, remove the '{{ wksp_item }}' panel item"
-      community.general.dconf:
-        key: "/org/mate/panel/objects/{{ wksp_item }}"
-        state: absent
-  vars:
-    avail_items: ['menu-bar', 'notification-area', 'clock', 'show-desktop', 'window-list']
-    wksp_item: "workspace-switcher"
-  become: true
-  become_user: "{{ user_name }}"
+# - name: "Configure general panel and panel-item settings"
+#   block:
+#     - name: "For panels, set available items for all panels to {{ avail_items }}"
+#       community.general.dconf:
+#         key: "/org/mate/panel/general/object-id-list"
+#         value: "{{ avail_items | string }}"
+#         state: present
+#     - name: "For panels, remove the '{{ wksp_item }}' panel item"
+#       community.general.dconf:
+#         key: "/org/mate/panel/objects/{{ wksp_item }}"
+#         state: absent
+#   vars:
+#     avail_items: ['menu-bar', 'notification-area', 'clock', 'show-desktop', 'window-list']
+#     wksp_item: "workspace-switcher"
+#   become: true
+#   become_user: "{{ user_name }}"
 
-- name: "Configure top panel settings"
-  block:
-    - name: "For top panel, set panel-size to {{ size }}"
-      community.general.dconf:
-        key: "/org/mate/panel/toplevels/top/size"
-        value: "{{ size }}"
-        state: present
-      vars:
-        size: "{{ top_panel_size }}"
-    - name: "For top panel, set background-type to '{{ bg_type }}'"
-      community.general.dconf:
-        key: "/org/mate/panel/toplevels/top/background/type"
-        value: "'{{ bg_type }}'"
-        state: present
-      vars:
-        bg_type: "color"
-    - name: "For top panel, set background-color to '{{ panels_background_color }}'"
-      community.general.dconf:
-        key: "/org/mate/panel/toplevels/top/background/color"
-        value: "'{{ panels_background_color }}'"
-        state: present
-    - name: "For panel clock, set time-format to '{{ time_format }}'"
-      community.general.dconf:
-        key: "/org/mate/panel/objects/clock/prefs/format"
-        value: "'{{ time_format }}'"
-        state: present
-      vars:
-        time_format: "{{ '24-hour' if panels_clock_format_24_hr else '12-hour' }}"
-  become: true
-  become_user: "{{ user_name }}"
+# - name: "Configure top panel settings"
+#   block:
+#     - name: "For top panel, set panel-size to {{ size }}"
+#       community.general.dconf:
+#         key: "/org/mate/panel/toplevels/top/size"
+#         value: "{{ size }}"
+#         state: present
+#       vars:
+#         size: "{{ top_panel_size }}"
+#     - name: "For top panel, set background-type to '{{ bg_type }}'"
+#       community.general.dconf:
+#         key: "/org/mate/panel/toplevels/top/background/type"
+#         value: "'{{ bg_type }}'"
+#         state: present
+#       vars:
+#         bg_type: "color"
+#     - name: "For top panel, set background-color to '{{ panels_background_color }}'"
+#       community.general.dconf:
+#         key: "/org/mate/panel/toplevels/top/background/color"
+#         value: "'{{ panels_background_color }}'"
+#         state: present
+#     - name: "For panel clock, set time-format to '{{ time_format }}'"
+#       community.general.dconf:
+#         key: "/org/mate/panel/objects/clock/prefs/format"
+#         value: "'{{ time_format }}'"
+#         state: present
+#       vars:
+#         time_format: "{{ '24-hour' if panels_clock_format_24_hr else '12-hour' }}"
+#   become: true
+#   become_user: "{{ user_name }}"
 
-- name: "Configure bottom panel settings"
-  block:
-    - name: "For bottom panel, set panel-size to {{ size }}"
-      community.general.dconf:
-        key: "/org/mate/panel/toplevels/bottom/size"
-        value: "{{ size }}"
-        state: present
-      vars:
-        size: "{{ bottom_panel_size }}"
-    - name: "For bottom panel, set background-type to '{{ bg_type }}'"
-      community.general.dconf:
-        key: "/org/mate/panel/toplevels/bottom/background/type"
-        value: "'{{ bg_type }}'"
-        state: present
-      vars:
-        bg_type: "color"
-    - name: "For bottom panel, set background-color to '{{ panels_background_color }}'"
-      community.general.dconf:
-        key: "/org/mate/panel/toplevels/bottom/background/color"
-        value: "'{{ panels_background_color }}'"
-        state: present
-  become: true
-  become_user: "{{ user_name }}"
+# - name: "Configure bottom panel settings"
+#   block:
+#     - name: "For bottom panel, set panel-size to {{ size }}"
+#       community.general.dconf:
+#         key: "/org/mate/panel/toplevels/bottom/size"
+#         value: "{{ size }}"
+#         state: present
+#       vars:
+#         size: "{{ bottom_panel_size }}"
+#     - name: "For bottom panel, set background-type to '{{ bg_type }}'"
+#       community.general.dconf:
+#         key: "/org/mate/panel/toplevels/bottom/background/type"
+#         value: "'{{ bg_type }}'"
+#         state: present
+#       vars:
+#         bg_type: "color"
+#     - name: "For bottom panel, set background-color to '{{ panels_background_color }}'"
+#       community.general.dconf:
+#         key: "/org/mate/panel/toplevels/bottom/background/color"
+#         value: "'{{ panels_background_color }}'"
+#         state: present
+#   become: true
+#   become_user: "{{ user_name }}"
 
