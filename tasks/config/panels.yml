@@ -46,15 +46,15 @@
   become: true
   become_user: "{{ user_name }}"
 
-# - name: "Configure bottom panel settings"
-#   block:
-#     - name: "For bottom panel, set panel-size to {{ size }}"
-#       community.general.dconf:
-#         key: "/org/mate/panel/toplevels/bottom/size"
-#         value: "{{ size }}"
-#         state: present
-#       vars:
-#         size: "{{ bottom_panel_size }}"
+- name: "Configure bottom panel settings"
+  block:
+    - name: "For bottom panel, set panel-size to {{ size }}"
+      community.general.dconf:
+        key: "/org/mate/panel/toplevels/bottom/size"
+        value: "{{ size }}"
+        state: present
+      vars:
+        size: "{{ bottom_panel_size }}"
     # - name: "For bottom panel, set background-type to '{{ bg_type }}'"
     #   community.general.dconf:
     #     key: "/org/mate/panel/toplevels/bottom/background/type"
@@ -67,6 +67,6 @@
     #     key: "/org/mate/panel/toplevels/bottom/background/color"
     #     value: "'{{ panels_background_color }}'"
     #     state: present
-  # become: true
-  # become_user: "{{ user_name }}"
+  become: true
+  become_user: "{{ user_name }}"
 
