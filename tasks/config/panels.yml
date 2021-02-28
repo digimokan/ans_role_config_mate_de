@@ -1,19 +1,19 @@
-# - name: "Configure general panel and panel-item settings"
-#   block:
-#     - name: "For panels, set available items for all panels to {{ avail_items }}"
-#       community.general.dconf:
-#         key: "/org/mate/panel/general/object-id-list"
-#         value: "{{ avail_items | string }}"
-#         state: present
-#     - name: "For panels, remove the '{{ wksp_item }}' panel item"
-#       community.general.dconf:
-#         key: "/org/mate/panel/objects/{{ wksp_item }}"
-#         state: absent
-#   vars:
-#     avail_items: ['menu-bar', 'notification-area', 'clock', 'show-desktop', 'window-list']
-#     wksp_item: "workspace-switcher"
-#   become: true
-#   become_user: "{{ user_name }}"
+- name: "Configure general panel and panel-item settings"
+  block:
+    - name: "For panels, remove the '{{ wksp_item }}' panel item"
+      community.general.dconf:
+        key: "/org/mate/panel/objects/{{ wksp_item }}"
+        state: absent
+    - name: "For panels, set available items for all panels to {{ avail_items }}"
+      community.general.dconf:
+        key: "/org/mate/panel/general/object-id-list"
+        value: "{{ avail_items | string }}"
+        state: present
+  vars:
+    avail_items: ['menu-bar', 'notification-area', 'clock', 'show-desktop', 'window-list']
+    wksp_item: "workspace-switcher"
+  become: true
+  become_user: "{{ user_name }}"
 
 - name: "Configure top panel settings"
   block:
