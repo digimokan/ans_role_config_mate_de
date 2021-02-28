@@ -1,10 +1,10 @@
 - name: "Configure general panel and panel-item settings"
   block:
-    - name: "For panels, set available items for all panels to {{ panels_available_items }}"
-      community.general.dconf:
-        key: "/org/mate/panel/general/object-id-list"
-        value: "{{ panels_available_items | string }}"
-        state: present
+    # - name: "For panels, set available items for all panels to {{ panels_available_items }}"
+    #   community.general.dconf:
+    #     key: "/org/mate/panel/general/object-id-list"
+    #     value: "{{ panels_available_items | string }}"
+    #     state: present
     - name: "For panel clock, set time-format to '{{ time_format }}'"
       community.general.dconf:
         key: "/org/mate/panel/objects/clock/prefs/format"
