@@ -5,13 +5,6 @@
     #     key: "/org/mate/panel/general/object-id-list"
     #     value: "{{ panels_available_items | string }}"
     #     state: present
-    - name: "For panel clock, set time-format to '{{ time_format }}'"
-      community.general.dconf:
-        key: "/org/mate/panel/objects/clock/prefs/format"
-        value: "'{{ time_format }}'"
-        state: present
-      vars:
-        time_format: "{{ '24-hour' if panels_clock_format_24_hr else '12-hour' }}"
   become: true
   become_user: "{{ user_name }}"
 
@@ -36,6 +29,13 @@
         key: "/org/mate/panel/toplevels/top/background/color"
         value: "'{{ panels_background_color }}'"
         state: present
+    - name: "For panel clock, set time-format to '{{ time_format }}'"
+      community.general.dconf:
+        key: "/org/mate/panel/objects/clock/prefs/format"
+        value: "'{{ time_format }}'"
+        state: present
+      vars:
+        time_format: "{{ '24-hour' if panels_clock_format_24_hr else '12-hour' }}"
   become: true
   become_user: "{{ user_name }}"
 
