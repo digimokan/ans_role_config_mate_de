@@ -1,0 +1,12 @@
+- name: "Edit a dconf setting, and try again if it fails"
+  block:
+    - name: "{{ task_descrip }}"
+      community.general.dconf:
+        state: present
+  rescue:
+    - name: "SECOND TRY - {{ task_descrip }}"
+      community.general.dconf:
+        state: present
+  become: true
+  become_user: "{{ user_name }}"
+
