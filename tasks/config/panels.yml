@@ -3,7 +3,7 @@
     - name: "For panels, remove the '{{ wksp_item }}' panel item"
       community.general.dconf:
         key: "/org/mate/panel/objects/{{ wksp_item }}/toplevel-id"
-        value: ""
+        value: "''"
         state: present
     # - name: "For panels, remove the '{{ wksp_item }}' panel item"
     #   community.general.dconf:
