@@ -1,11 +1,11 @@
 # color/transparency for both top and bottom panels
 panels_background_color: "rgba(36,31,49,0.80)"
 
-# use 24-hour clock format for the date/clock item in the top panel
-panels_clock_format_24_hr: false
-
 # height of the top panel (note: increases icon sizes as well)
 top_panel_size: 38
+
+# use 24-hour clock format for the date/clock item in the top panel
+top_panel_clock_format_24_hr: false
 
 # height of the bottom panel (note: increases icon sizes as well)
 bottom_panel_size: 32

@@ -1,25 +1,3 @@
-- name: "Configure general panel and panel-item settings"
-  block:
-    - name: "For panels, remove the '{{ wksp_item }}' panel item"
-      community.general.dconf:
-        key: "/org/mate/panel/objects/{{ wksp_item }}/toplevel-id"
-        value: "''"
-        state: present
-    # - name: "For panels, remove the '{{ wksp_item }}' panel item"
-    #   community.general.dconf:
-    #     key: "/org/mate/panel/objects/{{ wksp_item }}"
-    #     state: absent
-    # - name: "For panels, set available items for all panels to {{ avail_items }}"
-    #   community.general.dconf:
-    #     key: "/org/mate/panel/general/object-id-list"
-    #     value: "{{ avail_items | string }}"
-    #     state: present
-  vars:
-    avail_items: ['menu-bar', 'notification-area', 'clock', 'show-desktop', 'window-list']
-    wksp_item: "workspace-switcher"
-  become: true
-  become_user: "{{ user_name }}"
-
 - name: "Configure top panel settings"
   block:
     - name: "For top panel, set panel-size to {{ size }}"
@@ -41,18 +19,25 @@
         key: "/org/mate/panel/toplevels/top/background/color"
         value: "'{{ panels_background_color }}'"
         state: present
-    - name: "For panel clock, set time-format to '{{ time_format }}'"
+    - name: "For top panel clock, set time-format to '{{ time_format }}'"
       community.general.dconf:
         key: "/org/mate/panel/objects/clock/prefs/format"
         value: "'{{ time_format }}'"
         state: present
       vars:
-        time_format: "{{ '24-hour' if panels_clock_format_24_hr else '12-hour' }}"
+        time_format: "{{ '24-hour' if top_panel_clock_format_24_hr else '12-hour' }}"
   become: true
   become_user: "{{ user_name }}"
 
 - name: "Configure bottom panel settings"
   block:
+    - name: "For bottom panel, remove the '{{ wksp_item }}' panel item"
+      community.general.dconf:
+        key: "/org/mate/panel/objects/{{ wksp_item }}/toplevel-id"
+        value: "''"
+        state: present
+      vars:
+        wksp_item: "workspace-switcher"
     - name: "For bottom panel, set panel-size to {{ size }}"
       community.general.dconf:
         key: "/org/mate/panel/toplevels/bottom/size"
