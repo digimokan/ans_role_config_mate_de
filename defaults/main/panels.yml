@@ -5,7 +5,7 @@ panels_background_color: "rgba(36,31,49,0.80)"
 panels_clock_format_24_hr: false
 
 # height of the top panel (note: increases icon sizes as well)
-top_panel_size: 40
+top_panel_size: 38
 
 # height of the bottom panel (note: increases icon sizes as well)
 bottom_panel_size: 32
