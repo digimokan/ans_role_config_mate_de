@@ -4,11 +4,11 @@
       community.general.dconf:
         key: "/org/mate/panel/objects/{{ wksp_item }}"
         state: absent
-    # - name: "For panels, set available items for all panels to {{ avail_items }}"
-    #   community.general.dconf:
-    #     key: "/org/mate/panel/general/object-id-list"
-    #     value: "{{ avail_items | string }}"
-    #     state: present
+    - name: "For panels, set available items for all panels to {{ avail_items }}"
+      community.general.dconf:
+        key: "/org/mate/panel/general/object-id-list"
+        value: "{{ avail_items | string }}"
+        state: present
   vars:
     avail_items: ['menu-bar', 'notification-area', 'clock', 'show-desktop', 'window-list']
     wksp_item: "workspace-switcher"
