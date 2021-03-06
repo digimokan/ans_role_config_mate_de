@@ -7,6 +7,9 @@
     - name: "SECOND TRY - {{ task_descrip }}"
       community.general.dconf:
         state: present
+  vars:
+    key: "{{ key }}"
+    value: "{{ value | default(omit) }}"
   become: true
   become_user: "{{ user_name }}"
 
