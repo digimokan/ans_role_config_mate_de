@@ -1,12 +1,12 @@
 - name: "Edit a dconf setting, and try again if it fails"
   block:
-    - name: "{{ task_descrip }}"
+    - name: "{{ descrip }}"
       community.general.dconf:
         key: "{{ key }}"
         value: "{{ value | default(omit) }}"
         state: present
   rescue:
-    - name: "SECOND TRY - {{ task_descrip }}"
+    - name: "SECOND TRY - {{ descrip }}"
       community.general.dconf:
         key: "{{ key }}"
         value: "{{ value | default(omit) }}"

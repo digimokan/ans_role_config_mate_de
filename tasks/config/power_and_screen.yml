@@ -1,71 +1,64 @@
 - name: "Configure screensaver and power settings"
   block:
-  - name: "For screen/power, set enable-screensaver to '{{ enable_screensaver }}'"
-    community.general.dconf:
-      key: "/org/mate/screensaver/idle-activation-enabled"
-      value: "{{ enable_screensaver }}"
-      state: present
-    vars:
-      enable_screensaver: "{{ 'false' if (screensaver_delay_time == 0) else 'true' }}"
-  - name: "For screen/power, set screensaver-delay to {{ delay_time }} minutes"
-    community.general.dconf:
-      key: "/org/mate/desktop/session/idle-delay"
-      value: "{{ delay_time }}"
-      state: present
-    vars:
-      delay_time: "{{ screensaver_delay_time }}"
-    when: screensaver_delay_time != 0
-  - name: "For screen/power, set screensaver-mode to 'single'"
-    community.general.dconf:
-      key: "/org/mate/screensaver/mode"
-      value: "'single'"
-      state: present
-    when: screensaver_delay_time != 0
-  - name: "For screen/power, set screensaver-theme to '{{ screensaver_theme }}'"
-    community.general.dconf:
-      key: "/org/mate/screensaver/themes"
-      value: "{{ theme | string }}"
-      state: present
-    vars:
-      theme: ['{{ screensaver_theme }}']
-    when: screensaver_delay_time != 0
-  - name: "For screen/power, set AC-power screen blank delay to {{ blank_setting }}"
-    community.general.dconf:
-      key: "/org/mate/power-manager/sleep-display-ac"
-      value: "{{ blank_min }}"
-      state: present
-  - name: "For screen/power, set battery-power screen blank delay to {{ blank_setting }}"
-    community.general.dconf:
-      key: "/org/mate/power-manager/sleep-display-battery"
-      value: "{{ blank_min }}"
-      state: present
-  - name: "For screen/power, set UPS-power screen blank delay to {{ blank_setting }}"
-    community.general.dconf:
-      key: "/org/mate/power-manager/sleep-display-ups"
-      value: "{{ blank_min }}"
-      state: present
-  - name: "For screen/power, set screensaver lock to '{{ set_lock }}'"
-    community.general.dconf:
-      key: "/org/mate/screensaver/lock-enabled"
-      value: "{{ set_lock }}"
-      state: present
-    vars:
-      set_lock: "{{ 'true' if lock_with_screensaver else 'false' }}"
-  - name: "For screen/power, set screensaver lock background to '{{ lock_background_picture }}'"
-    community.general.dconf:
-      key: "/org/mate/screensaver/picture-filename"
-      value: "'{{ lock_background_picture }}'"
-      state: present
-  - name: "For screen/power, set poweroff/logout dialog-delay to {{ delay_time }} seconds"
-    community.general.dconf:
-      key: "/org/mate/desktop/session/logout-timeout"
-      value: "{{ delay_time }}"
-      state: present
-    vars:
-      delay_time: "{{ poweroff_dialog_delay }}"
+    - ansible.builtin.include_tasks: func/dconf.yml
+      vars:
+        descrip: "For screen/power, set enable-screensaver to '{{ enable_screensaver }}'"
+        key: "/org/mate/screensaver/idle-activation-enabled"
+        value: "{{ enable_screensaver }}"
+        enable_screensaver: "{{ 'false' if (screensaver_delay_time == 0) else 'true' }}"
+    - ansible.builtin.include_tasks: func/dconf.yml
+      vars:
+        descrip: "For screen/power, set screensaver-delay to {{ delay_time }} minutes"
+        key: "/org/mate/desktop/session/idle-delay"
+        value: "{{ delay_time }}"
+        delay_time: "{{ screensaver_delay_time }}"
+      when: screensaver_delay_time != 0
+    - ansible.builtin.include_tasks: func/dconf.yml
+      vars:
+        descrip: "For screen/power, set screensaver-mode to 'single'"
+        key: "/org/mate/screensaver/mode"
+        value: "'single'"
+      when: screensaver_delay_time != 0
+    - ansible.builtin.include_tasks: func/dconf.yml
+      vars:
+        descrip: "For screen/power, set screensaver-theme to '{{ screensaver_theme }}'"
+        key: "/org/mate/screensaver/themes"
+        value: "{{ theme | string }}"
+        theme: ['{{ screensaver_theme }}']
+      when: screensaver_delay_time != 0
+    - ansible.builtin.include_tasks: func/dconf.yml
+      vars:
+        descrip: "For screen/power, set AC-power screen blank delay to {{ blank_setting }}"
+        key: "/org/mate/power-manager/sleep-display-ac"
+        value: "{{ blank_min }}"
+    - ansible.builtin.include_tasks: func/dconf.yml
+      vars:
+        descrip: "For screen/power, set battery-power screen blank delay to {{ blank_setting }}"
+        key: "/org/mate/power-manager/sleep-display-battery"
+        value: "{{ blank_min }}"
+    - ansible.builtin.include_tasks: func/dconf.yml
+      vars:
+        descrip: "For screen/power, set UPS-power screen blank delay to {{ blank_setting }}"
+        key: "/org/mate/power-manager/sleep-display-ups"
+        value: "{{ blank_min }}"
+    - ansible.builtin.include_tasks: func/dconf.yml
+      vars:
+        descrip: "For screen/power, set screensaver lock to '{{ set_lock }}'"
+        key: "/org/mate/screensaver/lock-enabled"
+        value: "{{ set_lock }}"
+        set_lock: "{{ 'true' if lock_with_screensaver else 'false' }}"
+    - ansible.builtin.include_tasks: func/dconf.yml
+      vars:
+        descrip: "For screen/power, set screensaver lock background to '{{ lock_background_picture }}'"
+        key: "/org/mate/screensaver/picture-filename"
+        value: "'{{ lock_background_picture }}'"
+    - ansible.builtin.include_tasks: func/dconf.yml
+      vars:
+        descrip: "For screen/power, set poweroff/logout dialog-delay to {{ delay_time }} seconds"
+        key: "/org/mate/desktop/session/logout-timeout"
+        value: "{{ delay_time }}"
+        delay_time: "{{ poweroff_dialog_delay }}"
   vars:
     blank_min: "{{ screen_blank_time * 60 }}"
     blank_setting: "{{ 'no-screen-blank' if (blank_min == 0) else screen_blank_time }}{{ '' if (blank_min == 0) else ' minutes' }}"
-  become: true
-  become_user: "{{ user_name }}"
 

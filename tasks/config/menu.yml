@@ -1,12 +1,7 @@
-- name: "Configure general menu settings"
-  block:
-    - name: "For menu, set show-icon to '{{ show_icon }}'"
-      community.general.dconf:
-        key: "/org/mate/panel/menubar/show-icon"
-        value: "{{ show_icon }}"
-        state: present
-      vars:
-        show_icon: "{{ 'true' if menu_show_icon else 'false' }}"
-  become: true
-  become_user: "{{ user_name }}"
+- ansible.builtin.include_tasks: func/dconf.yml
+  vars:
+    descrip: "For menu, set show-icon to '{{ show_icon }}'"
+    key: "/org/mate/panel/menubar/show-icon"
+    value: "{{ show_icon }}"
+    show_icon: "{{ 'true' if menu_show_icon else 'false' }}"
 

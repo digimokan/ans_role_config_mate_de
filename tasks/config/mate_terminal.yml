@@ -1,69 +1,75 @@
-- name: "Configure MATE Terminal app settings"
-  block:
-    - name: "In MATE Terminal app, set use-system-theme-colors 'false'"
-      community.general.dconf:
-        key: "/org/mate/terminal/profiles/default/use-theme-colors"
-        value: "false"
-        state: present
-    - name: "In MATE Terminal app, set background to '{{ bg_type }}'"
-      community.general.dconf:
-        key: "/org/mate/terminal/profiles/default/background-type"
-        value: "'{{ bg_type }}'"
-        state: present
-      vars:
-        bg_type: "{{ 'solid' if (terminal_bg_transparency == '1.00') else 'transparent' }}"
-    - name: "In MATE Terminal app, set background transparency to {{ terminal_bg_transparency }}"
-      community.general.dconf:
-        key: "/org/mate/terminal/profiles/default/background-darkness"
-        value: "{{ terminal_bg_transparency }}"
-        state: present
-      when: terminal_bg_transparency != '1.00'
-      changed_when: false
-    - name: "In MATE Terminal app, set background color to '{{ terminal_bg_color }}'"
-      community.general.dconf:
-        key: "/org/mate/terminal/profiles/default/background-color"
-        value: "'{{ terminal_bg_color }}'"
-        state: present
-    - name: "In MATE Terminal app, set foreground/text color to '{{ terminal_fg_color }}'"
-      community.general.dconf:
-        key: "/org/mate/terminal/profiles/default/foreground-color"
-        value: "'{{ terminal_fg_color }}'"
-        state: present
-    - name: "In MATE Terminal app, set match-fg-text-for-bold-color to 'false'"
-      community.general.dconf:
-        key: "/org/mate/terminal/profiles/default/bold-color-same-as-fg"
-        value: "false"
-        state: present
-    - name: "In MATE Terminal app, text-bold-color to '{{ terminal_fg_bold_color }}'"
-      community.general.dconf:
-        key: "/org/mate/terminal/profiles/default/bold-color"
-        value: "'{{ terminal_fg_bold_color }}'"
-        state: present
-    - name: "In MATE Terminal app, set cursor-blink to '{{ terminal_cursor_blink }}'"
-      community.general.dconf:
-        key: "/org/mate/terminal/profiles/default/cursor-blink-mode"
-        value: "'{{ terminal_cursor_blink }}'"
-        state: present
-    - name: "In MATE Terminal app, set num scrollback lines to {{ terminal_num_scrollback_lines }}"
-      community.general.dconf:
-        key: "/org/mate/terminal/profiles/default/scrollback-lines"
-        value: "{{ terminal_num_scrollback_lines }}"
-        state: present
-    - name: "In MATE Terminal app, set use-custom-window-dimensions to 'true'"
-      community.general.dconf:
-        key: "/org/mate/terminal/profiles/default/use-custom-default-size"
-        value: "true"
-        state: present
-    - name: "In MATE Terminal app, set default-window-height to {{ terminal_window_height }}"
-      community.general.dconf:
-        key: "/org/mate/terminal/profiles/default/default-size-rows"
-        value: "{{ terminal_window_height }}"
-        state: present
-    - name: "In MATE Terminal app, set default-window-width to {{ terminal_window_width }}"
-      community.general.dconf:
-        key: "/org/mate/terminal/profiles/default/default-size-columns"
-        value: "{{ terminal_window_width }}"
-        state: present
-  become: true
-  become_user: "{{ user_name }}"
+- ansible.builtin.include_tasks: func/dconf.yml
+  vars:
+    descrip: "In MATE Terminal app, set use-system-theme-colors 'false'"
+    key: "/org/mate/terminal/profiles/default/use-theme-colors"
+    value: "false"
+
+- ansible.builtin.include_tasks: func/dconf.yml
+  vars:
+    descrip: "In MATE Terminal app, set background to '{{ bg_type }}'"
+    key: "/org/mate/terminal/profiles/default/background-type"
+    value: "'{{ bg_type }}'"
+    bg_type: "{{ 'solid' if (terminal_bg_transparency == '1.00') else 'transparent' }}"
+
+- ansible.builtin.include_tasks: func/dconf.yml
+  vars:
+    descrip: "In MATE Terminal app, set background transparency to {{ terminal_bg_transparency }}"
+    key: "/org/mate/terminal/profiles/default/background-darkness"
+    value: "{{ terminal_bg_transparency }}"
+  when: terminal_bg_transparency != '1.00'
+  changed_when: false
+
+- ansible.builtin.include_tasks: func/dconf.yml
+  vars:
+    descrip: "In MATE Terminal app, set background color to '{{ terminal_bg_color }}'"
+    key: "/org/mate/terminal/profiles/default/background-color"
+    value: "'{{ terminal_bg_color }}'"
+
+- ansible.builtin.include_tasks: func/dconf.yml
+  vars:
+    descrip: "In MATE Terminal app, set foreground/text color to '{{ terminal_fg_color }}'"
+    key: "/org/mate/terminal/profiles/default/foreground-color"
+    value: "'{{ terminal_fg_color }}'"
+
+- ansible.builtin.include_tasks: func/dconf.yml
+  vars:
+    descrip: "In MATE Terminal app, set match-fg-text-for-bold-color to 'false'"
+    key: "/org/mate/terminal/profiles/default/bold-color-same-as-fg"
+    value: "false"
+
+- ansible.builtin.include_tasks: func/dconf.yml
+  vars:
+    descrip: "In MATE Terminal app, text-bold-color to '{{ terminal_fg_bold_color }}'"
+    key: "/org/mate/terminal/profiles/default/bold-color"
+    value: "'{{ terminal_fg_bold_color }}'"
+
+- ansible.builtin.include_tasks: func/dconf.yml
+  vars:
+    descrip: "In MATE Terminal app, set cursor-blink to '{{ terminal_cursor_blink }}'"
+    key: "/org/mate/terminal/profiles/default/cursor-blink-mode"
+    value: "'{{ terminal_cursor_blink }}'"
+
+- ansible.builtin.include_tasks: func/dconf.yml
+  vars:
+    descrip: "In MATE Terminal app, set num scrollback lines to {{ terminal_num_scrollback_lines }}"
+    key: "/org/mate/terminal/profiles/default/scrollback-lines"
+    value: "{{ terminal_num_scrollback_lines }}"
+
+- ansible.builtin.include_tasks: func/dconf.yml
+  vars:
+    descrip: "In MATE Terminal app, set use-custom-window-dimensions to 'true'"
+    key: "/org/mate/terminal/profiles/default/use-custom-default-size"
+    value: "true"
+
+- ansible.builtin.include_tasks: func/dconf.yml
+  vars:
+    descrip: "In MATE Terminal app, set default-window-height to {{ terminal_window_height }}"
+    key: "/org/mate/terminal/profiles/default/default-size-rows"
+    value: "{{ terminal_window_height }}"
+
+- ansible.builtin.include_tasks: func/dconf.yml
+  vars:
+    descrip: "In MATE Terminal app, set default-window-width to {{ terminal_window_width }}"
+    key: "/org/mate/terminal/profiles/default/default-size-columns"
+    value: "{{ terminal_window_width }}"
 

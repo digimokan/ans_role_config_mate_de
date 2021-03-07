@@ -1,25 +1,25 @@
 - ansible.builtin.include_tasks: func/dconf.yml
   vars:
-    task_descrip: "For top panel, set panel-size to {{ top_panel_size }}"
+    descrip: "For top panel, set panel-size to {{ top_panel_size }}"
     key: "/org/mate/panel/toplevels/top/size"
     value: "{{ top_panel_size }}"
 
 - ansible.builtin.include_tasks: func/dconf.yml
   vars:
-    task_descrip: "For top panel, set background-type to '{{ bg_type }}'"
+    descrip: "For top panel, set background-type to '{{ bg_type }}'"
     key: "/org/mate/panel/toplevels/top/background/type"
     value: "'{{ bg_type }}'"
     bg_type: "color"
 
 - ansible.builtin.include_tasks: func/dconf.yml
   vars:
-    task_descrip: "For top panel, set background-color to '{{ panels_background_color }}'"
+    descrip: "For top panel, set background-color to '{{ panels_background_color }}'"
     key: "/org/mate/panel/toplevels/top/background/color"
     value: "'{{ panels_background_color }}'"
 
 - ansible.builtin.include_tasks: func/dconf.yml
   vars:
-    task_descrip: "For top panel clock, set time-format to '{{ time_format }}'"
+    descrip: "For top panel clock, set time-format to '{{ time_format }}'"
     key: "/org/mate/panel/objects/clock/prefs/format"
     value: "'{{ time_format }}'"
     time_format: "{{ '24-hour' if top_panel_clock_format_24_hr else '12-hour' }}"

@@ -1,18 +1,14 @@
-- name: "Configure interface behavior settings"
-  block:
-    - name: "For interface behavior, set cursor-blink to '{{ blink_on }}'"
-      community.general.dconf:
-        key: "/org/mate/desktop/interface/cursor-blink"
-        value: "{{ blink_on }}"
-        state: present
-      vars:
-        blink_on: "{{ 'false' if (interface_cursor_blink_time == '0') else 'true' }}"
-    - name: "For interface behavior, set cursor-blink-time to {{ interface_cursor_blink_time }} millisec"
-      community.general.dconf:
-        key: "/org/mate/desktop/interface/cursor-blink-time"
-        value: "{{ interface_cursor_blink_time }}"
-        state: present
-      when: interface_cursor_blink_time != '0'
-  become: true
-  become_user: "{{ user_name }}"
+- ansible.builtin.include_tasks: func/dconf.yml
+  vars:
+    descrip: "For interface behavior, set cursor-blink to '{{ blink_on }}'"
+    key: "/org/mate/desktop/interface/cursor-blink"
+    value: "{{ blink_on }}"
+    blink_on: "{{ 'false' if (interface_cursor_blink_time == '0') else 'true' }}"
+
+- ansible.builtin.include_tasks: func/dconf.yml
+  vars:
+    descrip: "For interface behavior, set cursor-blink-time to {{ interface_cursor_blink_time }} millisec"
+    key: "/org/mate/desktop/interface/cursor-blink-time"
+    value: "{{ interface_cursor_blink_time }}"
+  when: interface_cursor_blink_time != '0'
 
