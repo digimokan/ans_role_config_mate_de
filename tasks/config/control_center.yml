@@ -34,22 +34,22 @@
         path: "{{ matecc_path }}"
         regexp: >-
           ^\s\s<!-- Administration(.|\n)+End Administration -->\n$
-        replace: >-
-            <!-- Administration category -->
-            <Menu>
-              <Name>Administration</Name>
-              <Directory>mate-settings-system.directory</Directory>
-              <Include>
-                <And>
-                  <Category>Settings</Category>
-                  <Category>HardwareSettings</Category>
-                  <Not><Category>System</Category></Not>
-                </And>
-                <And>
-                  <Category>Printing</Category>
-                </And>
-              </Include>
-            </Menu> <!-- End Administration -->
+        replace: |-2
+          <!-- Administration category -->
+          <Menu>
+            <Name>Administration</Name>
+            <Directory>mate-settings-system.directory</Directory>
+            <Include>
+              <And>
+                <Category>Settings</Category>
+                <Category>HardwareSettings</Category>
+                <Not><Category>System</Category></Not>
+              </And>
+              <And>
+                <Category>Printing</Category>
+              </And>
+            </Include>
+          </Menu> <!-- End Administration -->
   vars:
     matecc_path: '/etc/xdg/menus/matecc.menu'
   become: true
