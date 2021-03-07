@@ -5,14 +5,14 @@
         key: "{{ key }}"
         value: "{{ value | default(omit) }}"
         state: present
-      changed_when: changed_when | default(omit)
+      # changed_when: changed_when | default(omit)
   rescue:
     - name: "SECOND TRY - {{ descrip }}"
       community.general.dconf:
         key: "{{ key }}"
         value: "{{ value | default(omit) }}"
         state: present
-      changed_when: changed_when | default(omit)
+      # changed_when: changed_when | default(omit)
   become: true
   become_user: "{{ user_name }}"
 
