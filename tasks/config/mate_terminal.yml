@@ -16,8 +16,8 @@
     descrip: "In MATE Terminal app, set background transparency to {{ terminal_bg_transparency }}"
     key: "/org/mate/terminal/profiles/default/background-darkness"
     value: "{{ terminal_bg_transparency }}"
+    changed_when: false
   when: terminal_bg_transparency != '1.00'
-  changed_when: false
 
 - ansible.builtin.include_tasks: func/dconf.yml
   vars:
