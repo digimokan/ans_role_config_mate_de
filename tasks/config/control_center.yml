@@ -3,12 +3,22 @@
     descrip: "For control center, remove the 'Common Tasks' section in sidebar"
     key: "/org/mate/control-center/cc-actions-list"
 
-- name: "For control center, remove menu file 'Internet and Network' menu"
-  ansible.builtin.replace:
-    path: /etc/xdg/menus/matecc.menu
-    regexp: >-
-      ^\s\s<!-- Internet and Network(.|\n)+End Internet and Network -->\n$
-    replace: ''
+- name: "Change Control Center app appearance by editing {{ matecc_path }}"
+  block:
+    - name: "For control center, remove menu-file 'Internet and Network' menu"
+      ansible.builtin.replace:
+        path: "{{ matecc_path }}"
+        regexp: >-
+          ^\s\s<!-- Internet and Network(.|\n)+End Internet and Network -->\n$
+        replace: ''
+    - name: "For control center, remove menu-file 'Internet and Network' category"
+      ansible.builtin.replace:
+        path: "{{ matecc_path }}"
+        regexp: >-
+          ^\s*<Menuname>Internet and Network</Menuname>$
+        replace: ''
+  vars:
+    matecc_path: '/etc/xdg/menus/matecc.menu'
   become: true
   become_user: root
 
