@@ -6,12 +6,12 @@
   become_user: root
 
 - name: "Install base 'mate' package-group"
-   community.general.pacman:
-     name: mate
-     state: present
-     extra_args: --needed
-   become: true
-   become_user: root
+  community.general.pacman:
+    name: mate
+    state: present
+    extra_args: --needed
+  become: true
+  become_user: root
 
 - name: "Remove 'mate-user-guide' package (part of 'mate' package-group)"
   community.general.pacman:
