@@ -1,0 +1,16 @@
+- name: "Write an empty list to a dconf setting, and try again if it fails"
+  block:
+    - name: "{{ descrip }}"
+      community.general.dconf:
+        key: "{{ key }}"
+        value: "[]"
+        state: present
+  rescue:
+    - name: "SECOND TRY - {{ descrip }}"
+      community.general.dconf:
+        key: "{{ key }}"
+        value: "[]"
+        state: present
+  become: true
+  become_user: "{{ user_name }}"
+
