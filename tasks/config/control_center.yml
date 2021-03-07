@@ -17,6 +17,39 @@
         regexp: >-
           ^\s*<Menuname>Internet and Network</Menuname>$
         replace: ''
+    - name: "For control center, remove menu-file 'Hardware' menu"
+      ansible.builtin.replace:
+        path: "{{ matecc_path }}"
+        regexp: >-
+          ^\s\s<!-- Hardware(.|\n)+End Hardware -->\n$
+        replace: ''
+    - name: "For control center, remove menu-file 'Hardware' category"
+      ansible.builtin.replace:
+        path: "{{ matecc_path }}"
+        regexp: >-
+          ^\s*<Menuname>Hardware</Menuname>$
+        replace: ''
+    - name: "For control center, define unifying menu-file 'Administration' menu"
+      ansible.builtin.replace:
+        path: "{{ matecc_path }}"
+        regexp: >-
+          ^\s\s<!-- Administration(.|\n)+End Administration -->\n$
+        replace: >-
+            <!-- Administration category -->
+            <Menu>
+              <Name>Administration</Name>
+              <Directory>mate-settings-system.directory</Directory>
+              <Include>
+                <And>
+                  <Category>Settings</Category>
+                  <Category>HardwareSettings</Category>
+                  <Not><Category>System</Category></Not>
+                </And>
+                <And>
+                  <Category>Printing</Category>
+                </And>
+              </Include>
+            </Menu> <!-- End Administration -->
   vars:
     matecc_path: '/etc/xdg/menus/matecc.menu'
   become: true
