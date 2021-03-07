@@ -2,5 +2,5 @@
   vars:
     descrip: "For control center, remove the 'Common Tasks' section in sidebar"
     key: "/org/mate/control-center/cc-actions-list"
-    value: []
+    value: "[]"
 
