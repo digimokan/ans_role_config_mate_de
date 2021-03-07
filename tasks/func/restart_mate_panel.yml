@@ -1,6 +1,6 @@
 - name: "Restart {{ panel_proc_name }}, if the process is running"
   block:
-    - name: "Search for mate-panel PID"
+    - name: "Search for {{ panel_proc_name }} PID"
       community.general.pids:
         name: "{{ panel_proc_name }}"
       register: mate_panel_pids
