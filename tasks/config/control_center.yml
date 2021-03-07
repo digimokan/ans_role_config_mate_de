@@ -34,7 +34,7 @@
         path: "{{ matecc_path }}"
         regexp: >-
           ^\s\s<!-- Administration(.|\n)+End Administration -->\n$
-        replace: |-2
+        replace: |-
           <!-- Administration category -->
           <Menu>
             <Name>Administration</Name>
