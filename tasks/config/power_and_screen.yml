@@ -19,12 +19,11 @@
         key: "/org/mate/screensaver/mode"
         value: "'single'"
       when: screensaver_delay_time != 0
-    - ansible.builtin.include_tasks: func/dconf.yml
+    - ansible.builtin.include_tasks: func/dconf_force_str.yml
       vars:
         descrip: "For screen/power, set screensaver-theme to '{{ screensaver_theme }}'"
         key: "/org/mate/screensaver/themes"
-        value: "{{ theme | string }}"
-        theme: ['{{ screensaver_theme }}']
+        value: ['{{ screensaver_theme }}']
       when: screensaver_delay_time != 0
     - ansible.builtin.include_tasks: func/dconf.yml
       vars:
