@@ -24,5 +24,7 @@
 
 - ansible.builtin.include_tasks: menu.yml
 
+- ansible.builtin.include_tasks: control_center.yml
+
 - ansible.builtin.include_tasks: mate_terminal.yml
 
