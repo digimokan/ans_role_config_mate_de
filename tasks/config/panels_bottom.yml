@@ -4,6 +4,7 @@
     key: "/org/mate/panel/objects/{{ wksp_item }}/toplevel-id"
     value: "''"
     wksp_item: "workspace-switcher"
+  notify: restart-mate-panel
 
 - ansible.builtin.include_tasks: func/dconf.yml
   vars:
