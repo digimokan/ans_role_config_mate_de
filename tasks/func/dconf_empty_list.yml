@@ -4,15 +4,17 @@
       community.general.dconf:
         key: "{{ key }}"
         # value: "{{ empty_list | string }}"
-        state: absent
+        value: "['Change Theme;mate-appearance-properties.desktop']"
+        state: present
   rescue:
     - name: "SECOND TRY - {{ descrip }}"
       community.general.dconf:
         key: "{{ key }}"
         # value: "{{ empty_list | string }}"
-        state: absent
-  vars:
-    empty_list: []
+        value: "['Change Theme;mate-appearance-properties.desktop']"
+        state: present
+  # vars:
+  #   empty_list: ['Change Theme;mate-appearance-properties.desktop']
   become: true
   become_user: "{{ user_name }}"
 
