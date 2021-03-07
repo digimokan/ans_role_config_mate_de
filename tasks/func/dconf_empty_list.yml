@@ -3,13 +3,13 @@
     - name: "{{ descrip }}"
       community.general.dconf:
         key: "{{ key }}"
-        value: "[]"
+        value: [] | string
         state: present
   rescue:
     - name: "SECOND TRY - {{ descrip }}"
       community.general.dconf:
         key: "{{ key }}"
-        value: "[]"
+        value: [] | string
         state: present
   become: true
   become_user: "{{ user_name }}"
