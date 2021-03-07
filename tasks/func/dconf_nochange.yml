@@ -1,16 +1,18 @@
-- name: "Edit a dconf setting, and try again if it fails"
+- name: "Edit a dconf setting, try again if it fails, and ignored 'changed'"
   block:
     - name: "{{ descrip }}"
       community.general.dconf:
         key: "{{ key }}"
         value: "{{ value | default(omit) }}"
         state: present
+      changed_when: false
   rescue:
     - name: "SECOND TRY - {{ descrip }}"
       community.general.dconf:
         key: "{{ key }}"
         value: "{{ value | default(omit) }}"
         state: present
+      changed_when: false
   become: true
   become_user: "{{ user_name }}"
 
