@@ -5,19 +5,24 @@
   become: true
   become_user: root
 
-- name: "Install base 'mate' package-group"
+- name: "Install select packages from the 'mate' package-group"
+  # Package-group latest list: https://archlinux.org/groups/x86_64/mate/
   community.general.pacman:
-    name: mate
+    name:
+      - caja
+      - marco
+      - mate-backgrounds
+      - mate-control-center
+      - mate-desktop
+      - mate-icon-theme
+      - mate-menus
+      - mate-notification-daemon
+      - mate-panel
+      - mate-polkit
+      - mate-session-manager
+      - mate-settings-daemon
+      - mate-themes
     state: present
-    extra_args: --needed
-  become: true
-  become_user: root
-
-- name: "Remove 'mate-user-guide' package (part of 'mate' package-group)"
-  community.general.pacman:
-    name: mate-user-guide
-    state: removed
-    extra_args: --recursive --nosave
   become: true
   become_user: root
 
