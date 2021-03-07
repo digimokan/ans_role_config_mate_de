@@ -3,18 +3,16 @@
     - name: "{{ descrip }}"
       community.general.dconf:
         key: "{{ key }}"
-        # value: "{{ empty_list | string }}"
-        value: "@as []"
+        value: "{{ empty_list_value }}"
         state: present
   rescue:
     - name: "SECOND TRY - {{ descrip }}"
       community.general.dconf:
         key: "{{ key }}"
-        # value: "{{ empty_list | string }}"
-        value: "@as []"
+        value: "{{ empty_list_value }}"
         state: present
-  # vars:
-  #   empty_list: ['Change Theme;mate-appearance-properties.desktop']
+  vars:
+    empty_list_value: "@as []"
   become: true
   become_user: "{{ user_name }}"
 
