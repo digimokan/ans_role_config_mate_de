@@ -1,0 +1,12 @@
+- name: "Restart mate-panel, if the process is running"
+  block:
+    - name: "Search for mate-panel PID"
+      community.general.pids:
+        name: mate-panel
+      register: mate_panel_pids
+    - name: "Restart mate-panel executable"
+      ansible.builtin.command: mate-panel --replace &
+      become: true
+      become_user: "{{ user_name }}"
+      when: (mate_panel_pids | length) > 0
+
