@@ -1,6 +1,4 @@
-- name: "Configure top panel settings"
-  ansible.builtin.include_tasks: panels_top.yml
+- ansible.builtin.include_tasks: panels_top.yml
 
-- name: "Configure bottom panel settings"
-  ansible.builtin.include_tasks: panels_bottom.yml
+- ansible.builtin.include_tasks: panels_bottom.yml
 

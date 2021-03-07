@@ -1,42 +1,28 @@
-- name: "Configure desktop background settings"
-  ansible.builtin.include_tasks: background.yml
+- ansible.builtin.include_tasks: background.yml
 
-- name: "Configure general theme, style, and colors settings"
-  ansible.builtin.include_tasks: theme.yml
+- ansible.builtin.include_tasks: theme.yml
 
-- name: "Configure icons settings"
-  ansible.builtin.include_tasks: icons.yml
+- ansible.builtin.include_tasks: icons.yml
 
-- name: "Configure fonts settings"
-  ansible.builtin.include_tasks: fonts.yml
+- ansible.builtin.include_tasks: fonts.yml
 
-- name: "Configure interface behavior settings"
-  ansible.builtin.include_tasks: interface_behavior.yml
+- ansible.builtin.include_tasks: interface_behavior.yml
 
-- name: "Configure windowing settings"
-  ansible.builtin.include_tasks: windowing.yml
+- ansible.builtin.include_tasks: windowing.yml
 
-- name: "Configure keyboard settings"
-  ansible.builtin.include_tasks: keyboard.yml
+- ansible.builtin.include_tasks: keyboard.yml
 
-- name: "Configure mouse pointer settings"
-  ansible.builtin.include_tasks: mouse.yml
+- ansible.builtin.include_tasks: mouse.yml
 
-- name: "Configure sound settings"
-  ansible.builtin.include_tasks: sound.yml
+- ansible.builtin.include_tasks: sound.yml
 
-- name: "Configure media devices settings"
-  ansible.builtin.include_tasks: media_devices.yml
+- ansible.builtin.include_tasks: media_devices.yml
 
-- name: "Configure screensaver and power settings"
-  ansible.builtin.include_tasks: power_and_screen.yml
+- ansible.builtin.include_tasks: power_and_screen.yml
 
-- name: "Configure top and bottom panels (i.e. 'system-tray') settings"
-  ansible.builtin.include_tasks: panels.yml
+- ansible.builtin.include_tasks: panels.yml
 
-- name: "Configure main-menu (i.e. 'Start' menu) settings"
-  ansible.builtin.include_tasks: menu.yml
+- ansible.builtin.include_tasks: menu.yml
 
-- name: "Configure MATE Terminal app settings"
-  ansible.builtin.include_tasks: mate_terminal.yml
+- ansible.builtin.include_tasks: mate_terminal.yml
 

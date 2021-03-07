@@ -1,4 +1,4 @@
-- name: "Install base 'mate' window manager packages"
+- name: "Install base 'mate' package-group window manager packages"
   ansible.builtin.include_tasks: install_base_pkgs.yml
 
 - name: "Install add-on application packages from 'mate-extra' package-group"
