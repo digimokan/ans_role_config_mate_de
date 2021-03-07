@@ -1,10 +1,10 @@
-- ansible.builtin.include_tasks: func/dconf.yml
+- ansible.builtin.include_tasks: func/dconf_notify.yml
   vars:
     descrip: "For bottom panel, remove the '{{ wksp_item }}' panel item"
     key: "/org/mate/panel/objects/{{ wksp_item }}/toplevel-id"
     value: "''"
     wksp_item: "workspace-switcher"
-  notify: restart-mate-panel
+    notify_receiver: restart-mate-panel
 
 - ansible.builtin.include_tasks: func/dconf.yml
   vars:
