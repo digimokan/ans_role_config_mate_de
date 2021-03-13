@@ -5,3 +5,5 @@
     value: "{{ show_icon }}"
     show_icon: "{{ 'true' if menu_show_icon else 'false' }}"
 
+- ansible.builtin.include_tasks: menu_system.yml
+

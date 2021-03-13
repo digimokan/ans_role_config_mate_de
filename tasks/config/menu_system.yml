@@ -1,0 +1,19 @@
+- name: "Change 'System' menu appearance by editing {{ matesettings_path }}"
+  block:
+    - name: "For 'System' menu, remove menu-file 'Preferences' menu"
+      ansible.builtin.replace:
+        path: "{{ matesettings_path }}"
+        regexp: >-
+          ^\s\s<!-- Merge in these other files as submenus(.|\n)+^\s\s</Menu>\n$
+        replace: ''
+    - name: "For 'System' menu, remove menu-file 'Preferences' category"
+      ansible.builtin.replace:
+        path: "{{ matesettings_path }}"
+        regexp: >-
+          ^\s*<Menuname>Preferences</Menuname>$
+        replace: ''
+  vars:
+    matesettings_path: '/etc/xdg/menus/mate-settings.menu'
+  become: true
+  become_user: root
+
