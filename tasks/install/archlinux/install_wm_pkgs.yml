@@ -1,4 +1,4 @@
-- name: "Install 'python-psutil' package, for dconf support"
+- name: "Install 'python-psutil' package, for ansible dconf support"
   community.general.pacman:
     name: python-psutil
     state: present

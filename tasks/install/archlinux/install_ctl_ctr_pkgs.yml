@@ -12,12 +12,16 @@
       community.general.pacman:
         name: mozo
         state: present
-    - name: "Install sound-support packages"
+    - name: "Install 'mate-media' package, for sound support"
       community.general.pacman:
-        name:
-          - mate-media
-          - libcanberra-pulse
+        name: mate-media
         state: present
+      when: enable_sound_support
+    - name: "Install 'libcanberra-pulse' package, for speaker-test sounds"
+      community.general.pacman:
+        name: libcanberra-pulse
+        state: present
+        extra_args: "--asdeps"
       when: enable_sound_support
     - name: "Install 'system-config-printer' package, for printing support"
       community.general.pacman:
