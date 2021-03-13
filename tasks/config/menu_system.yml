@@ -12,6 +12,16 @@
         regexp: >-
           ^\s*<Menuname>Preferences</Menuname>$
         replace: ''
+    - name: "For 'System' menu, remove menu-file 'Administration' menu"
+      ansible.builtin.replace:
+        path: "{{ matesettings_path }}"
+        regexp: >-
+          ^\s\s<!-- System Settings(.|\n)+End System Settings -->\n$
+    - name: "For 'System' menu, remove menu-file 'Administration' category"
+      ansible.builtin.replace:
+        path: "{{ matesettings_path }}"
+        regexp: >-
+          ^\s*<Menuname>Administration</Menuname>$
   vars:
     matesettings_path: '/etc/xdg/menus/mate-settings.menu'
   become: true
