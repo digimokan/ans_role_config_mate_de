@@ -4,4 +4,17 @@
     desktop_file_basename: "{{ item }}"
   loop:
     - "engrampa"
+    - "vim"
+    - "mate-font-viewer"
+    - "eom"
+    - "mate-color-select"
+    - "bssh"
+    - "bvnc"
+    - "avahi-discover"
+    - "mate-dictionary"
+    - "mate-volume-control"
+    - "caja"
+    - "mate-system-log"
+    - "mate-disk-image-mounter"
+    - "mate-power-statistics"
 
