@@ -13,7 +13,7 @@
     - "avahi-discover"
     - "mate-dictionary"
     - "mate-volume-control"
-    - "caja"
+    - "caja-browser"
     - "mate-system-log"
     - "mate-disk-image-mounter"
     - "mate-power-statistics"
