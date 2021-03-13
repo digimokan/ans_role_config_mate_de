@@ -1,0 +1,8 @@
+- ansible.builtin.include_tasks: func/edit_desktop_file.yml
+  vars:
+    short_descrip: "hide entry from appearing in menu"
+    line_regexp: >-
+      ^#?\s*NoDisplay=
+    line_replacement: >-
+      NoDisplay=true
+

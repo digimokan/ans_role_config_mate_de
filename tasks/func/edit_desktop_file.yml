@@ -1,0 +1,9 @@
+- name: "For '{{ desktop_file_basename }}.desktop', {{ short_descrip }}"
+  ansible.builtin.lineinfile:
+    path: "/usr/share/applications/{{ desktop_file_basename }}.desktop"
+    regexp: "{{ line_regexp }}"
+    line: "{{ line_replacement }}"
+    state: present
+  become: true
+  become_user: root
+

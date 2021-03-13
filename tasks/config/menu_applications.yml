@@ -1,0 +1,7 @@
+- name: "Hide select entries from appearing in 'Applications' menu"
+  ansible.builtin.include_tasks: func/hide_desktop_entry.yml
+  vars:
+    desktop_file_basename: "{{ item }}"
+  loop:
+    - "engrampa"
+
