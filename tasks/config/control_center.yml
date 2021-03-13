@@ -10,25 +10,21 @@
         path: "{{ matecc_path }}"
         regexp: >-
           ^\s\s<!-- Internet and Network(.|\n)+End Internet and Network -->\n$
-        replace: ''
     - name: "For control center, remove menu-file 'Internet and Network' category"
       ansible.builtin.replace:
         path: "{{ matecc_path }}"
         regexp: >-
           ^\s*<Menuname>Internet and Network</Menuname>$
-        replace: ''
     - name: "For control center, remove menu-file 'Hardware' menu"
       ansible.builtin.replace:
         path: "{{ matecc_path }}"
         regexp: >-
           ^\s\s<!-- Hardware(.|\n)+End Hardware -->\n$
-        replace: ''
     - name: "For control center, remove menu-file 'Hardware' category"
       ansible.builtin.replace:
         path: "{{ matecc_path }}"
         regexp: >-
           ^\s*<Menuname>Hardware</Menuname>$
-        replace: ''
     - name: "For control center, define unifying menu-file 'Administration' menu"
       ansible.builtin.replace:
         path: "{{ matecc_path }}"
