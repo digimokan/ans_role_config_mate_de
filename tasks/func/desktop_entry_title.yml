@@ -1,0 +1,8 @@
+- ansible.builtin.include_tasks: func/desktop_entry_edit.yml
+  vars:
+    short_descrip: "set menu item title"
+    line_regexp: >-
+      ^#?\s*Name=
+    line_replacement: >-
+      Name={{ title }}
+

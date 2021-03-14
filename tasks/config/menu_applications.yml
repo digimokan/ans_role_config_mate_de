@@ -27,3 +27,12 @@
     - { basename: 'pluma', cat: 'Office' }
     - { basename: 'mate-search-tool', cat: 'Core' }
 
+- name: "Set item title for select 'Applications' menu entries"
+  ansible.builtin.include_tasks: func/desktop_entry_title.yml
+  vars:
+    desktop_file_basename: "{{ item.basename }}"
+    category: "{{ item.cat }}"
+  loop:
+    - { basename: 'pluma', title: 'Pluma Text Editor' }
+    - { basename: 'atril', title: 'Atril PDF Document Viewer' }
+
