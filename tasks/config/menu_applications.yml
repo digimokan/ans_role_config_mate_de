@@ -17,6 +17,8 @@
     - "mate-system-log"
     - "mate-volume-control"
     - "org.fontforge.FontForge"
+    - "qv4l2"
+    - "qvidcap"
     - "vim"
 
 - name: "Set submenu category for select 'Applications' menu entries"
@@ -36,6 +38,7 @@
   loop:
     - { basename: 'pluma', title: 'Pluma Text Editor' }
     - { basename: 'atril', title: 'Atril PDF Document Viewer' }
+    - { basename: 'vlc', title: 'VLC Video Player' }
 
 - name: "Set mouse-hover tooltip for select 'Applications' menu entries"
   ansible.builtin.include_tasks: func/desktop_entry_tooltip.yml
@@ -44,4 +47,5 @@
     tooltip: "{{ item.tooltip }}"
   loop:
     - { basename: 'atril', tooltip: 'View multi-page PDF documents' }
+    - { basename: 'vlc', tooltip: 'Play video/audio files and DVDs' }
 
