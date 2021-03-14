@@ -25,4 +25,8 @@
     category: "{{ item.cat }}"
   loop:
     - { basename: 'pluma', cat: 'Office' }
+    - { basename: 'mate-search-tool', cat: 'Core' }
+    - { basename: 'mate-disk-usage-analyzer', cat: 'Accessories' }
+    - { basename: 'mate-system-monitor', cat: 'Accessories' }
+    - { basename: 'mate-terminal', cat: 'Accessories' }
 
