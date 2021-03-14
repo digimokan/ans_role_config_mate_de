@@ -26,7 +26,4 @@
   loop:
     - { basename: 'pluma', cat: 'Office' }
     - { basename: 'mate-search-tool', cat: 'Core' }
-    - { basename: 'mate-disk-usage-analyzer', cat: 'Utility' }
-    - { basename: 'mate-system-monitor', cat: 'Utility' }
-    - { basename: 'mate-terminal', cat: 'Utility' }
 
