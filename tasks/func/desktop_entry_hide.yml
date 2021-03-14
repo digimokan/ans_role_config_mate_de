@@ -1,4 +1,4 @@
-- ansible.builtin.include_tasks: func/edit_desktop_file.yml
+- ansible.builtin.include_tasks: func/desktop_entry_edit.yml
   vars:
     short_descrip: "hide entry from appearing in menu"
     line_regexp: >-

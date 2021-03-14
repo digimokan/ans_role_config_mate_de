@@ -1,5 +1,5 @@
 - name: "Hide select entries from appearing in 'Applications' menu"
-  ansible.builtin.include_tasks: func/hide_desktop_entry.yml
+  ansible.builtin.include_tasks: func/desktop_entry_hide.yml
   vars:
     desktop_file_basename: "{{ item }}"
   loop:
@@ -19,7 +19,7 @@
     - "mate-power-statistics"
 
 - name: "Set submenu category for select 'Applications' menu entries"
-  ansible.builtin.include_tasks: func/set_desktop_entry_cat.yml
+  ansible.builtin.include_tasks: func/desktop_entry_category.yml
   vars:
     desktop_file_basename: "{{ item.basename }}"
     category: "{{ item.cat }}"
