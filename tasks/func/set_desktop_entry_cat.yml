@@ -1,0 +1,8 @@
+- ansible.builtin.include_tasks: func/edit_desktop_file.yml
+  vars:
+    short_descrip: "set submenu category"
+    line_regexp: >-
+      ^#?\s*Categories=
+    line_replacement: >-
+      Categories={{ category }};
+

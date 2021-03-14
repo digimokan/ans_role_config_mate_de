@@ -4,6 +4,7 @@
     regexp: "{{ line_regexp }}"
     line: "{{ line_replacement }}"
     state: present
+    create: no
   become: true
   become_user: root
 

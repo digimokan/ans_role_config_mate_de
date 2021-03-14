@@ -18,3 +18,11 @@
     - "mate-disk-image-mounter"
     - "mate-power-statistics"
 
+- name: "Set submenu category for select 'Applications' menu entries"
+  ansible.builtin.include_tasks: func/set_desktop_entry_cat.yml
+  vars:
+    desktop_file_basename: "{{ item.basename }}"
+    category: "{{ item.cat }}"
+  loop:
+    - { basename: 'pluma', cat: 'Office' }
+
