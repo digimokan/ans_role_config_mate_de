@@ -27,9 +27,8 @@
   vars:
     desktop_file_basename: "{{ item.basename }}"
     category: "{{ item.cat }}"
-    entry_dir: "{{ item.entry_path | default(omit) }}"
   loop:
-    - { basename: 'math', cat: 'Office', entry_path: '/usr/lib/libreoffice/share/xdg' }
+    - { basename: 'math', cat: 'Office' }
     - { basename: 'mate-search-tool', cat: 'Core' }
     - { basename: 'pluma', cat: 'Office' }
 
@@ -38,9 +37,8 @@
   vars:
     desktop_file_basename: "{{ item.basename }}"
     title: "{{ item.title }}"
-    entry_dir: "{{ item.entry_path | default(omit) }}"
   loop:
-    - { basename: 'startcenter', title: 'LibreOffice Start Page', entry_path: '/usr/lib/libreoffice/share/xdg' }
+    - { basename: 'startcenter', title: 'LibreOffice Start Page' }
     - { basename: 'pluma', title: 'Pluma Text Editor' }
     - { basename: 'atril', title: 'Atril PDF Document Viewer' }
     - { basename: 'vlc', title: 'VLC Video Player' }
@@ -50,9 +48,8 @@
   vars:
     desktop_file_basename: "{{ item.basename }}"
     tooltip: "{{ item.tooltip }}"
-    entry_dir: "{{ item.entry_path | default(omit) }}"
   loop:
     - { basename: 'atril', tooltip: 'View multi-page PDF documents' }
-    - { basename: 'startcenter', tooltip: 'Open recent LibreOffice docs, or create new ones', entry_path: '/usr/lib/libreoffice/share/xdg' }
+    - { basename: 'startcenter', tooltip: 'Open recent LibreOffice docs, or create new ones' }
     - { basename: 'vlc', tooltip: 'Play video/audio files and DVDs' }
 

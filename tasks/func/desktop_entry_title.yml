@@ -5,6 +5,4 @@
       ^#?\s*Name=
     line_replacement: >-
       Name={{ title }}
-    vars:
-      dir: "{{ entry_dir | default(omit) }}"
 

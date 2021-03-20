@@ -5,6 +5,4 @@
       ^#?\s*NoDisplay=
     line_replacement: >-
       NoDisplay=true
-    vars:
-      dir: "{{ entry_dir | default(omit) }}"
 

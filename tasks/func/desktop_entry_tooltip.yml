@@ -5,6 +5,4 @@
       ^#?\s*Comment[en_US]=
     line_replacement: >-
       Comment[en_US]={{ tooltip }}
-    vars:
-      dir: "{{ entry_dir | default(omit) }}"
 
