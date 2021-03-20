@@ -9,6 +9,7 @@
     - "caja-browser"
     - "engrampa"
     - "eom"
+    - "libreoffice-base"
     - "mate-color-select"
     - "mate-dictionary"
     - "mate-disk-image-mounter"
@@ -27,8 +28,9 @@
     desktop_file_basename: "{{ item.basename }}"
     category: "{{ item.cat }}"
   loop:
-    - { basename: 'pluma', cat: 'Office' }
+    - { basename: 'libreoffice-math', cat: 'Office' }
     - { basename: 'mate-search-tool', cat: 'Core' }
+    - { basename: 'pluma', cat: 'Office' }
 
 - name: "Set item title for select 'Applications' menu entries"
   ansible.builtin.include_tasks: func/desktop_entry_title.yml
@@ -36,6 +38,7 @@
     desktop_file_basename: "{{ item.basename }}"
     title: "{{ item.title }}"
   loop:
+    - { basename: 'libreoffice-startcenter', cat: 'LibreOffice Start Page' }
     - { basename: 'pluma', title: 'Pluma Text Editor' }
     - { basename: 'atril', title: 'Atril PDF Document Viewer' }
     - { basename: 'vlc', title: 'VLC Video Player' }
@@ -47,5 +50,6 @@
     tooltip: "{{ item.tooltip }}"
   loop:
     - { basename: 'atril', tooltip: 'View multi-page PDF documents' }
+    - { basename: 'libreoffice-startcenter', cat: 'Open recent LibreOffice docs, or create new ones' }
     - { basename: 'vlc', tooltip: 'Play video/audio files and DVDs' }
 
