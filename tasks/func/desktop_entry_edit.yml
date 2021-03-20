@@ -3,6 +3,9 @@
     path: "/usr/share/applications/{{ desktop_file_basename }}.desktop"
     regexp: "{{ line_regexp }}"
     line: "{{ line_replacement }}"
+    insertafter: >-
+      ^[Desktop Entry]$
+    firstmatch: yes
     state: present
     create: no
   become: true
