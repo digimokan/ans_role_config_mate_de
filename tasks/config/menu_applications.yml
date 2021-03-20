@@ -38,7 +38,7 @@
     desktop_file_basename: "{{ item.basename }}"
     title: "{{ item.title }}"
   loop:
-    - { basename: 'libreoffice-startcenter', cat: 'LibreOffice Start Page' }
+    - { basename: 'libreoffice-startcenter', title: 'LibreOffice Start Page' }
     - { basename: 'pluma', title: 'Pluma Text Editor' }
     - { basename: 'atril', title: 'Atril PDF Document Viewer' }
     - { basename: 'vlc', title: 'VLC Video Player' }
@@ -50,6 +50,6 @@
     tooltip: "{{ item.tooltip }}"
   loop:
     - { basename: 'atril', tooltip: 'View multi-page PDF documents' }
-    - { basename: 'libreoffice-startcenter', cat: 'Open recent LibreOffice docs, or create new ones' }
+    - { basename: 'libreoffice-startcenter', tooltip: 'Open recent LibreOffice docs, or create new ones' }
     - { basename: 'vlc', tooltip: 'Play video/audio files and DVDs' }
 
