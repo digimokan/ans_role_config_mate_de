@@ -1,10 +1,12 @@
 - name: "For '{{ desktop_file_basename }}.desktop', {{ short_descrip }}"
   ansible.builtin.lineinfile:
-    path: "/usr/share/applications/{{ desktop_file_basename }}.desktop"
+    path: "{{ desktop_entry_dir }}/{{ desktop_file_basename }}.desktop"
     regexp: "{{ line_regexp }}"
     line: "{{ line_replacement }}"
     state: present
     create: no
+  vars:
+    desktop_entry_dir: "{{ entry_dir | default('/usr/share/applications') }}"
   become: true
   become_user: root
   notify: restart-mate-panel

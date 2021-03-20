@@ -28,7 +28,7 @@
     desktop_file_basename: "{{ item.basename }}"
     category: "{{ item.cat }}"
   loop:
-    - { basename: 'libreoffice-math', cat: 'Office' }
+    - { basename: 'math', cat: 'Office', entry_dir: '/usr/lib/libreoffice/share/xdg' }
     - { basename: 'mate-search-tool', cat: 'Core' }
     - { basename: 'pluma', cat: 'Office' }
 
@@ -38,7 +38,7 @@
     desktop_file_basename: "{{ item.basename }}"
     title: "{{ item.title }}"
   loop:
-    - { basename: 'libreoffice-startcenter', title: 'LibreOffice Start Page' }
+    - { basename: 'startcenter', title: 'LibreOffice Start Page', entry_dir: '/usr/lib/libreoffice/share/xdg' }
     - { basename: 'pluma', title: 'Pluma Text Editor' }
     - { basename: 'atril', title: 'Atril PDF Document Viewer' }
     - { basename: 'vlc', title: 'VLC Video Player' }
@@ -50,6 +50,6 @@
     tooltip: "{{ item.tooltip }}"
   loop:
     - { basename: 'atril', tooltip: 'View multi-page PDF documents' }
-    - { basename: 'libreoffice-startcenter', tooltip: 'Open recent LibreOffice docs, or create new ones' }
+    - { basename: 'startcenter', tooltip: 'Open recent LibreOffice docs, or create new ones', entry_dir: '/usr/lib/libreoffice/share/xdg' }
     - { basename: 'vlc', tooltip: 'Play video/audio files and DVDs' }
 
