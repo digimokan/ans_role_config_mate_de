@@ -5,4 +5,6 @@
       ^#?\s*Categories=
     line_replacement: >-
       Categories={{ category }};
+    vars:
+      dir: "{{ entry_dir | default(omit) }}"
 
