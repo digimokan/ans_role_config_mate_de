@@ -2,7 +2,7 @@
   vars:
     short_descrip: "set menu item mouse-hover tooltip"
     line_regexp: >-
-      ^#?\s*Comment=
+      ^#?\s*Comment[en_US]=
     line_replacement: >-
-      Comment={{ tooltip }}
+      Comment[en_US]={{ tooltip }}
 
