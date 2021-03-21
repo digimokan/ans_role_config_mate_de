@@ -28,6 +28,7 @@
     desktop_file_basename: "{{ item.basename }}"
     category: "{{ item.cat }}"
   loop:
+    - { basename: 'libreoffice-draw', cat: 'Graphics' }
     - { basename: 'libreoffice-math', cat: 'Office' }
     - { basename: 'mate-search-tool', cat: 'Core' }
     - { basename: 'pluma', cat: 'Office' }

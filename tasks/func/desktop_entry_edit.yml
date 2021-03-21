@@ -4,7 +4,7 @@
     regexp: "{{ line_regexp }}"
     line: "{{ line_replacement }}"
     insertafter: >-
-      ^[Desktop Entry]$
+      ^\[Desktop Entry\]$
     firstmatch: yes
     state: present
     create: no
