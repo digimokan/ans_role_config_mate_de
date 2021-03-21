@@ -1,9 +1,9 @@
 - name: "Edit a line in a .desktop, file, if the file exists"
   block:
-    # - name: "Check if '{{ desktop_file_path }}' exists"
-    #   ansible.builtin.stat:
-    #     path: "{{ desktop_file_path }}"
-    #   register: result
+    - name: "Check if '{{ desktop_file_path }}' exists"
+      ansible.builtin.stat:
+        path: "{{ desktop_file_path }}"
+      register: result
     - name: "For '{{ desktop_file_basename }}.desktop', {{ short_descrip }}"
       ansible.builtin.lineinfile:
         path: "{{ desktop_file_path }}"
@@ -13,9 +13,8 @@
           ^\[Desktop Entry\]$
         firstmatch: yes
         state: present
-        # create: no
-        create: yes
-      # when: result.stat.exists
+        create: no
+      when: result.stat.exists
       notify: restart-mate-panel
   vars:
     desktop_file_path: "/usr/share/applications/{{ desktop_file_basename }}.desktop"
