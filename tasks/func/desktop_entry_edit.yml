@@ -10,5 +10,4 @@
     create: no
   become: true
   become_user: root
-  notify: restart-mate-panel
 
