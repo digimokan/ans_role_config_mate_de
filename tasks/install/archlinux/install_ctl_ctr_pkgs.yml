@@ -13,9 +13,9 @@
         name: mate-media
         state: present
       when: enable_sound_support
-    - name: "Install 'libcanberra-pulse' package, for speaker-test sounds"
+    - name: "Install 'libcanberra' package, for speaker-test sounds"
       community.general.pacman:
-        name: libcanberra-pulse
+        name: libcanberra
         state: present
         extra_args: "--asdeps"
       when: enable_sound_support
