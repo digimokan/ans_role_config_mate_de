@@ -13,12 +13,6 @@
         name: mate-media
         state: present
       when: enable_sound_support
-    - name: "Install 'libcanberra' package, for speaker-test sounds"
-      community.general.pacman:
-        name: libcanberra
-        state: present
-        extra_args: "--asdeps"
-      when: enable_sound_support
     - name: "Install 'system-config-printer' package, for printing support"
       community.general.pacman:
         name: system-config-printer
