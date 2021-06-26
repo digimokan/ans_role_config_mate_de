@@ -17,7 +17,6 @@
     - "mate-font-viewer"
     - "mate-power-statistics"
     - "mate-system-log"
-    - "mate-volume-control"
     - "org.fontforge.FontForge"
     - "qv4l2"
     - "qvidcap"
@@ -32,6 +31,7 @@
     - { basename: 'libreoffice-draw', cat: 'Graphics' }
     - { basename: 'libreoffice-math', cat: 'Office' }
     - { basename: 'mate-search-tool', cat: 'Core' }
+    - { basename: 'mate-volume-control', cat: 'Settings;HardwareSettings' }
     - { basename: 'pluma', cat: 'Office' }
 
 - name: "Set item title for select 'Applications' menu entries"
