@@ -1,6 +1,7 @@
-- name: "Install select packages from the 'mate' package-group"
+- name: "Install packages for a minimal mate desktop environment"
+  # Package-group latest list: https://www.freshports.org/x11/mate-base/
   # Package-group latest list: https://archlinux.org/groups/x86_64/mate/
-  community.general.pacman:
+  ansible.builtin.package:
     name:
       - caja
       - marco

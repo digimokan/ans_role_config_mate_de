@@ -1,6 +1,9 @@
 - name: "Install Xorg display server"
   ansible.builtin.include_tasks: install_xorg/main.yml
 
+- name: "Install minimal, functional MATE DE"
+  ansible.builtin.include_tasks: install_mate_min/main.yml
+
 - name: "Install MATE DE packages"
   ansible.builtin.include_tasks: install/main.yml
 
