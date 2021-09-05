@@ -1,0 +1,30 @@
+- name: "Install 'mate-power-manager' package"
+  community.general.pacman:
+    name: mate-power-manager
+    state: present
+  become: true
+  become_user: root
+
+# - name: "Install 'network-manager-applet' package"
+#   community.general.pacman:
+#     name: network-manager-applet
+#     state: present
+#   become: true
+#   become_user: root
+
+- name: "Install 'mate-media' package, for sound support"
+  community.general.pacman:
+    name: mate-media
+    state: present
+  become: true
+  become_user: root
+  when: enable_sound_support
+
+- name: "Install 'system-config-printer' package, for printing support"
+  community.general.pacman:
+    name: system-config-printer
+    state: present
+  become: true
+  become_user: root
+  when: enable_printing_support
+
