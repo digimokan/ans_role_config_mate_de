@@ -1,5 +1,5 @@
 # dir for top-panel menu-item config files
-linux_xdg_menus_dir: '/usr/local/etc/xdg/menus'
+freebsd_xdg_menus_dir: '/usr/local/etc/xdg/menus'
 
 # dir that contains accumulated '.desktop' application launching files
 freebsd_dot_desktop_files_dir: '/usr/local/share/applications'

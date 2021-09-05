@@ -1,0 +1,9 @@
+- name: "Configure fonts"
+  ansible.builtin.include_tasks: fonts.yml
+
+- name: "Configure icons used in windows and menus"
+  ansible.builtin.include_tasks: icons.yml
+
+- name: "Configure general user interface elements"
+  ansible.builtin.include_tasks: user_interface.yml
+

@@ -1,4 +1,0 @@
-- ansible.builtin.include_tasks: panels_top.yml
-
-- ansible.builtin.include_tasks: panels_bottom.yml
-

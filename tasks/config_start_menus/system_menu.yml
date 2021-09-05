@@ -1,0 +1,32 @@
+- name: "For 'System' start menu, remove menu-file 'Preferences' menu"
+  ansible.builtin.replace:
+    path: "{{ matesettings_path }}"
+    regexp: >-
+      ^\s\s<!-- Merge in these other files as submenus(.|\n)+^\s\s</Menu>\n$
+  become: true
+  become_user: root
+
+- name: "For 'System' start menu, remove menu-file 'Preferences' category"
+  ansible.builtin.replace:
+    path: "{{ matesettings_path }}"
+    regexp: >-
+      ^\s*<Menuname>Preferences</Menuname>$
+  become: true
+  become_user: root
+
+- name: "For 'System' start menu, remove menu-file 'Administration' menu"
+  ansible.builtin.replace:
+    path: "{{ matesettings_path }}"
+    regexp: >-
+      ^\s\s<!-- System Settings(.|\n)+End System Settings -->\n$
+  become: true
+  become_user: root
+
+- name: "For 'System' start menu, remove menu-file 'Administration' category"
+  ansible.builtin.replace:
+    path: "{{ matesettings_path }}"
+    regexp: >-
+      ^\s*<Menuname>Administration</Menuname>$
+  become: true
+  become_user: root
+

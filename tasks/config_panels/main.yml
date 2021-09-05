@@ -1,0 +1,6 @@
+- name: "Configure top panel (i.e. 'system tray')"
+  ansible.builtin.include_tasks: top_panel.yml
+
+- name: "Configure bottom panel (i.e. 'system tray')"
+  ansible.builtin.include_tasks: bottom_panel.yml
+

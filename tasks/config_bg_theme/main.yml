@@ -1,0 +1,6 @@
+- name: "Configure desktop background image and appearance"
+  ansible.builtin.include_tasks: background.yml
+
+- name: "Configure theming of window colors and styles"
+  ansible.builtin.include_tasks: theme.yml
+

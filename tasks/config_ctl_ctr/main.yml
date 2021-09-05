@@ -1,0 +1,17 @@
+- ansible.builtin.include_tasks: func/dconf_empty_list.yml
+  vars:
+    descrip: "For control center, remove the 'Common Tasks' section in sidebar"
+    key: "/org/mate/control-center/cc-actions-list"
+
+- name: "Configure Control Center application behavior and appearance for Linux"
+  ansible.builtin.include_tasks: do_config.yml
+  vars:
+    matecc_path: "{{ linux_xdg_menus_dir }}/matecc.menu"
+  when: ansible_system == "Linux"
+
+- name: "Configure Control Center application behavior and appearance for FreeBSD"
+  ansible.builtin.include_tasks: do_config.yml
+  vars:
+    matecc_path: "{{ freebsd_xdg_menus_dir }}/matecc.menu"
+  when: ansible_os_family == "FreeBSD"
+

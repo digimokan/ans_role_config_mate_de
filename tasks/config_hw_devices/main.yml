@@ -1,0 +1,12 @@
+- name: "Configure keyboard settings"
+  ansible.builtin.include_tasks: keyboard.yml
+
+- name: "Configure mouse settings"
+  ansible.builtin.include_tasks: mouse.yml
+
+- name: "Configure sound settings"
+  ansible.builtin.include_tasks: sound.yml
+
+- name: "Configure storage / removable-media device settings"
+  ansible.builtin.include_tasks: media_devices.yml
+
