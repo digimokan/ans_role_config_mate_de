@@ -1,0 +1,15 @@
+- name: "Install base 'mate' package-group window manager packages"
+  ansible.builtin.include_tasks: install_base_pkgs.yml
+
+- name: "Load services requried for mate desktop"
+  ansible.builtin.include_tasks: load_services.yml
+
+- name: "Install add-on application packages from 'mate-extra' package-group"
+  ansible.builtin.include_tasks: install_mate_extra_pkgs.yml
+
+- name: "Install Control Center packages"
+  ansible.builtin.include_tasks: install_ctl_ctr_pkgs.yml
+
+- name: "Install window manager packages"
+  ansible.builtin.include_tasks: install_wm_pkgs.yml
+

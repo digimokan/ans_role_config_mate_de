@@ -1,0 +1,45 @@
+- name: "Install MATE-supported packages from 'mate-extra' package group"
+  block:
+    - name: "Install 'mate-utils' package, for screenshots/disk-usage/etc"
+      ansible.builtin.package:
+        name: mate-utils
+        state: present
+    # - name: "Install 'caja-wallpaper' package, for caja set-wallpaper shortcut"
+    #   ansible.builtin.package:
+    #     name: caja-wallpaper
+    #     state: present
+    - name: "Install 'mate-screensaver' package"
+      ansible.builtin.package:
+        name: mate-screensaver
+        state: present
+    - name: "Install 'mate-system-monitor' package"
+      ansible.builtin.package:
+        name: mate-system-monitor
+        state: present
+    - name: "Install 'engrampa' package, for archive support"
+      ansible.builtin.package:
+        name: engrampa
+        state: present
+    - name: "Install 'mate-calc' package, for a desktop calculator app"
+      ansible.builtin.package:
+        name: mate-calc
+        state: present
+    - name: "Install 'eom' (eye-of-MATE) package, for a desktop image-viewer app"
+      ansible.builtin.package:
+        name: eom
+        state: present
+    - name: "Install 'atril' package, for a pdf-viewer app"
+      ansible.builtin.package:
+        name: atril
+        state: present
+    - name: "Install 'pluma' package, for a text-editor app"
+      ansible.builtin.package:
+        name: pluma
+        state: present
+    - name: "Install 'mate-terminal' package, for a terminal emulator app"
+      ansible.builtin.package:
+        name: mate-terminal
+        state: present
+  become: true
+  become_user: root
+

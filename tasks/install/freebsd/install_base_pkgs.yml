@@ -1,0 +1,27 @@
+- name: "Install 'xorg-server' display server package"
+  ansible.builtin.package:
+    name: xorg-minimal
+    state: present
+  become: true
+  become_user: root
+
+- name: "Install packages for a basic mate desktop environment"
+  ansible.builtin.package:
+    name:
+      - caja
+      - marco
+      - mate-backgrounds
+      - mate-control-center
+      - mate-base
+      - mate-icon-theme
+      - mate-menus
+      - mate-notification-daemon
+      - mate-panel
+      - mate-polkit
+      - mate-session-manager
+      - mate-settings-daemon
+      - mate-themes
+    state: present
+  become: true
+  become_user: root
+

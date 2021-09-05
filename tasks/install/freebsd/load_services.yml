@@ -1,0 +1,23 @@
+# See https://docs.freebsd.org/en/books/handbook/x11/#x11-wm
+
+- name: "Set dbus service to load on startup in {{ rc_conf_filepath }}"
+  community.general.sysrc:
+    path: "{{ rc_conf_filepath }}"
+    name: "dbus_enable"
+    value: "YES"
+    state: present
+  become: true
+  become_user: root
+
+- name: "Set procfs to mount at boot in /etc/fstab"
+  ansible.builtin.blockinfile:
+    path: '/etc/fstab'
+    insertafter: EOF
+    block: 'proc           /proc       procfs  rw  0   0'
+    marker: "# {mark} ANSIBLE MANAGED BLOCK: mount procfs"
+    create: no
+    state: present
+    validate: 'findmnt --verify'
+  become: true
+  become_user: root
+
