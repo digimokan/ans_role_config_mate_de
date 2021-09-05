@@ -17,7 +17,9 @@ Configure the MATE desktop environment.
 
 ## Purpose
 
-* Configure the [MATE](https://mate-desktop.org/) desktop environment.
+* Install Xorg components.
+* Install [MATE Desktop](https://mate-desktop.org/) packages.
+* Configure the MATE desktop environment.
 
 ## Supported Operating Systems
 
