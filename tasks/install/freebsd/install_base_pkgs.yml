@@ -6,13 +6,14 @@
   become_user: root
 
 - name: "Install packages for a basic mate desktop environment"
+  # Package-group latest list: https://www.freshports.org/x11/mate-base/
   ansible.builtin.package:
     name:
       - caja
       - marco
       - mate-backgrounds
       - mate-control-center
-      - mate-base
+      - mate-desktop
       - mate-icon-theme
       - mate-menus
       - mate-notification-daemon
