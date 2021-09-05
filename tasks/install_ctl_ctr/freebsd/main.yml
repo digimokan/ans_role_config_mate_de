@@ -1,5 +1,5 @@
 - name: "Install 'mate-power-manager' package"
-  community.general.pacman:
+  ansible.builtin.package:
     name: mate-power-manager
     state: present
   become: true
@@ -13,7 +13,7 @@
 #   become_user: root
 
 - name: "Install 'mate-media' package, for sound support"
-  community.general.pacman:
+  ansible.builtin.package:
     name: mate-media
     state: present
   become: true
@@ -21,7 +21,7 @@
   when: enable_sound_support
 
 - name: "Install 'system-config-printer' package, for printing support"
-  community.general.pacman:
+  ansible.builtin.package:
     name: system-config-printer
     state: present
   become: true
