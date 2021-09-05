@@ -1,0 +1,7 @@
+- name: "Install 'xorg-minimal' package group"
+  ansible.builtin.package:
+    name: xorg-minimal
+    state: present
+  become: true
+  become_user: root
+

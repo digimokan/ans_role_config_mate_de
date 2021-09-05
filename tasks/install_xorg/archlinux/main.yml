@@ -1,0 +1,7 @@
+- name: "Install 'xorg-server' display server package"
+  community.general.pacman:
+    name: xorg-server
+    state: present
+  become: true
+  become_user: root
+

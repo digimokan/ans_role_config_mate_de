@@ -1,10 +1,3 @@
-- name: "Install 'xorg-server' display server package"
-  community.general.pacman:
-    name: xorg-server
-    state: present
-  become: true
-  become_user: root
-
 - name: "Install select packages from the 'mate' package-group"
   # Package-group latest list: https://archlinux.org/groups/x86_64/mate/
   community.general.pacman:
