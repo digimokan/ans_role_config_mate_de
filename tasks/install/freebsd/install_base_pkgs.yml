@@ -1,4 +1,4 @@
-- name: "Install 'xorg-server' display server package"
+- name: "Install 'xorg-minimal' display server package"
   ansible.builtin.package:
     name: xorg-minimal
     state: present

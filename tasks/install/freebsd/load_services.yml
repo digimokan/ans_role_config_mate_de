@@ -17,7 +17,6 @@
     marker: "# {mark} ANSIBLE MANAGED BLOCK: mount procfs"
     create: no
     state: present
-    validate: 'findmnt --verify'
   become: true
   become_user: root
 
