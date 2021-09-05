@@ -24,6 +24,7 @@ Configure the MATE desktop environment.
 ## Supported Operating Systems
 
 * Arch Linux.
+* FreeBSD.
 
 ## Quick Start
 
