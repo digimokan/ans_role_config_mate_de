@@ -1,0 +1,9 @@
+# dir for top-panel menu-item config files
+linux_xdg_menus_dir: '/usr/local/etc/xdg/menus'
+
+# dir that contains accumulated '.desktop' application launching files
+freebsd_dot_desktop_files_dir: '/usr/local/share/applications'
+
+# config file for host info, network info, and services to start at boot
+rc_conf_filepath: '/etc/rc.conf'
+
