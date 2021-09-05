@@ -1,8 +1,0 @@
-# See https://docs.ansible.com/ansible/latest/collections/community/general/dconf_module.html#notes
-- name: "Install 'sysutils/py-psutil' package, for ansible dconf support"
-  ansible.builtin.package:
-    name: sysutils/py-psutil
-    state: present
-  become: true
-  become_user: root
-

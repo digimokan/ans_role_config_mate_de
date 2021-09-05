@@ -1,5 +1,12 @@
-# See https://docs.freebsd.org/en/books/handbook/x11/#x11-wm
+# See https://docs.ansible.com/ansible/latest/collections/community/general/dconf_module.html#notes
+- name: "Install 'sysutils/py-psutil' package, for ansible dconf support"
+  ansible.builtin.package:
+    name: sysutils/py-psutil
+    state: present
+  become: true
+  become_user: root
 
+# See https://docs.freebsd.org/en/books/handbook/x11/#x11-wm
 - name: "Set dbus service to load on startup in {{ rc_conf_filepath }}"
   community.general.sysrc:
     path: "{{ rc_conf_filepath }}"
@@ -9,11 +16,15 @@
   become: true
   become_user: root
 
+# See https://docs.freebsd.org/en/books/handbook/x11/#x11-wm
 - name: "Ensure dbus service is started"
   ansible.builtin.service:
     name: dbus
     state: started
+  become: true
+  become_user: root
 
+# See https://docs.freebsd.org/en/books/handbook/x11/#x11-wm
 - name: "Mount procfs, and set it to mount at boot in /etc/fstab"
   ansible.posix.mount:
     src: 'proc'
@@ -23,4 +34,6 @@
     dump: '0'
     passno: '0'
     state: mounted
+  become: true
+  become_user: root
 

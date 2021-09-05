@@ -1,8 +1,8 @@
-- name: "Install MATE DE packages for Arch Linux"
+- name: "Install and configure MATE system-layer packages and services for Arch Linux"
   ansible.builtin.include_tasks: archlinux/main.yml
   when: ansible_os_family == "Archlinux"
 
-- name: "Install MATE DE packages for FreeBSD"
+- name: "Install and configure MATE system-layer packages and services for FreeBSD"
   ansible.builtin.include_tasks: freebsd/main.yml
   when: ansible_os_family == "FreeBSD"
 
