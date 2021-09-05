@@ -6,10 +6,3 @@
   become: true
   become_user: root
 
-# - name: "Install 'xdg-utils' package, for .desktop file support"
-#   ansible.builtin.package:
-#     name: xdg-utils
-#     state: present
-#   become: true
-#   become_user: root
-
