@@ -1,5 +1,5 @@
 # path to image to use for desktop background
-background_image_path: "/usr/share/backgrounds/mate/desktop/Ubuntu-Mate-Cold-no-logo.png"
+background_image_file_name: "Ubuntu-Mate-Cold-no-logo.png"
 
 # opacity of image, from 0 (fully-transparent, no image) to 100 (opaque)
 background_image_opacity: "100"

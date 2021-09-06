@@ -1,6 +1,15 @@
-- name: "Configure desktop background image and appearance"
-  ansible.builtin.include_tasks: background.yml
-
 - name: "Configure theming of window colors and styles"
   ansible.builtin.include_tasks: theme.yml
+
+- name: "Configure desktop background image and appearance for Linux"
+  ansible.builtin.include_tasks: background.yml
+  vars:
+    background_image_path: "{{ linux_backgrounds_dir }}/{{ background_image_file_name }}"
+  when: ansible_system == "Linux"
+
+- name: "Configure desktop background image and appearance for FreeBSD"
+  ansible.builtin.include_tasks: background.yml
+  vars:
+    background_image_path: "{{ freebsd_backgrounds_dir }}/{{ background_image_file_name }}"
+  when: ansible_os_family == "FreeBSD"
 

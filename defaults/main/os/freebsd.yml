@@ -1,6 +1,9 @@
 # dir for top-panel menu-item config files
 freebsd_xdg_menus_dir: '/usr/local/etc/xdg/menus'
 
+# dir for background images for the desktop
+freebsd_backgrounds_dir: "/usr/local/share/backgrounds/mate/desktop"
+
 # dir that contains accumulated '.desktop' application launching files
 freebsd_dot_desktop_files_dir: '/usr/local/share/applications'
 
