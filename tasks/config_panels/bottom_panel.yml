@@ -15,6 +15,12 @@
 
 - ansible.builtin.include_tasks: func/dconf.yml
   vars:
+    descrip: "Define all available top/bottom panel items, with wksp-switcher removed"
+    key: "/org/mate/panel/general/object-id-list"
+    value: "{{ panels_available_items | string }}"
+
+- ansible.builtin.include_tasks: func/dconf.yml
+  vars:
     descrip: "For bottom panel, set panel-size to {{ size }}"
     key: "/org/mate/panel/toplevels/bottom/size"
     value: "{{ size }}"
