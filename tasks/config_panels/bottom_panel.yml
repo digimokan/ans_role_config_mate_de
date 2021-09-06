@@ -6,19 +6,6 @@
     wksp_item: "workspace-switcher"
     notify_receiver: restart-mate-panel
 
-# - ansible.builtin.include_tasks: func/dconf_rem_notify.yml
-#   vars:
-#     descrip: "For bottom panel, remove the '{{ wksp_item }}' panel item"
-#     key: "/org/mate/panel/objects/{{ wksp_item }}"
-#     wksp_item: "workspace-switcher"
-#     notify_receiver: restart-mate-panel
-
-# - ansible.builtin.include_tasks: func/dconf.yml
-#   vars:
-#     descrip: "Define all available top/bottom panel items, with wksp-switcher removed"
-#     key: "/org/mate/panel/general/object-id-list"
-#     value: "{{ panels_available_items | string }}"
-
 - ansible.builtin.include_tasks: func/dconf.yml
   vars:
     descrip: "For bottom panel, set panel-size to {{ size }}"
