@@ -3,14 +3,12 @@
     - name: "{{ descrip }}"
       community.general.dconf:
         key: "{{ key }}"
-        value: "{{ value | default(omit) }}"
         state: absent
       notify: "{{ notify_receiver }}"
   rescue:
     - name: "SECOND TRY - {{ descrip }}"
       community.general.dconf:
         key: "{{ key }}"
-        value: "{{ value | default(omit) }}"
         state: absent
       notify: "{{ notify_receiver }}"
   become: true
