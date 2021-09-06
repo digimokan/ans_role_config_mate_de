@@ -16,8 +16,8 @@
 - name: "Configure background and theming"
   ansible.builtin.include_tasks: config_bg_theme/main.yml
 
-# - name: "Configure Control Center settings"
-#   ansible.builtin.include_tasks: config_ctl_ctr/main.yml
+- name: "Configure Control Center settings"
+  ansible.builtin.include_tasks: config_ctl_ctr/main.yml
 
 - name: "Configure input, sound, and storage hardware devices"
   ansible.builtin.include_tasks: config_hw_devices/main.yml
@@ -25,11 +25,11 @@
 - name: "Configure top and bottom panels/trays"
   ansible.builtin.include_tasks: config_panels/main.yml
 
-# - name: "Configure power and screen settings"
-#   ansible.builtin.include_tasks: config_pwr_screen/main.yml
+- name: "Configure power and screen settings"
+  ansible.builtin.include_tasks: config_pwr_screen/main.yml
 
-# - name: "Configure 'Start' menus"
-#   ansible.builtin.include_tasks: config_start_menus/main.yml
+- name: "Configure 'Start' menus"
+  ansible.builtin.include_tasks: config_start_menus/main.yml
 
 - name: "Configure the MATE Terminal application"
   ansible.builtin.include_tasks: config_terminal/main.yml
