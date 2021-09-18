@@ -12,4 +12,6 @@
     - { pkg: 'atril', descrip: 'a pdf-viewer app' }
     - { pkg: 'pluma', descrip: 'a text-editor app' }
     - { pkg: 'mate-terminal', descrip: 'a terminal emulator app' }
+  become: true
+  become_user: root
 
