@@ -1,15 +1,15 @@
-- name: "Install '{{ item.pkgname }}' package, for {{ item.descrip }}"
+- name: "Install mate-specific application packages"
   ansible.builtin.package:
-    name: "{{ item.pkgname }}"
+    name: "{{ item.pkg }}"
     state: present
   loop:
-    - { pkgname: 'mate-utils', descrip: 'screenshots/disk-usage/etc' }
-    - { pkgname: 'mate-screensaver', descrip: 'basic screensavers' }
-    - { pkgname: 'mate-system-monitor', descrip: 'a process/memory monitor app' }
-    - { pkgname: 'engrampa', descrip: 'archive support' }
-    - { pkgname: 'mate-calc', descrip: 'a desktop calculator app' }
-    - { pkgname: 'eom', descrip: 'a desktop image-viewer app' }
-    - { pkgname: 'atril', descrip: 'a pdf-viewer app' }
-    - { pkgname: 'pluma', descrip: 'a text-editor app' }
-    - { pkgname: 'mate-terminal', descrip: 'a terminal emulator app' }
+    - { pkg: 'mate-utils', descrip: 'screenshots/disk-usage/etc' }
+    - { pkg: 'mate-screensaver', descrip: 'basic screensavers' }
+    - { pkg: 'mate-system-monitor', descrip: 'a process/memory monitor app' }
+    - { pkg: 'engrampa', descrip: 'archive support' }
+    - { pkg: 'mate-calc', descrip: 'a desktop calculator app' }
+    - { pkg: 'eom', descrip: 'a desktop image-viewer app' }
+    - { pkg: 'atril', descrip: 'a pdf-viewer app' }
+    - { pkg: 'pluma', descrip: 'a text-editor app' }
+    - { pkg: 'mate-terminal', descrip: 'a terminal emulator app' }
 
