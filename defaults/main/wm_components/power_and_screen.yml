@@ -11,7 +11,7 @@ screen_blank_time: 30
 lock_with_screensaver: false
 
 # when the screen locks, show this picture in the background
-lock_background_picture: "/usr/share/backgrounds/mate/desktop/Ubuntu-Mate-Warm-no-logo.png"
+lock_bg_image_filename: "Ubuntu-Mate-Warm-no-logo.png"
 
 # on showing logout/poweroff dialog, do auto-logout/poweroff after XX seconds
 poweroff_dialog_delay: 30
