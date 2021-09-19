@@ -30,7 +30,6 @@
   ansible.builtin.include_role:
     name: ext/ans_role_add_user
   vars:
-    user_name: "{{ user_name }}"
     user_groups: "wheel"
 
 - name: "Install 'mate-media' package, for sound support"
