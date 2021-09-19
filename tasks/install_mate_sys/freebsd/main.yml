@@ -1,26 +1,27 @@
-# See https://docs.ansible.com/ansible/latest/collections/community/general/dconf_module.html#notes
 - name: "Install 'sysutils/py-psutil' package, for ansible dconf support"
+  # See https://docs.ansible.com/ansible/latest/collections/community/general/dconf_module.html#notes
   ansible.builtin.package:
     name: sysutils/py-psutil
     state: present
   become: true
   become_user: root
 
-# See https://docs.freebsd.org/en/books/handbook/x11/#x11-wm
-- name: "Set dbus service to load on startup in {{ rc_conf_filepath }}"
-  community.general.sysrc:
-    path: "{{ rc_conf_filepath }}"
-    name: "dbus_enable"
-    value: "YES"
-    state: present
-  become: true
-  become_user: root
+# # See https://docs.freebsd.org/en/books/handbook/x11/#x11-wm
+# - name: "Set dbus service to load on startup in {{ rc_conf_filepath }}"
+#   community.general.sysrc:
+#     path: "{{ rc_conf_filepath }}"
+#     name: "dbus_enable"
+#     value: "YES"
+#     state: present
+#   become: true
+#   become_user: root
 
-# See https://docs.freebsd.org/en/books/handbook/x11/#x11-wm
-- name: "Ensure dbus service is started"
+- name: "Ensure dbus service is started, and set to start at boot"
+  # See https://docs.freebsd.org/en/books/handbook/x11/#x11-wm
   ansible.builtin.service:
     name: dbus
     state: started
+    enabled: yes
   become: true
   become_user: root
 
