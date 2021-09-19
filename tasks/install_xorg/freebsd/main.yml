@@ -1,8 +1,8 @@
 - name: "Install packages from xorg-minimal package group"
   block:
-    - name: "Install 'xorg-xserver', for the main Xorg server"
+    - name: "Install 'xorg-server', for the main Xorg server"
       ansible.builtin.package:
-        name: xorg-xserver
+        name: xorg-server
         state: present
     - name: "Install 'xorg-xinit', for Xorg windows system initializer"
       ansible.builtin.package:
