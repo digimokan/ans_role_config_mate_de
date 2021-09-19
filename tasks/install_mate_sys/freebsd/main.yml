@@ -6,16 +6,6 @@
   become: true
   become_user: root
 
-# # See https://docs.freebsd.org/en/books/handbook/x11/#x11-wm
-# - name: "Set dbus service to load on startup in {{ rc_conf_filepath }}"
-#   community.general.sysrc:
-#     path: "{{ rc_conf_filepath }}"
-#     name: "dbus_enable"
-#     value: "YES"
-#     state: present
-#   become: true
-#   become_user: root
-
 - name: "Ensure dbus service is started, and set to start at boot"
   # See https://docs.freebsd.org/en/books/handbook/x11/#x11-wm
   ansible.builtin.service:
@@ -25,8 +15,8 @@
   become: true
   become_user: root
 
-# See https://docs.freebsd.org/en/books/handbook/x11/#x11-wm
 - name: "Mount procfs, and set it to mount at boot in /etc/fstab"
+  # See https://docs.freebsd.org/en/books/handbook/x11/#x11-wm
   ansible.posix.mount:
     src: 'proc'
     path: '/proc'
