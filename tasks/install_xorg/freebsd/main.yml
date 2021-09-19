@@ -1,7 +1,27 @@
-- name: "Install 'xorg-minimal' package group"
-  ansible.builtin.package:
-    name: xorg-minimal
-    state: present
+- name: "Install packages from xorg-minimal package group"
+  block:
+    - name: "Install 'xorg-xserver', for the main Xorg server"
+      ansible.builtin.package:
+        name: xorg-xserver
+        state: present
+    - name: "Install 'xorg-xinit', for Xorg windows system initializer"
+      ansible.builtin.package:
+        name: xorg-xinit
+        state: present
+    - name: "Install 'xorg-xauth', for Xorg authority file utility"
+      ansible.builtin.package:
+        name: xorg-xauth
+        state: present
+    - name: "Install 'xf86-input-libinput', for Xorg wrapper around libinput"
+      ansible.builtin.package:
+        name: xf86-input-libinput
+        state: present
+    - name: "Install 'xf86-video-vesa', for the fallback Xorg video driver"
+      # Note xf86-video-vesa is fallback graphics driver, and may not be required:
+      #   https://forums.FreeBSD.org/threads/startx-not-coming-up.61320/post-368542
+      ansible.builtin.package:
+        name: xf86-video-vesa
+        state: present
   become: true
   become_user: root
 
