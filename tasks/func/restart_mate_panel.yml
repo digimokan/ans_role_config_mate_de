@@ -1,5 +1,5 @@
 - name: "Restart 'mate-panel' executable"
-  ansible.builtin.command: pkill 'mate-panel'
+  ansible.builtin.command: pkill -a 'mate-panel'
   register: pk
   become: true
   become_user: root
