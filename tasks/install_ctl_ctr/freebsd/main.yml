@@ -26,12 +26,6 @@
       - '/usr/sbin/wpa_supplicant'
     req_sudo_password: false
 
-- name: "Add user '{{ user_name }}' to 'wheel' group, for networkmgr limited-cmd auth"
-  ansible.builtin.include_role:
-    name: ext/ans_role_add_user
-  vars:
-    user_groups: "wheel"
-
 - name: "Install 'mate-media' package, for sound support"
   ansible.builtin.package:
     name: mate-media
