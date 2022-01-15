@@ -16,12 +16,12 @@
       ansible.builtin.package:
         name: xf86-input-libinput
         state: present
-    - name: "Install 'xf86-video-vesa' package, for fallback Xorg video driver"
+    - name: "Install xorg 'xf86-video-vesa' fallback-graphics-driver package: {{ install_fallback_xorg_graphics_driver }}"
       # Note xf86-video-vesa is fallback graphics driver, and may not be required:
       #   https://forums.FreeBSD.org/threads/startx-not-coming-up.61320/post-368542
       ansible.builtin.package:
         name: xf86-video-vesa
-        state: present
+        state: "{{ 'present' if install_fallback_xorg_graphics_driver else 'absent' }}"
   become: true
   become_user: root
 
