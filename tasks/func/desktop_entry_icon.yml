@@ -4,5 +4,5 @@
     line_regexp: >-
       ^#?\s*Icon=
     line_replacement: >-
-      Icon={{ icon }};
+      Icon={{ icon }}
 

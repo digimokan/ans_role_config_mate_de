@@ -53,7 +53,7 @@
   loop:
     - { basename: 'atril', title: 'Atril PDF Document Viewer' }
     - { basename: 'firefox', title: 'Firefox' }
-    - { basename: 'gtkmixer', title: 'Sound (GTK-Mixer)' }
+    - { basename: 'gtkmixer', title: 'Sound' }
     - { basename: 'libreoffice-startcenter', title: 'LibreOffice Start Page' }
     - { basename: 'pluma', title: 'Pluma Text Editor' }
     - { basename: 'vlc', title: 'VLC Video Player' }
