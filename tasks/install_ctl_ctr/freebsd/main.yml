@@ -35,6 +35,7 @@
   when: enable_sound_support
 
 - name: "Install 'gtk-mixer', a non-mate package for sound settings config"
+  # NOTE: the MATE sound-prefs-app can't set new default sound device (JAN 2022)
   ansible.builtin.package:
     name: gtk-mixer
     state: present
