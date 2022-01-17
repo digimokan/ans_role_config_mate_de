@@ -1,0 +1,8 @@
+- ansible.builtin.include_tasks: func/desktop_entry_edit.yml
+  vars:
+    short_descrip: "set icon"
+    line_regexp: >-
+      ^#?\s*Icon=
+    line_replacement: >-
+      Icon={{ icon }};
+
