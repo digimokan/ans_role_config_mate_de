@@ -3,26 +3,26 @@
   vars:
     desktop_file_basename: "{{ item }}"
   loop:
-    - "avahi-discover"
-    - "bssh"
-    - "bvnc"
-    - "caja-browser"
-    - "cups"
-    - "engrampa"
-    - "eom"
-    - "fish"
-    - "libreoffice-base"
-    - "mate-color-select"
-    - "mate-dictionary"
-    - "mate-disk-image-mounter"
-    - "mate-font-viewer"
-    - "mate-power-statistics"
-    - "mate-system-log"
-    - "mate-volume-control"
-    - "org.fontforge.FontForge"
-    - "qv4l2"
-    - "qvidcap"
-    - "vim"
+    - 'avahi-discover'
+    - 'bssh'
+    - 'bvnc'
+    - 'caja-browser'
+    - 'cups'
+    - 'engrampa'
+    - 'eom'
+    - 'fish'
+    - 'libreoffice-base'
+    - 'mate-color-select'
+    - 'mate-dictionary'
+    - 'mate-disk-image-mounter'
+    - 'mate-font-viewer'
+    - 'mate-power-statistics'
+    - 'mate-system-log'
+    - 'mate-volume-control'
+    - 'org.fontforge.FontForge'
+    - 'qv4l2'
+    - 'qvidcap'
+    - 'vim'
 
 - name: "Set icon for select 'Applications' start menu entries"
   ansible.builtin.include_tasks: func/desktop_entry_icon.yml
