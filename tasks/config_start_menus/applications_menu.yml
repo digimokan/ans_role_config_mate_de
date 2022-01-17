@@ -18,11 +18,16 @@
     - 'mate-font-viewer'
     - 'mate-power-statistics'
     - 'mate-system-log'
-    - 'mate-volume-control'
     - 'org.fontforge.FontForge'
     - 'qv4l2'
     - 'qvidcap'
     - 'vim'
+
+- name: "For FreeBSD, hide MATE sound-prefs-app, since GTK-mixer replaces it"
+  ansible.builtin.include_tasks: func/desktop_entry_hide.yml
+  vars:
+    desktop_file_basename: 'mate-volume-control'
+  when: ansible_os_family == "FreeBSD"
 
 - name: "Set icon for select 'Applications' start menu entries"
   ansible.builtin.include_tasks: func/desktop_entry_icon.yml

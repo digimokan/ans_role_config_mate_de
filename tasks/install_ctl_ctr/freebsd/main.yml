@@ -35,13 +35,16 @@
   when: enable_sound_support
 
 - name: "Install 'gtk-mixer', a non-mate package for sound settings config"
-  # NOTE: the MATE sound-prefs-app can't set new default sound device (JAN 2022)
+  # NOTE:
+  #   * The FreeBSD MATE sound-prefs-app can't set new default device (JAN 2022).
+  #   * Best way of finding replacement app was using pkg search for 'mixer'.
   ansible.builtin.package:
     name: gtk-mixer
     state: present
   become: true
   become_user: root
   when: enable_sound_support
+  when: ansible_os_family == "FreeBSD"
 
 - name: "Install 'system-config-printer' package, for printing support"
   ansible.builtin.package:
