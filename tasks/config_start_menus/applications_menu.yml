@@ -60,6 +60,7 @@
     - { basename: 'firefox', title: 'Firefox' }
     - { basename: 'gtkmixer', title: 'Sound' }
     - { basename: 'libreoffice-startcenter', title: 'LibreOffice Start Page' }
+    - { basename: 'net.sourceforge.gscan2pdf', title: 'gscan2pdf Document Scanner' }
     - { basename: 'pluma', title: 'Pluma Text Editor' }
     - { basename: 'vlc', title: 'VLC Video Player' }
 
