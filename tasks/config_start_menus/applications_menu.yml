@@ -57,10 +57,12 @@
     title: "{{ item.title }}"
   loop:
     - { basename: 'atril', title: 'Atril PDF Document Viewer' }
+    - { basename: 'com.obsproject.Studio', title: 'OBS Video Recording' }
     - { basename: 'firefox', title: 'Firefox' }
     - { basename: 'gtkmixer', title: 'Sound' }
     - { basename: 'libreoffice-startcenter', title: 'LibreOffice Start Page' }
     - { basename: 'net.sourceforge.gscan2pdf', title: 'gscan2pdf Document Scanner' }
+    - { basename: 'org.gnome.Cheese', title: 'Cheese Webcam Snapshot' }
     - { basename: 'pluma', title: 'Pluma Text Editor' }
     - { basename: 'vlc', title: 'VLC Video Player' }
 
