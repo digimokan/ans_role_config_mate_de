@@ -1,5 +1,17 @@
 - ansible.builtin.include_tasks: func/dconf.yml
   vars:
+    descrip: "In MATE Terminal app, set specify-terminal-shell to 'true'"
+    key: "/org/mate/terminal/profiles/default/use-custom-command"
+    value: "true"
+
+- ansible.builtin.include_tasks: func/dconf.yml
+  vars:
+    descrip: "In MATE Terminal app, set shell-path to '{{ terminal_shell }}'"
+    key: "/org/mate/terminal/profiles/default/custom-command"
+    value: "'{{ terminal_shell }}'"
+
+- ansible.builtin.include_tasks: func/dconf.yml
+  vars:
     descrip: "In MATE Terminal app, set use-system-theme-colors 'false'"
     key: "/org/mate/terminal/profiles/default/use-theme-colors"
     value: "false"

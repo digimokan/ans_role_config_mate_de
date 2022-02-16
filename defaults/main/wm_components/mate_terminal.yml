@@ -1,3 +1,6 @@
+# shell to run in the terminal
+terminal_shell: "/bin/sh"
+
 # background color hex code
 terminal_bg_color: "#000000000000"
 
