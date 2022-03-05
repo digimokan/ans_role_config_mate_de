@@ -10,6 +10,3 @@ freebsd_dot_desktop_files_dir: '/usr/local/share/applications'
 # config file for host info, network info, and services to start at boot
 rc_conf_filepath: '/etc/rc.conf'
 
-# if main xorg graphics drivers fail, the fallback driver can run the DE
-install_fallback_xorg_graphics_driver: false
-

@@ -1,0 +1,24 @@
+- name: "Install 'mate-media' package, for sound support"
+  ansible.builtin.package:
+    name: mate-media
+    state: present
+  become: true
+  become_user: root
+
+- name: "Install 'freedesktop-sound-theme' package, for default button/action sounds"
+  ansible.builtin.package:
+    name: freedesktop-sound-theme
+    state: present
+  become: true
+  become_user: root
+
+- name: "Install 'gtk-mixer', a non-mate package for sound settings config"
+  # NOTE:
+  #   * The FreeBSD MATE sound-prefs-app can't set new default device (JAN 2022).
+  #   * Best way of finding replacement app was using pkg search for 'mixer'.
+  ansible.builtin.package:
+    name: gtk-mixer
+    state: present
+  become: true
+  become_user: root
+

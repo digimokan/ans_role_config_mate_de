@@ -1,0 +1,7 @@
+- name: "Install 'system-config-printer' package, for printing support"
+  ansible.builtin.package:
+    name: system-config-printer
+    state: present
+  become: true
+  become_user: root
+

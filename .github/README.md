@@ -72,6 +72,7 @@ Define these _required_ vars for the role:
 ## Role Dependencies
 
 * [ans_role_config_sudo](https://github.com/digimokan/ans_role_config_sudo)
+* [ans_role_config_xorg](https://github.com/digimokan/ans_role_config_xorg)
 
 ## Contributing
 
