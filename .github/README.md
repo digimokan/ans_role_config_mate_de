@@ -9,6 +9,7 @@ Configure the MATE desktop environment.
 
 * [Purpose](#purpose)
 * [Supported Operating Systems](#supported-operating-systems)
+* [Requirements](#requirements)
 * [Quick Start](#quick-start)
     * [Use From Playbook](#use-from-playbook)
 * [Role Options](#role-options)
@@ -25,6 +26,10 @@ Configure the MATE desktop environment.
 
 * Arch Linux.
 * FreeBSD.
+
+## Requirements
+
+* Xorg has been installed.
 
 ## Quick Start
 
@@ -72,7 +77,6 @@ Define these _required_ vars for the role:
 ## Role Dependencies
 
 * [ans_role_config_sudo](https://github.com/digimokan/ans_role_config_sudo)
-* [ans_role_config_xorg](https://github.com/digimokan/ans_role_config_xorg)
 
 ## Contributing
 
