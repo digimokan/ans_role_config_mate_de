@@ -2,7 +2,7 @@
   # See https://docs.ansible.com/ansible/latest/collections/community/general/dconf_module.html#notes
   ansible.builtin.package:
     name: sysutils/py-psutil
-    state: present
+    state: latest
   become: true
   become_user: root
 
