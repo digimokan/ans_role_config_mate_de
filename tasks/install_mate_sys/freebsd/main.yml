@@ -1,8 +1,10 @@
-- name: "Install 'sysutils/py-psutil' package, for ansible dconf support"
+- name: "Install '{{ psutil_pkg_name }}' package, for ansible dconf support"
   # See https://docs.ansible.com/ansible/latest/collections/community/general/dconf_module.html#notes
   ansible.builtin.package:
-    name: sysutils/py-psutil
-    state: latest
+    name: "{{ psutil_pkg_name }}"
+    state: present
+  vars:
+    psutil_pkg_name: py39-psutil
   become: true
   become_user: root
 
