@@ -1,0 +1,4 @@
+# command to start MATE Desktop, and descriptive name
+# NOTE: this var is exported by the role, for use with display managers
+mate_session: { cmd: 'mate-session', name: 'MATE Desktop' }
+
