@@ -23,6 +23,7 @@
     - 'org.gtk.IconBrowser4'
     - 'org.gtk.PrintEditor4'
     - 'org.gtk.WidgetFactory4'
+    - 'org.gtk.gtk4.NodeEditor'
     - 'qv4l2'
     - 'qvidcap'
     - 'vim'
