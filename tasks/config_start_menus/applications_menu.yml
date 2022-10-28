@@ -19,6 +19,7 @@
     - 'mate-power-statistics'
     - 'mate-system-log'
     - 'org.fontforge.FontForge'
+    - 'org.gnome.Glade'
     - 'org.gtk.Demo4'
     - 'org.gtk.IconBrowser4'
     - 'org.gtk.PrintEditor4'
