@@ -1,13 +1,3 @@
-# - name: "Install '{{ psutil_pkg_name }}' package, for ansible dconf support"
-#   # See https://docs.ansible.com/ansible/latest/collections/community/general/dconf_module.html#notes
-#   ansible.builtin.package:
-#     name: "{{ psutil_pkg_name }}"
-#     state: present
-#   vars:
-#     psutil_pkg_name: py39-psutil
-#   become: true
-#   become_user: root
-
 - name: "Ensure dbus service is started, and set to start at boot"
   # See https://docs.freebsd.org/en/books/handbook/x11/#x11-wm
   ansible.builtin.service:
