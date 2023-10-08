@@ -60,7 +60,7 @@ Configure the MATE desktop environment.
        - name: "Configure the MATE desktop environment"
          ansible.builtin.include_role:
            name: ans_role_config_mate_de
-           public: yes
+           public: true
          vars:
            user_name: "user2"
    ```

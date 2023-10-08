@@ -12,9 +12,9 @@
     line: "{{ line_replacement }}"
     insertafter: >-
       ^\[Desktop Entry\]$
-    firstmatch: yes
+    firstmatch: true
     state: present
-    create: no
+    create: false
   become: true
   become_user: root
   when: result.stat.exists
