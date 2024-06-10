@@ -28,6 +28,7 @@
     - 'qv4l2'
     - 'qvidcap'
     - 'vim'
+    - 'ca.desrt.dconf-editor'
 
 - name: "For FreeBSD, hide MATE sound-prefs-app, since GTK-mixer replaces it"
   ansible.builtin.include_tasks: func/desktop_entry_hide.yml
