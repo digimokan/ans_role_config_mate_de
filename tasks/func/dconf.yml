@@ -5,12 +5,14 @@
         key: "{{ key }}"
         value: "{{ value | default(omit) }}"
         state: present
+      become: true
+      become_user: "{{ mate_de_user_name }}"
   rescue:
     - name: "SECOND TRY - {{ descrip }}"
       community.general.dconf:
         key: "{{ key }}"
         value: "{{ value | default(omit) }}"
         state: present
-  become: true
-  become_user: "{{ mate_de_user_name }}"
+      become: true
+      become_user: "{{ mate_de_user_name }}"
 
