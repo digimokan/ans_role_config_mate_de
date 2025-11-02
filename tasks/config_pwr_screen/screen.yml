@@ -3,36 +3,36 @@
     descrip: "For screen/power, set enable-screensaver to '{{ enable_screensaver }}'"
     key: "/org/mate/screensaver/idle-activation-enabled"
     value: "{{ enable_screensaver }}"
-    enable_screensaver: "{{ 'false' if (screensaver_delay_time == 0) else 'true' }}"
+    enable_screensaver: "{{ 'false' if (mate_de_screensaver_delay_time_minutes == 0) else 'true' }}"
 
 - ansible.builtin.include_tasks: func/dconf.yml
   vars:
     descrip: "For screen/power, set screensaver-delay to {{ delay_time }} minutes"
     key: "/org/mate/desktop/session/idle-delay"
     value: "{{ delay_time }}"
-    delay_time: "{{ screensaver_delay_time }}"
-  when: screensaver_delay_time != 0
+    delay_time: "{{ mate_de_screensaver_delay_time_minutes }}"
+  when: mate_de_screensaver_delay_time_minutes != 0
 
 - ansible.builtin.include_tasks: func/dconf.yml
   vars:
     descrip: "For screen/power, set screensaver-mode to 'single'"
     key: "/org/mate/screensaver/mode"
     value: "'single'"
-  when: screensaver_delay_time != 0
+  when: mate_de_screensaver_delay_time_minutes != 0
 
 - ansible.builtin.include_tasks: func/dconf_force_str.yml
   vars:
-    descrip: "For screen/power, set screensaver-theme to '{{ screensaver_theme }}'"
+    descrip: "For screen/power, set screensaver-theme to '{{ mate_de_screensaver_theme }}'"
     key: "/org/mate/screensaver/themes"
-    value: ['{{ screensaver_theme }}']
-  when: screensaver_delay_time != 0
+    value: ['{{ mate_de_screensaver_theme }}']
+  when: mate_de_screensaver_delay_time_minutes != 0
 
 - ansible.builtin.include_tasks: func/dconf.yml
   vars:
     descrip: "For screen/power, set screensaver lock to '{{ set_lock }}'"
     key: "/org/mate/screensaver/lock-enabled"
     value: "{{ set_lock }}"
-    set_lock: "{{ 'true' if lock_with_screensaver else 'false' }}"
+    set_lock: "{{ 'true' if mate_de_lock_with_screensaver else 'false' }}"
 
 - ansible.builtin.include_tasks: func/dconf.yml
   vars:

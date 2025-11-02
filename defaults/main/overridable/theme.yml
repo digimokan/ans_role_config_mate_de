@@ -1,9 +1,9 @@
 # main WM theme for windows: background and controls
-theme_for_windows: "Blue-Submarine"
+mate_de_theme_for_windows: "Blue-Submarine"
 
 # WM theme for window borders and title-bars
-theme_for_borders: "Blue-Submarine"
+mate_de_theme_for_borders: "Blue-Submarine"
 
 # theme for pop-up notifications
-theme_for_notifications: "coco"
+mate_de_theme_for_notifications: "coco"
 

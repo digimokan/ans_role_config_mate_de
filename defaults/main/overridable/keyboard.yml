@@ -1,9 +1,9 @@
 # rate to repeat a keypress, in millisec ("none" to disable keypress-repeat)
-keyboard_repeat_rate: "30"
+mate_de_keyboard_repeat_rate_ms: "30"
 
 # millisec-delay, after keypress, to start repeating the key
-keyboard_repeat_delay: "500"
+mate_de_keyboard_repeat_delay_ms: "500"
 
 # enable audible bell for certain events
-keyboard_bell_enable: true
+mate_de_keyboard_bell_enable: true
 

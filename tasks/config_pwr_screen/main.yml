@@ -4,12 +4,12 @@
 - name: "Configure screen and screensaver settings for Linux"
   ansible.builtin.include_tasks: screen.yml
   vars:
-    lock_screen_image_path: "{{ linux_backgrounds_dir }}/{{ lock_bg_image_filename }}"
+    lock_screen_image_path: "{{ mate_de_linux_backgrounds_dir }}/{{ mate_de_lock_bg_image_filename }}"
   when: ansible_system == "Linux"
 
 - name: "Configure screen and screensaver settings for FreeBSD"
   ansible.builtin.include_tasks: screen.yml
   vars:
-    lock_screen_image_path: "{{ freebsd_backgrounds_dir }}/{{ lock_bg_image_filename }}"
+    lock_screen_image_path: "{{ mate_de_freebsd_backgrounds_dir }}/{{ mate_de_lock_bg_image_filename }}"
   when: ansible_os_family == "FreeBSD"
 

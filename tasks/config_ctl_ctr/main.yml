@@ -6,12 +6,12 @@
 - name: "Configure Control Center application behavior and appearance for Linux"
   ansible.builtin.include_tasks: do_config.yml
   vars:
-    matecc_path: "{{ linux_xdg_menus_dir }}/matecc.menu"
+    matecc_path: "{{ mate_de_linux_xdg_menus_dir }}/matecc.menu"
   when: ansible_system == "Linux"
 
 - name: "Configure Control Center application behavior and appearance for FreeBSD"
   ansible.builtin.include_tasks: do_config.yml
   vars:
-    matecc_path: "{{ freebsd_xdg_menus_dir }}/matecc.menu"
+    matecc_path: "{{ mate_de_freebsd_xdg_menus_dir }}/matecc.menu"
   when: ansible_os_family == "FreeBSD"
 

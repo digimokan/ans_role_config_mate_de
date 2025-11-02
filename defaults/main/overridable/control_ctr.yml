@@ -1,6 +1,6 @@
 # enable sound applets, applications, and Control Center integration
-enable_sound_support: true
+mate_de_enable_sound_support: true
 
 # enable printing applications and Control Center integration
-enable_printing_support: true
+mate_de_enable_printing_support: true
 

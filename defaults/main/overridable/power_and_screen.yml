@@ -1,0 +1,18 @@
+# show screensaver after this number of minutes (define to 0 for no screensaver)
+mate_de_screensaver_delay_time_minutes: 15
+
+# screensaver to show (if mate_de_screensaver_delay_time_minutes is not 0)
+mate_de_screensaver_theme: "screensavers-cosmos-slideshow"
+
+# blank the screen after this number of minutes (define to 0 for no blanking)
+mate_de_screen_blank_time_minutes: 30
+
+# lock the screen when screensaver is activated
+mate_de_lock_with_screensaver: false
+
+# when the screen locks, show this picture in the background
+mate_de_lock_bg_image_filename: "Ubuntu-Mate-Warm-no-logo.png"
+
+# on showing logout/poweroff dialog, do auto-logout/poweroff after XX seconds
+mate_de_poweroff_dialog_delay_sec: 30
+

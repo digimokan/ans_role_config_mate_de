@@ -1,18 +1,18 @@
 - ansible.builtin.include_tasks: func/dconf.yml
   vars:
-    descrip: "For mouse, set pointer-theme to '{{ mouse_pointer_theme }}'"
+    descrip: "For mouse, set pointer-theme to '{{ mate_de_mouse_pointer_theme }}'"
     key: "/org/mate/desktop/peripherals/mouse/cursor-theme"
-    value: "'{{ mouse_pointer_theme }}'"
+    value: "'{{ mate_de_mouse_pointer_theme }}'"
 
 - ansible.builtin.include_tasks: func/dconf.yml
   vars:
-    descrip: "For mouse, set pointer-size to {{ mouse_pointer_size }}"
+    descrip: "For mouse, set pointer-size to {{ mate_de_mouse_pointer_size }}"
     key: "/org/mate/desktop/peripherals/mouse/cursor-size"
-    value: "{{ mouse_pointer_size }}"
+    value: "{{ mate_de_mouse_pointer_size }}"
 
 - ansible.builtin.include_tasks: func/dconf.yml
   vars:
-    descrip: "For mouse, set double-click-threshold-time to {{ mouse_double_click_time }} millisec"
+    descrip: "For mouse, set double-click-threshold-time to {{ mate_de_mouse_double_click_time_ms }} millisec"
     key: "/org/mate/desktop/peripherals/mouse/double-click"
-    value: "{{ mouse_double_click_time }}"
+    value: "{{ mate_de_mouse_double_click_time_ms }}"
 

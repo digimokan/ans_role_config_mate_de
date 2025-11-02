@@ -6,31 +6,31 @@
 
 - ansible.builtin.include_tasks: func/dconf.yml
   vars:
-    descrip: "For desktop background, set bg image opacity to {{ background_image_opacity }}"
+    descrip: "For desktop background, set bg image opacity to {{ mate_de_background_image_opacity }}"
     key: "/org/mate/desktop/background/picture-opacity"
-    value: "{{ background_image_opacity }}"
+    value: "{{ mate_de_background_image_opacity }}"
 
 - ansible.builtin.include_tasks: func/dconf.yml
   vars:
-    descrip: "For desktop background, set bg image coverage to '{{ background_image_coverage }}'"
+    descrip: "For desktop background, set bg image coverage to '{{ mate_de_background_image_coverage }}'"
     key: "/org/mate/desktop/background/picture-options"
-    value: "'{{ background_image_coverage }}'"
+    value: "'{{ mate_de_background_image_coverage }}'"
 
 - ansible.builtin.include_tasks: func/dconf.yml
   vars:
-    descrip: "For desktop background, set bg primary color to '{{ background_primary_color }}'"
+    descrip: "For desktop background, set bg primary color to '{{ mate_de_background_primary_color }}'"
     key: "/org/mate/desktop/background/primary-color"
-    value: "'{{ background_primary_color }}'"
+    value: "'{{ mate_de_background_primary_color }}'"
 
 - ansible.builtin.include_tasks: func/dconf.yml
   vars:
-    descrip: "For desktop background, set bg secondary color to '{{ background_secondary_color }}'"
+    descrip: "For desktop background, set bg secondary color to '{{ mate_de_background_secondary_color }}'"
     key: "/org/mate/desktop/background/secondary-color"
-    value: "'{{ background_secondary_color }}'"
+    value: "'{{ mate_de_background_secondary_color }}'"
 
 - ansible.builtin.include_tasks: func/dconf.yml
   vars:
-    descrip: "For desktop background, set bg colors transition to '{{ background_colors_transition }}'"
+    descrip: "For desktop background, set bg colors transition to '{{ mate_de_background_colors_transition }}'"
     key: "/org/mate/desktop/background/color-shading-type"
-    value: "'{{ background_colors_transition }}'"
+    value: "'{{ mate_de_background_colors_transition }}'"
 

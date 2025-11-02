@@ -1,30 +1,30 @@
 - ansible.builtin.include_tasks: func/dconf.yml
   vars:
-    descrip: "For fonts, set window-title font to '{{ font_for_window_titles }}'"
+    descrip: "For fonts, set window-title font to '{{ mate_de_font_for_window_titles }}'"
     key: "/org/mate/marco/general/titlebar-font"
-    value: "'{{ font_for_window_titles }}'"
+    value: "'{{ mate_de_font_for_window_titles }}'"
 
 - ansible.builtin.include_tasks: func/dconf.yml
   vars:
-    descrip: "For fonts, set desktop-background font to '{{ font_for_desktop_background }}'"
+    descrip: "For fonts, set desktop-background font to '{{ mate_de_font_for_desktop_background }}'"
     key: "/org/mate/caja/desktop/font"
-    value: "'{{ font_for_desktop_background }}'"
+    value: "'{{ mate_de_font_for_desktop_background }}'"
 
 - ansible.builtin.include_tasks: func/dconf.yml
   vars:
-    descrip: "For fonts, set main application font to '{{ font_for_apps }}'"
+    descrip: "For fonts, set main application font to '{{ mate_de_font_for_apps }}'"
     key: "/org/mate/desktop/interface/font-name"
-    value: "'{{ font_for_apps }}'"
+    value: "'{{ mate_de_font_for_apps }}'"
 
 - ansible.builtin.include_tasks: func/dconf.yml
   vars:
-    descrip: "For fonts, set document/user-input font to '{{ font_for_docs }}'"
+    descrip: "For fonts, set document/user-input font to '{{ mate_de_font_for_docs }}'"
     key: "/org/mate/desktop/interface/document-font-name"
-    value: "'{{ font_for_docs }}'"
+    value: "'{{ mate_de_font_for_docs }}'"
 
 - ansible.builtin.include_tasks: func/dconf.yml
   vars:
-    descrip: "For fonts, set monospace font to '{{ font_for_monospace }}'"
+    descrip: "For fonts, set monospace font to '{{ mate_de_font_for_monospace }}'"
     key: "/org/mate/desktop/interface/monospace-font-name"
-    value: "'{{ font_for_monospace }}'"
+    value: "'{{ mate_de_font_for_monospace }}'"
 

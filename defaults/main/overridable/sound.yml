@@ -1,6 +1,6 @@
 # use system sounds from named theme ("none" for no system sounds)
-sound_theme: "freedesktop"
+mate_de_sound_theme: "freedesktop"
 
 # enable window, button, and input-feedback sounds
-enable_input_sounds: true
+mate_de_enable_input_sounds: true
 

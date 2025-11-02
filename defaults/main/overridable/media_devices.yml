@@ -1,9 +1,9 @@
 # auto-mount media devices when they are inserted
-media_auto_mount: true
+mate_de_media_auto_mount: true
 
 # auto-open media devices after they are mounted
-media_auto_open: true
+mate_de_media_auto_open: true
 
 # prompt to run applications on mounted media devices
-media_prompt_to_run: true
+mate_de_media_prompt_to_run: true
 

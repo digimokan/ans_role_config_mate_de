@@ -1,3 +1,3 @@
 # cursor blink-time, in millisec (set to 0 for no blink)
-interface_cursor_blink_time: "800"
+mate_de_interface_cursor_blink_time: "800"
 

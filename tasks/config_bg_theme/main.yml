@@ -4,12 +4,12 @@
 - name: "Configure desktop background image and appearance for Linux"
   ansible.builtin.include_tasks: background.yml
   vars:
-    background_image_path: "{{ linux_backgrounds_dir }}/{{ background_image_file_name }}"
+    background_image_path: "{{ mate_de_linux_backgrounds_dir }}/{{ mate_de_background_image_file_name }}"
   when: ansible_system == "Linux"
 
 - name: "Configure desktop background image and appearance for FreeBSD"
   ansible.builtin.include_tasks: background.yml
   vars:
-    background_image_path: "{{ freebsd_backgrounds_dir }}/{{ background_image_file_name }}"
+    background_image_path: "{{ mate_de_freebsd_backgrounds_dir }}/{{ mate_de_background_image_file_name }}"
   when: ansible_os_family == "FreeBSD"
 

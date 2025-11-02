@@ -1,0 +1,3 @@
+# name of MATE session, command to start MATE Desktop, and descriptive name
+mate_de_session: { session_name: 'mate', cmd: 'mate-session', descrip: 'MATE Desktop' }
+

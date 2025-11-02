@@ -62,18 +62,22 @@ Configure the MATE desktop environment.
            name: ans_role_config_mate_de
            public: true
          vars:
-           user_name: "user2"
+           mate_de_user_name: "user2"
    ```
 
 ## Role Options
 
-See the role `defaults` file, for overridable vars:
+Vars that must be defined when including the role in the playbook:
 
-  * [defaults/main.yml](../defaults/main.yml)
+  * [dependencies](../defaults/main/dependencies/main.yml)
 
-Define these _required_ vars for the role:
+Vars with default values, which can be overridden in the playbook:
 
-  * `user_name`: name of primary MATE user to configure the desktop for
+  * [overridable](../defaults/main/overridable)
+
+Vars defined by this role, exported with `public: true`, for use in other roles:
+
+  * [export vars](../defaults/main/export/main.yml)
 
 ## Role Dependencies
 

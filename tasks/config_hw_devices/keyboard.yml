@@ -3,25 +3,25 @@
     descrip: "For keyboard, set enable-keypress-repeat to '{{ repeat_on }}'"
     key: "/org/mate/desktop/peripherals/keyboard/repeat"
     value: "{{ repeat_on }}"
-    repeat_on: "{{ 'false' if (keyboard_repeat_rate == 'none') else 'true' }}"
+    repeat_on: "{{ 'false' if (mate_de_keyboard_repeat_rate_ms == 'none') else 'true' }}"
 
 - ansible.builtin.include_tasks: func/dconf.yml
   vars:
-    descrip: "For keyboard, set keypress-repeat-rate to {{ keyboard_repeat_rate }} millisec"
+    descrip: "For keyboard, set keypress-repeat-rate to {{ mate_de_keyboard_repeat_rate_ms }} millisec"
     key: "/org/mate/desktop/peripherals/keyboard/rate"
-    value: "{{ keyboard_repeat_rate }}"
-  when: keyboard_repeat_delay != 'none'
+    value: "{{ mate_de_keyboard_repeat_rate_ms }}"
+  when: mate_de_keyboard_repeat_delay_ms != 'none'
 
 - ansible.builtin.include_tasks: func/dconf.yml
   vars:
-    descrip: "For keyboard, set keypress-repeat-delay to {{ keyboard_repeat_delay }} millisec"
+    descrip: "For keyboard, set keypress-repeat-delay to {{ mate_de_keyboard_repeat_delay_ms }} millisec"
     key: "/org/mate/desktop/peripherals/keyboard/delay"
-    value: "{{ keyboard_repeat_delay }}"
+    value: "{{ mate_de_keyboard_repeat_delay_ms }}"
 
 - ansible.builtin.include_tasks: func/dconf.yml
   vars:
     descrip: "For keyboard, set enable-audible-bell to '{{ bell_on }}'"
     key: "/org/mate/desktop/peripherals/keyboard/bell-mode"
     value: "'{{ bell_on }}'"
-    bell_on: "{{ 'on' if keyboard_bell_enable else 'off' }}"
+    bell_on: "{{ 'on' if mate_de_keyboard_bell_enable else 'off' }}"
 

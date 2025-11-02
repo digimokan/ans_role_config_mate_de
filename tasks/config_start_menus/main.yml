@@ -3,7 +3,7 @@
     descrip: "For menu, set show-icon to '{{ show_icon }}'"
     key: "/org/mate/panel/menubar/show-icon"
     value: "{{ show_icon }}"
-    show_icon: "{{ 'true' if menu_show_icon else 'false' }}"
+    show_icon: "{{ 'true' if mate_de_menu_show_icon else 'false' }}"
 
 - name: "Configure the 'Applications' start menu"
   ansible.builtin.include_tasks: applications_menu.yml
@@ -11,12 +11,12 @@
 - name: "Configure the 'System' start menu for Linux"
   ansible.builtin.include_tasks: system_menu.yml
   vars:
-    matesettings_path: "{{ linux_xdg_menus_dir }}/mate-settings.menu"
+    matesettings_path: "{{ mate_de_linux_xdg_menus_dir }}/mate-settings.menu"
   when: ansible_system == "Linux"
 
 - name: "Configure the 'System' start menu for FreeBSD"
   ansible.builtin.include_tasks: system_menu.yml
   vars:
-    matesettings_path: "{{ freebsd_xdg_menus_dir }}/mate-settings.menu"
+    matesettings_path: "{{ mate_de_freebsd_xdg_menus_dir }}/mate-settings.menu"
   when: ansible_os_family == "FreeBSD"
 

@@ -1,27 +1,27 @@
 # shell to run in the terminal
-terminal_shell: "/bin/sh"
+mate_de_terminal_shell: "/bin/sh"
 
 # background color hex code
-terminal_bg_color: "#000000000000"
+mate_de_terminal_bg_color: "#000000000000"
 
 # value from "0.01" (fully-transparent) to "1.00" (solid background color)
-terminal_bg_transparency: "0.85"
+mate_de_terminal_bg_transparency: "0.85"
 
 # foreground color (i.e. text color) hex code
-terminal_fg_color: "#F6F6F5F5F4F4"
+mate_de_terminal_fg_color: "#F6F6F5F5F4F4"
 
 # foreground bold color (i.e. bold text color) hex code
-terminal_fg_bold_color: "#FFFFFFFFFFFF"
+mate_de_terminal_fg_bold_color: "#FFFFFFFFFFFF"
 
 # cursor-blink "on" or "off"
-terminal_cursor_blink: "off"
+mate_de_terminal_cursor_blink: "off"
 
 # number of lines to retain in terminal scroll-history
-terminal_num_scrollback_lines: "20000"
+mate_de_terminal_num_scrollback_lines: "20000"
 
 # default height (in number of rows) of the terminal app window
-terminal_window_height: "32"
+mate_de_terminal_window_height: "32"
 
 # default width (in number of chars) of the terminal app window
-terminal_window_width: "120"
+mate_de_terminal_window_width: "120"
 

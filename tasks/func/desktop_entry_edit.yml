@@ -1,12 +1,12 @@
 - name: "Edit a .desktop file for Linux"
   ansible.builtin.include_tasks: func/desktop_entry.yml
   vars:
-    desktop_file_path: "{{ linux_dot_desktop_files_dir }}/{{ desktop_file_basename }}.desktop"
+    desktop_file_path: "{{ mate_de_linux_dot_desktop_files_dir }}/{{ desktop_file_basename }}.desktop"
   when: ansible_system == "Linux"
 
 - name: "Edit a .desktop file for FreeBSD"
   ansible.builtin.include_tasks: func/desktop_entry.yml
   vars:
-    desktop_file_path: "{{ freebsd_dot_desktop_files_dir }}/{{ desktop_file_basename }}.desktop"
+    desktop_file_path: "{{ mate_de_freebsd_dot_desktop_files_dir }}/{{ desktop_file_basename }}.desktop"
   when: ansible_os_family == "FreeBSD"
 

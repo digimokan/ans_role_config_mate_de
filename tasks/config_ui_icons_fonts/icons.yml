@@ -1,26 +1,26 @@
 - ansible.builtin.include_tasks: func/dconf.yml
   vars:
-    descrip: "For icons, set main icon theme to '{{ icons_main_theme }}'"
+    descrip: "For icons, set main icon theme to '{{ mate_de_icons_main_theme }}'"
     key: "/org/mate/desktop/interface/icon-theme"
-    value: "'{{ icons_main_theme }}'"
+    value: "'{{ mate_de_icons_main_theme }}'"
 
 - ansible.builtin.include_tasks: func/dconf.yml
   vars:
-    descrip: "For icons, set file-view to '{{ icons_for_file_view }}'"
+    descrip: "For icons, set file-view to '{{ mate_de_icons_for_file_view }}'"
     key: "/org/mate/desktop/file-views/icon-theme"
-    value: "'{{ icons_for_file_view }}'"
+    value: "'{{ mate_de_icons_for_file_view }}'"
 
 - ansible.builtin.include_tasks: func/dconf.yml
   vars:
     descrip: "For icons, set icons-on-buttons to '{{ have_icons }}'"
     key: "/org/mate/desktop/interface/buttons-have-icons"
     value: "{{ have_icons }}"
-    have_icons: "{{ 'true' if icons_on_buttons else 'false' }}"
+    have_icons: "{{ 'true' if mate_de_icons_on_buttons else 'false' }}"
 
 - ansible.builtin.include_tasks: func/dconf.yml
   vars:
     descrip: "For icons, set icons-in-menus to '{{ have_icons }}'"
     key: "/org/mate/desktop/interface/menus-have-icons"
     value: "{{ have_icons }}"
-    have_icons: "{{ 'true' if icons_in_menus else 'false' }}"
+    have_icons: "{{ 'true' if mate_de_icons_in_menus else 'false' }}"
 

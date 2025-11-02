@@ -3,26 +3,26 @@
     descrip: "For interface behavior, set cursor-blink to '{{ blink_on }}'"
     key: "/org/mate/desktop/interface/cursor-blink"
     value: "{{ blink_on }}"
-    blink_on: "{{ 'false' if (interface_cursor_blink_time == '0') else 'true' }}"
+    blink_on: "{{ 'false' if (mate_de_interface_cursor_blink_time == '0') else 'true' }}"
 
 - ansible.builtin.include_tasks: func/dconf.yml
   vars:
-    descrip: "For interface behavior, set cursor-blink-time to {{ interface_cursor_blink_time }} millisec"
+    descrip: "For interface behavior, set cursor-blink-time to {{ mate_de_interface_cursor_blink_time }} millisec"
     key: "/org/mate/desktop/interface/cursor-blink-time"
-    value: "{{ interface_cursor_blink_time }}"
-  when: interface_cursor_blink_time != '0'
+    value: "{{ mate_de_interface_cursor_blink_time }}"
+  when: mate_de_interface_cursor_blink_time != '0'
 
 - ansible.builtin.include_tasks: func/dconf.yml
   vars:
     descrip: "For windowing actions, set draw-animations to '{{ use_animations }}'"
     key: "/org/mate/desktop/interface/enable-animations"
     value: "{{ use_animations }}"
-    use_animations: "{{ 'true' if windowing_animations else 'false' }}"
+    use_animations: "{{ 'true' if mate_de_windowing_animations else 'false' }}"
 
 - ansible.builtin.include_tasks: func/dconf.yml
   vars:
     descrip: "For windowing, set num-workspaces to {{ num_wkspc }}"
     key: "/org/mate/marco/general/num-workspaces"
     value: "{{ num_wkspc }}"
-    num_wkspc: "{{ windowing_num_workspaces }}"
+    num_wkspc: "{{ mate_de_windowing_num_workspaces }}"
 

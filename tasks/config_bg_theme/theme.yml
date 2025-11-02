@@ -1,18 +1,18 @@
 - ansible.builtin.include_tasks: func/dconf.yml
   vars:
-    descrip: "For theme, set main WM theme to '{{ theme_for_windows }}'"
+    descrip: "For theme, set main WM theme to '{{ mate_de_theme_for_windows }}'"
     key: "/org/mate/desktop/interface/gtk-theme"
-    value: "'{{ theme_for_windows }}'"
+    value: "'{{ mate_de_theme_for_windows }}'"
 
 - ansible.builtin.include_tasks: func/dconf.yml
   vars:
-    descrip: "For theme, set WM border/title-bar theme to '{{ theme_for_borders }}'"
+    descrip: "For theme, set WM border/title-bar theme to '{{ mate_de_theme_for_borders }}'"
     key: "/org/mate/marco/general/theme"
-    value: "'{{ theme_for_borders }}'"
+    value: "'{{ mate_de_theme_for_borders }}'"
 
 - ansible.builtin.include_tasks: func/dconf.yml
   vars:
-    descrip: "For theme, set pop-up notification theme to '{{ theme_for_notifications }}'"
+    descrip: "For theme, set pop-up notification theme to '{{ mate_de_theme_for_notifications }}'"
     key: "/org/mate/notification-daemon/theme"
-    value: "'{{ theme_for_notifications }}'"
+    value: "'{{ mate_de_theme_for_notifications }}'"
 

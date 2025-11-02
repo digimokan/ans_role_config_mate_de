@@ -11,7 +11,7 @@
     descrip: "For bottom panel, set panel-size to {{ size }}"
     key: "/org/mate/panel/toplevels/bottom/size"
     value: "{{ size }}"
-    size: "{{ bottom_panel_size }}"
+    size: "{{ mate_de_bottom_panel_size }}"
 
 - ansible.builtin.include_tasks: func/dconf.yml
   vars:
@@ -22,7 +22,7 @@
 
 - ansible.builtin.include_tasks: func/dconf.yml
   vars:
-    descrip: "For bottom panel, set background-color to '{{ panels_background_color }}'"
+    descrip: "For bottom panel, set background-color to '{{ mate_de_panels_background_color }}'"
     key: "/org/mate/panel/toplevels/bottom/background/color"
-    value: "'{{ panels_background_color }}'"
+    value: "'{{ mate_de_panels_background_color }}'"
 

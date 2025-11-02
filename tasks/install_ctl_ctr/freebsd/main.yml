@@ -6,9 +6,9 @@
 
 - name: "Install printer components"
   ansible.builtin.include_tasks: printer.yml
-  when: enable_printing_support
+  when: mate_de_enable_printing_support
 
 - name: "Install sound components"
   ansible.builtin.include_tasks: sound.yml
-  when: enable_sound_support
+  when: mate_de_enable_sound_support
 

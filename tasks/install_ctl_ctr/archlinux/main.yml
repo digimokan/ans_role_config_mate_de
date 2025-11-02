@@ -18,7 +18,7 @@
     state: present
   become: true
   become_user: root
-  when: enable_sound_support
+  when: mate_de_enable_sound_support
 
 - name: "Install 'system-config-printer' package, for printing support"
   community.general.pacman:
@@ -26,5 +26,5 @@
     state: present
   become: true
   become_user: root
-  when: enable_printing_support
+  when: mate_de_enable_printing_support
 

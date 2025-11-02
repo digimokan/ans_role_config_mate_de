@@ -1,19 +1,19 @@
 # path to image to use for desktop background
-background_image_file_name: "Ubuntu-Mate-Cold-no-logo.png"
+mate_de_background_image_file_name: "Ubuntu-Mate-Cold-no-logo.png"
 
 # opacity of image, from 0 (fully-transparent, no image) to 100 (opaque)
-background_image_opacity: "100"
+mate_de_background_image_opacity: "100"
 
 # select one of "wallpaper", "centered", "scaled", "stretched", "zoom", "spanned"
-background_image_coverage: "zoom"
+mate_de_background_image_coverage: "zoom"
 
 # primary color of background (that exists behind the image)
-background_primary_color: "rgb(88,145,188)"
+mate_de_background_primary_color: "rgb(88,145,188)"
 
 # secondary color of background (that exists behind the image)
-background_secondary_color: "rgb(60,143,37)"
+mate_de_background_secondary_color: "rgb(60,143,37)"
 
 # for transition from pri to sec color: "vertical-gradient" or "horizontal-gradient"
 # for solid primary color only: "solid"
-background_colors_transition: "vertical-gradient"
+mate_de_background_colors_transition: "vertical-gradient"
 

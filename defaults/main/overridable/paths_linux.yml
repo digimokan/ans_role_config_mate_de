@@ -1,0 +1,9 @@
+# dir for top-panel menu-item config files
+mate_de_linux_xdg_menus_dir: '/etc/xdg/menus'
+
+# dir for background images for the desktop
+mate_de_linux_backgrounds_dir: "/usr/share/backgrounds/mate/desktop"
+
+# dir that contains accumulated '.desktop' application launching files
+mate_de_linux_dot_desktop_files_dir: '/usr/share/applications'
+

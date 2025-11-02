@@ -3,19 +3,19 @@
     descrip: "For sound, set input-feedback-sounds to '{{ use_input }}'"
     key: "/org/mate/desktop/sound/input-feedback-sounds"
     value: "{{ use_input }}"
-    use_input: "{{ 'true' if enable_input_sounds else 'false' }}"
+    use_input: "{{ 'true' if mate_de_enable_input_sounds else 'false' }}"
 
 - ansible.builtin.include_tasks: func/dconf.yml
   vars:
     descrip: "For sound, set event-sounds to '{{ use_sounds }}'"
     key: "/org/mate/desktop/sound/event-sounds"
     value: "{{ use_sounds }}"
-    use_sounds: "{{ 'false' if (sound_theme == 'none') else 'true' }}"
+    use_sounds: "{{ 'false' if (mate_de_sound_theme == 'none') else 'true' }}"
 
 - ansible.builtin.include_tasks: func/dconf.yml
   vars:
     descrip: "For sound, set theme-name to '{{ theme_name }}'"
     key: "/org/mate/desktop/sound/theme-name"
     value: "'{{ theme_name }}'"
-    theme_name: "{{ '__no_sounds' if (sound_theme == 'none') else sound_theme }}"
+    theme_name: "{{ '__no_sounds' if (mate_de_sound_theme == 'none') else mate_de_sound_theme }}"
 

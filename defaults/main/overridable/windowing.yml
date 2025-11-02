@@ -1,6 +1,6 @@
 # enable window movement and appearance animations
-windowing_animations: true
+mate_de_windowing_animations: true
 
 # total number of workspaces in the window manager
-windowing_num_workspaces: 1
+mate_de_windowing_num_workspaces: 1
 

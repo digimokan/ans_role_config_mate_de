@@ -5,7 +5,7 @@
   become: true
   become_user: root
 
-- name: "In sudo settings, configure user '{{ user_name }}'for networkmgr permissions"
+- name: "In sudo settings, configure user '{{ mate_de_user_name }}'for networkmgr permissions"
   ansible.builtin.include_role:
     name: ext/ans_role_config_sudo
   vars:

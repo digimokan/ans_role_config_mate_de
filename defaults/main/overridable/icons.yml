@@ -1,0 +1,12 @@
+# main WM icon theme
+mate_de_icons_main_theme: "menta"
+
+# theme for file-view icons
+mate_de_icons_for_file_view: "crux_teal"
+
+# if true, put icons on WM buttons
+mate_de_icons_on_buttons: true
+
+# if true, put icons in user menus
+mate_de_icons_in_menus: true
+

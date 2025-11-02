@@ -20,8 +20,8 @@
         descrip: "For screen/power, set poweroff/logout dialog-delay to {{ delay_time }} seconds"
         key: "/org/mate/desktop/session/logout-timeout"
         value: "{{ delay_time }}"
-        delay_time: "{{ poweroff_dialog_delay }}"
+        delay_time: "{{ mate_de_poweroff_dialog_delay_sec }}"
   vars:
-    blank_min: "{{ screen_blank_time * 60 }}"
-    blank_setting: "{{ 'no-screen-blank' if (blank_min == 0) else screen_blank_time }}{{ '' if (blank_min == 0) else ' minutes' }}"
+    blank_min: "{{ mate_de_screen_blank_time_minutes * 60 }}"
+    blank_setting: "{{ 'no-screen-blank' if (blank_min == 0) else mate_de_screen_blank_time_minutes }}{{ '' if (blank_min == 0) else ' minutes' }}"
 
