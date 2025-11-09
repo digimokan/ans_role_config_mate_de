@@ -10,14 +10,14 @@
     mate_de_network_mgr_sudoers_rule:
       sudoer_name: "{{ user_name }}"
       sudoer_type: "user"
-      allow_run_on_host: ALL
-      allow_run_as_user: ALL
+      allow_run_on_host: "ALL"
+      allow_run_as_user: "ALL"
       allow_commands:
-        - '/sbin/ifconfig'
-        - '/usr/bin/killall'
-        - '/usr/local/bin/networkmgr'
-        - '/usr/local/bin/networkmgr'
-        - '/usr/sbin/service'
-        - '/usr/sbin/wpa_supplicant'
+        - "/sbin/ifconfig"
+        - "/usr/bin/killall"
+        - "/usr/local/bin/networkmgr"
+        - "/usr/local/bin/networkmgr"
+        - "/usr/sbin/service"
+        - "/usr/sbin/wpa_supplicant"
       req_passwd: false
 
