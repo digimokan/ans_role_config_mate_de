@@ -13,7 +13,6 @@ Configure the MATE desktop environment.
 * [Quick Start](#quick-start)
     * [Use From Playbook](#use-from-playbook)
 * [Role Options](#role-options)
-* [Role Dependencies](#role-dependencies)
 * [Contributing](#contributing)
 
 ## Purpose
@@ -78,10 +77,7 @@ Vars with default values, which can be overridden in the playbook:
 Vars defined by this role, exported with `public: true`, for use in other roles:
 
   * [export vars](../defaults/main/export/main.yml)
-
-## Role Dependencies
-
-* [ans_role_config_sudo](https://github.com/digimokan/ans_role_config_sudo)
+  * [sudoers rules](../tasks/install_ctl_ctr/freebsd/network.yml)
 
 ## Contributing
 
