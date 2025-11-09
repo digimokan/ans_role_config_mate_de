@@ -8,7 +8,7 @@
 - name: "Define export var 'mate_de_network_mgr_sudoers_rule'"
   ansible.builtin.set_fact:
     mate_de_network_mgr_sudoers_rule:
-      sudoer_name: "{{ user_name }}"
+      sudoer_name: "{{ mate_de_user_name }}"
       sudoer_type: "user"
       allow_run_on_host: "ALL"
       allow_run_as_user: "ALL"
