@@ -20,6 +20,8 @@
     - 'mate-system-log'
     - 'org.fontforge.FontForge'
     - 'org.gnome.Glade'
+    - 'org.gnome.Vte.App.Gtk3'
+    - 'org.gnome.Vte.App.Gtk4'
     - 'org.gtk.Demo4'
     - 'org.gtk.IconBrowser4'
     - 'org.gtk.PrintEditor4'
