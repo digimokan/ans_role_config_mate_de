@@ -1,8 +1,8 @@
 - ansible.builtin.include_tasks: func/dconf.yml
   vars:
-    descrip: "For desktop background, set bg image to '{{ background_image_path }}'"
+    descrip: "For desktop background, set bg image to '{{ mate_de_background_image_path }}'"
     key: "/org/mate/desktop/background/picture-filename"
-    value: "'{{ background_image_path }}'"
+    value: "'{{ mate_de_background_image_path }}'"
 
 - ansible.builtin.include_tasks: func/dconf.yml
   vars:

@@ -1,0 +1,12 @@
+- name: "Define export var 'mate_de_background_image_path'"
+  ansible.builtin.set_fact:
+  vars:
+    mate_de_background_image_path: "{{ mate_de_linux_backgrounds_dir }}/{{ mate_de_background_image_file_name }}"
+  when: ansible_system == "Linux"
+
+- name: "Define export var 'mate_de_background_image_path'"
+  ansible.builtin.set_fact:
+  vars:
+    mate_de_background_image_path: "{{ mate_de_freebsd_backgrounds_dir }}/{{ mate_de_background_image_file_name }}"
+  when: ansible_os_family == "FreeBSD"
+

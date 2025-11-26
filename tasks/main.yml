@@ -1,3 +1,6 @@
+- name: "Export vars for other roles to use"
+  ansible.builtin.include_tasks: export_vars/main.yml
+
 - name: "Install minimal, functional MATE DE"
   ansible.builtin.include_tasks: install_mate_min/main.yml
 
